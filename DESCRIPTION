@@ -24,3 +24,5 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
     pagedown
+URL: https://github.com/vidonne/unhcrdown
+BugReports: https://github.com/vidonne/unhcrdown/issues
