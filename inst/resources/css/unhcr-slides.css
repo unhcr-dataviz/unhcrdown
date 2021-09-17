@@ -1,0 +1,106 @@
+:root {
+  --unhcr-font-color: rgb(34, 34, 34);
+  --unhcr-grey60: rgb(102, 102, 102);
+  --unhcr-grey20: rgb(204, 204, 204);
+  --unhcr-grey10: rgb(230, 230, 230);
+  --unhcr-blue: rgb(0, 114, 188);
+  --unhcr-lightblue: rgb(204, 227, 242);
+  --unhcr-yellow: rgb(250, 235, 0);
+}
+
+div.my-footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 68px;
+  width: 100%;
+  border-top: 1px solid var(--unhcr-grey20);
+}
+
+div.my-footer span {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  height: 48px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 200px 48px;
+  background-position: right center;
+  background-image: url("../logo/unhcr-logo-blue.svg");
+}
+
+/*****
+ Typography
+*****/
+a, a > code {
+  color: var(--unhcr-blue);
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  color: var(--unhcr-blue);
+}
+
+.lead {
+  font-size: 1.35rem;
+}
+
+.unhcr-blue {
+  color: var(--unhcr-blue);
+}
+
+.remark-slide-number {
+  display: none;
+}
+
+.remark-code-line-highlighted {
+  background-color: #FEFABF;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+/*****
+ Dark slide
+*****/
+.inverse {
+  background-color: var(--unhcr-blue);
+  color: var(--unhcr-yellow);
+  text-shadow: none;
+}
+
+/* Author */
+.title-slide h3:nth-of-type(1) {
+    color: var(--unhcr-yellow);
+}
+
+/* Date */
+.title-slide h3:nth-of-type(2) {
+    color: var(--unhcr-yellow);
+}
+
+.inverse h1, .inverse h2, .inverse h3 {
+  color: #FFFFFF;
+}
+
+.inverse div.my-footer {
+  border-top: 1px solid #FFFFFF;
+}
+
+.inverse div.my-footer span {
+  background-image: url("../logo/unhcr-logo-white.svg");
+}
+
+/* Images */
+.img50 img {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img75 img {
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}

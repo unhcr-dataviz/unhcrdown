@@ -1,7 +1,7 @@
 Package: unhcrdown
 Title: UNHCR Templates for R Markdown
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R:
     c(person(given = "Cedric",
            family = "Vidonne",
            role = c("aut", "cre"),
@@ -9,7 +9,7 @@ Authors@R:
       person(given = "Ahmadou",
            family = "Dicko",
            role = "aut",
-           email = "dickoa@unhcr.org"),
+           email = "mail@ahmadoudicko.com"),
       person(given = "Edouard",
            family = "Legoupil",
            role = "aut",
@@ -22,7 +22,9 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
-Imports: 
-    pagedown
+Imports:
+    pagedown,
+    rmarkdown,
+    xaringan
 URL: https://github.com/vidonne/unhcrdown
 BugReports: https://github.com/vidonne/unhcrdown/issues
