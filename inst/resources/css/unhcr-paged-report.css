@@ -1,0 +1,339 @@
+/* ----------------------------------- */
+/* CSS template for UNHCR paged report */
+/* ----------------------------------- */
+
+/* -------------------- CSS variables ---------------------- */
+:root {
+    --background: whitesmoke;
+    --pagedjs-width: 210mm;
+    --pagedjs-height: 297mm;
+    --color-paper: white;
+    --color-mbox: rgba(0, 0, 0, 0.2);
+    --running-title-width: 2.5in;
+    --screen-pages-spacing: 5mm;
+    --main-color: 0, 114, 188;
+    --font-color: 0, 0, 0;
+  }
+
+  /* ---------------------- For debugging -------------------- */
+/* two pages in a row if possible on screen */
+@media screen {
+  body {
+      background-color: var(--background);
+      margin: var(--screen-pages-spacing) auto 0 auto;
+  }
+  .pagedjs_pages {
+      display: flex;
+      max-width: calc(var(--pagedjs-width) * 2);
+      flex: 0;
+      flex-wrap: wrap;
+      margin: 0 auto;
+  }
+  .pagedjs_page {
+      background-color: var(--color-paper);
+      box-shadow: 0 0 0 1px var(--color-mbox);
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin: auto auto var(--screen-pages-spacing) auto;
+  }
+}
+
+/* when a row can hold two pages, start first page on the right */
+@media screen and (min-width: 12.32in) {
+  .pagedjs_page {
+      margin: auto 0 var(--screen-pages-spacing) 0;
+  }
+  .pagedjs_first_page {
+      margin-left: var(--pagedjs-width);
+  }
+}
+
+/* ------------------------ Pages -------------------------- */
+/* page size */
+@page {
+    size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
+    margin: 40mm 25mm 25mm 25mm;
+  }
+
+/* string variables */
+h1.title {
+  string-set: h1-title content(text);
+}
+
+h1.subtitle {
+  string-set: h1-subtitle content(text);
+}
+h2.date {
+  string-set: h2-date content(text);
+}
+h2.author {
+  string-set: h2-author content(text);
+}
+address.author-afil {
+  string-set: address-author-afil content(text);
+}
+a.author-email {
+  string-set: a-author-email content(text);
+}
+
+/* normal page */
+@page {
+
+}
+
+/* left page */
+@page:left {
+  /* running title */
+  @top-left {
+    content: string(h1-title) " > " string(h1-subtitle);
+    margin-left: -10mm;
+    margin-top: 10mm;
+    color: rgba(var(--font-color), 0.6);
+    font-size: 0.8em;
+    text-transform: uppercase;
+    vertical-align: top;
+  }
+  /* numbering */
+  @bottom-left {
+    content: counter(page);
+    margin-left: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: rgb(var(--main-color));
+    font-size: 0.7em;
+    vertical-align: top;
+    border-top: 0.5px solid rgb(var(--main-color));
+  }
+  /* running date */
+  @bottom-right {
+    content: "UNHCR / " string(h2-date);
+    margin-right: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: rgb(var(--main-color));
+    font-size: 0.7em;
+    vertical-align: top;
+    border-top: 0.5px solid rgb(var(--main-color));
+  }
+  /* top ruler */
+  background-image: url(../utils/header-ruler-left.svg);
+  background-position: 15mm 15mm;
+  background-size: 180mm;
+  background-repeat: no-repeat;
+}
+
+/* right page */
+@page:right {
+  /* running title */
+  @top-right {
+    content: string(h1-title) " > " string(h1-subtitle);
+    margin-right: -10mm;
+    margin-top: 10mm;
+    color: rgba(var(--font-color), 0.6);;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    vertical-align: top;
+  }
+  /* numbering */
+  @bottom-right {
+    content: counter(page);
+    margin-right: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: rgb(var(--main-color));
+    font-size: 0.7em;
+    vertical-align: top;
+    border-top: 0.5px solid rgb(var(--main-color));
+  }
+  /* running date */
+  @bottom-left {
+    content: "UNHCR / " string(h2-date);
+    margin-left: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: rgb(var(--main-color));
+    font-size: 0.7em;
+    vertical-align: top;
+    border-top: 0.5px solid rgb(var(--main-color));
+  }
+  /* top ruler */
+  background-image: url(../utils/header-ruler-right.svg);
+  background-position: 15mm 15mm;
+  background-size: 180mm;
+  background-repeat: no-repeat;
+}
+
+/* ------------------------ Front Cover --------------------- */
+@page:first{
+  /* logo + tick + cover */
+  background-color: #ffffff;
+  background-image: url(../logo/unhcr-logo-blue.svg), url(../utils/header-white-tick.svg), var(--front-cover);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: 10mm 10mm, 29mm 26.5mm, 10mm 30mm;
+  background-size:  60mm, 7mm, 190mm;
+  @top-left-corner {
+    display: none;
+  }
+
+  @top-left {
+    display: none;
+  }
+
+  @top-center {
+    display: none;
+  }
+
+  @top-right {
+    display: none;
+  }
+
+  @top-right-corner {
+    display: none;
+  }
+
+  @bottom-right {
+    display: none;
+  }
+
+  @bottom-left {
+    display: none;
+  }
+}
+
+/* ------------------------ Back Cover ---------------------- */
+@page back-cover {
+  background-color: #ffffff;
+  background-image: url(../utils/back-cover.svg);
+  background-repeat: no-repeat;
+  background-position: 10mm 30mm;
+  background-size:  190mm 257mm;
+  @top-left-corner {
+    display: none;
+  }
+
+  @top-left {
+    display: none;
+  }
+
+  @top-center {
+    display: none;
+  }
+
+  @top-right {
+    display: none;
+  }
+
+  @top-right-corner {
+    display: none;
+  }
+
+  @bottom-right {
+    display: none;
+  }
+
+  @bottom-left {
+    display: none;
+  }
+}
+
+.back-cover {
+  page: back-cover;
+}
+
+.back-title:after {
+  content: string(h1-title);
+}
+.back-subtitle:after {
+  content: string(h1-subtitle);
+}
+.back-name:after {
+  content: string(h2-author);
+}
+.back-afil:after {
+  content: string(address-author-afil);
+}
+.back-email:after {
+  content: string(a-author-email);
+}
+
+@page:blank {
+  @top-left-corner {
+    display: none;
+  }
+
+  @top-left {
+    display: none;
+  }
+
+  @top-center {
+    display: none;
+  }
+
+  @top-right {
+    display: none;
+  }
+
+  @top-right-corner {
+    display: none;
+  }
+
+  @bottom-right {
+    display: none;
+  }
+
+  @bottom-left {
+    display: none;
+  }
+  background-image: none !important;
+}
+
+
+/* ------------------------ Fonts ---------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  color: rgba(var(--font-color), 0.9);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+pre, code,
+kbd, samp {
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* --------------------- CSS Fragmentation --------------------------- */
+/* page breaks; aka CSS fragmentation */
+
+.front-page {
+  counter-reset: page -1;
+  break-after: right;
+}
+.back-cover {
+  break-before: left;
+}
+.level1 {
+  break-after: page;
+}
+.section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
+  break-after: avoid;
+}
+.footenotes {
+  break-before: always;
+  break-after: always;
+}
+.figure {
+  break-inside: avoid;
+}
+
+/* do not break captions */
+caption {
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+/* misc elements */
+img {
+  max-width: 100%;
+}
