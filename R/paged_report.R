@@ -25,7 +25,7 @@ paged_report <- function(front_img = NULL,
 
   # template
   pagedown::html_paged(
-    css = c(other_css, main_css, base_css),
+    css = c(base_css, main_css, other_css),
     front_cover = front_img,
     includes = list(after_body = back_html),
     ...

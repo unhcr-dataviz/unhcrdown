@@ -16,6 +16,8 @@ output:
 # uncomment this line to produce HTML and PDF in RStudio:
 #knit: pagedown::chrome_print
 toc-title: Contents
+paged-footnotes: true
+links-to-footnotes: true
 ---
 
 ```{r setup, include=FALSE}
