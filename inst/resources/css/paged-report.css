@@ -1,6 +1,6 @@
-/* ----------------------------------- */
-/* CSS template for UNHCR paged report */
-/* ----------------------------------- */
+/* ------------------------------- */
+/* Main CSS for UNHCR paged report */
+/* ------------------------------- */
 
 /* -------------------- CSS variables ---------------------- */
 :root {
@@ -12,6 +12,7 @@
     --running-title-width: 2.5in;
     --screen-pages-spacing: 5mm;
     --main-color: 0, 114, 188;
+    --accent-color: 250, 235, 0;
     --font-color: 0, 0, 0;
   }
 
@@ -100,7 +101,7 @@ a.author-email {
     margin-top: 10mm;
     padding-top: 1.5mm;
     color: rgb(var(--main-color));
-    font-size: 0.7em;
+    font-size: 0.8em;
     vertical-align: top;
     border-top: 0.5px solid rgb(var(--main-color));
   }
@@ -111,7 +112,7 @@ a.author-email {
     margin-top: 10mm;
     padding-top: 1.5mm;
     color: rgb(var(--main-color));
-    font-size: 0.7em;
+    font-size: 0.8em;
     vertical-align: top;
     border-top: 0.5px solid rgb(var(--main-color));
   }
@@ -141,7 +142,7 @@ a.author-email {
     margin-top: 10mm;
     padding-top: 1.5mm;
     color: rgb(var(--main-color));
-    font-size: 0.7em;
+    font-size: 0.8em;
     vertical-align: top;
     border-top: 0.5px solid rgb(var(--main-color));
   }
@@ -152,7 +153,7 @@ a.author-email {
     margin-top: 10mm;
     padding-top: 1.5mm;
     color: rgb(var(--main-color));
-    font-size: 0.7em;
+    font-size: 0.8em;
     vertical-align: top;
     border-top: 0.5px solid rgb(var(--main-color));
   }
@@ -287,20 +288,12 @@ a.author-email {
   background-image: none !important;
 }
 
-
-/* ------------------------ Fonts ---------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:ital,wght@0,300;0,400;1,300;1,400&display=swap');
-
-body {
-  font-family: 'Lato', Arial, sans-serif;
-  color: rgba(var(--font-color), 0.9);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-pre, code,
-kbd, samp {
-  font-family: 'Roboto Mono', monospace;
+/* ------------------------ Style ----------------------------- */
+/* footnote */
+.footnote sup,
+.footnote-ref {
+  color: rgba(var(--main-color), 1);
+  font-weight: 700;
 }
 
 /* --------------------- CSS Fragmentation --------------------------- */
@@ -331,9 +324,4 @@ kbd, samp {
 caption {
   break-inside: avoid;
   break-after: avoid;
-}
-
-/* misc elements */
-img {
-  max-width: 100%;
 }

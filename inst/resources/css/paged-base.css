@@ -1,0 +1,334 @@
+/* --------------------------------- */
+/* Base CSS for UNHCR paged document */
+/* --------------------------------- */
+
+/*** The new CSS Reset - version 1.3.1 (last updated 28.10.2021) ***/
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+ol, ul {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+}
+table {
+    border-collapse: collapse;
+}
+textarea {
+    white-space: revert;
+}
+
+/* ------------------------ Fonts ---------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  color: rgb(var(--font-color));
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+pre, code,
+kbd, samp {
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* headers */
+h6, h5, h4, h3, h2, h1 {
+  line-height: 1.2;
+  margin-bottom: 0.75em;
+}
+
+h3, h2, h1 {
+  color: rgb(var(--main-color));
+}
+
+h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.65em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  display: table;
+  color: #ffffff;
+  font-size: 1em;
+  text-transform: uppercase;
+  background-color: rgb(var(--main-color));
+  padding: 0.25em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+h6 {
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+/* paragraph elements */
+p {
+  margin-bottom: 1.2em;
+}
+
+blockquote {
+  margin-bottom: 1em;
+  quotes: "“" "”" "‘" "’";
+}
+
+blockquote>:first-child {
+  font-size: 1.2em;
+  font-style: italic;
+  margin-bottom: 0;
+  color: rgb(var(--main-color));
+  quotes: "“" "”" "‘" "’";
+}
+
+blockquote>:first-child::before {
+  content: open-quote;
+}
+
+blockquote>:first-child::after {
+  content: close-quote;
+}
+
+blockquote>:last-child {
+  font-weight: 700;
+  text-align: end;
+}
+
+blockquote>:last-child::before {
+  content: "— ";
+}
+
+blockquote>:only-child {
+  font-weight: 400;
+  text-align: start;
+}
+
+blockquote>:only-child::before,
+blockquote>:only-child::after {
+  content: none;
+}
+
+em {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+small {
+  font-size: 0.875em;
+}
+
+big, .lead {
+  font-size: 1.2em;
+}
+
+mark {
+  padding: 0.2em;
+  background-color: rgba(var(--accent-color), 0.2);
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+a {
+  color: rgb(var(--main-color));
+  text-decoration: underline;
+}
+
+u {
+  text-decoration: underline;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+.footnote {
+  font-size: 0.75em !important;
+  font-style: italic;
+}
+
+.footnote-ref {
+  text-decoration: none;
+  color: rgb(var(--font-color));
+}
+
+/* lists */
+ol, ul {
+  padding-left: 1em;
+  list-style: square;
+}
+
+ol, ul, dl {
+  margin-bottom: 1em;
+  line-height: 1.25;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-bottom: 0.5em;
+  margin-left: 0;
+}
+
+/* code */
+pre {
+  display: block;
+  margin-bottom: 1em;
+  font-size: 0.85em;
+  padding: 1em;
+}
+
+pre[class] {
+  background: rgba(var(--font-color), 0.05);
+}
+
+pre code {
+  font-size: inherit;
+  color: inherit;
+  word-break: normal;
+}
+
+code {
+  font-size: 0.85em;
+  word-wrap: break-word;
+}
+
+/* figure */
+figure {
+  margin-bottom: 1em;
+}
+
+img,
+svg {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+img + em,
+caption, .caption {
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+/* helper */
+.img75, .img66,
+.img50, .img33,
+.img25 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img25 {
+  max-width: 25%;
+}
+
+.img33 {
+  max-width: 33%;
+}
+
+.img50 {
+  max-width: 50%;
+}
+
+.img66 {
+  max-width: 66%;
+}
+
+.img75 {
+  max-width: 75%;
+}
+
+.col2 {
+  columns: 2;
+}
+
+.float-start {
+  float: left !important;
+  margin-right: 1em;
+}
+
+.float-end {
+  float: right !important;
+  margin-left: 1em;
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.blue {
+  color: rgba(var(--main-color), 1);
+}
+
+.grey {
+  color: rgba(var(--font-color), 0.6);
+}
+
+.bg-blue,
+.bg-grey {
+  padding: 1.6em;
+}
+
+.bg-blue {
+  background-color: rgba(var(--main-color), 0.2);
+}
+
+.bg-grey {
+  background-color: rgba(var(--font-color), 0.2);
+}
+
+.bg-blue > *:last-child,
+.bg-grey > *:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

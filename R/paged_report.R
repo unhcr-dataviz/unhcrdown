@@ -6,12 +6,14 @@
 #'
 #' @return A pagedown report
 #' @export
-paged_report = function(front_img = NULL,
-                        other_css = NULL,
-                        ...) {
+paged_report <- function(front_img = NULL,
+                         other_css = NULL,
+                         ...) {
   # arguments
+  base_css <-
+    pkg_resource("css/paged-base.css")
   main_css <-
-    pkg_resource("css/unhcr-paged-report.css")
+    pkg_resource("css/paged-report.css")
   back_html <-
     pkg_resource("html/back-cover-paged-report.html")
 
@@ -23,8 +25,9 @@ paged_report = function(front_img = NULL,
 
   # template
   pagedown::html_paged(
-    css = c(other_css, main_css),
+    css = c(other_css, main_css, base_css),
     front_cover = front_img,
     includes = list(after_body = back_html),
-    ...)
+    ...
+  )
 }
