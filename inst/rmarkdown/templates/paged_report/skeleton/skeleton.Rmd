@@ -7,17 +7,30 @@ date: "`r format(Sys.Date(),  '%d %B %Y')`"
 author:
   - name: Contact Name
     affiliation: Job title
-    email: <email@unhcr.org>
+    email: email@unhcr.org
 output:
   unhcrdown::paged_report:
     # put the path to your cover image
     front_img:
     toc: true
-# uncomment this line to produce HTML and PDF in RStudio:
-#knit: pagedown::chrome_print
+    toc_depth: 2
+# Set  toc title, default none
 toc-title: Contents
+# Change to true to include list of tables
+lot: false
+# Set lot title, default: "List of Tables"
+lot-title: "Tables"
+# Change to true to include list of figures
+lof: false
+# Set lof title, default: "List of Figures"
+lof-title: "Figures"
+# If you include any <abbr> a list of abbreviations will be built.
+# Set lof title, default: "List of Abbreviations"
+loa-title: "Acronyms"
 paged-footnotes: true
 links-to-footnotes: true
+# uncomment this line to produce HTML and PDF in RStudio:
+#knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}

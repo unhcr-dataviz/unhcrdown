@@ -258,6 +258,11 @@ caption, .caption {
   font-style: italic;
 }
 
+/* table */
+table {
+  margin-bottom: 1em;
+}
+
 /* helper */
 .img75, .img66,
 .img50, .img33,
