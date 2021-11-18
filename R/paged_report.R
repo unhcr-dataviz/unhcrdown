@@ -2,12 +2,16 @@
 #'
 #' @param front_img Cover image
 #' @param other_css Add extra css
+#' @param toc Table of content
+#' @param toc_depth Table of content depth
 #' @param ... Arguments passed to pagedown::html_paged
 #'
 #' @return A pagedown report
 #' @export
 paged_report <- function(front_img = NULL,
                          other_css = NULL,
+                         toc = TRUE,
+                         toc_depth = 2,
                          ...) {
   # arguments
   base_css <-
@@ -22,12 +26,12 @@ paged_report <- function(front_img = NULL,
     front_img <-
       pkg_resource("img/cover-example.jpg")
   }
-
   # template
   pagedown::html_paged(
     css = c(base_css, main_css, other_css),
     front_cover = front_img,
     includes = list(after_body = back_html),
-    ...
-  )
+    toc = toc,
+    toc_depth = toc_depth,
+    ...)
 }

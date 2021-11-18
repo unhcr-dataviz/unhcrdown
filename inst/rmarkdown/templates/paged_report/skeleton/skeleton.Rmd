@@ -12,8 +12,8 @@ output:
   unhcrdown::paged_report:
     # put the path to your cover image
     front_img:
-    toc: true
-    toc_depth: 2
+    # change to true for a self-contained document, but it'll be a litte slower for Pandoc to render
+    self_contained: false
 # Set  toc title, default none
 toc-title: Contents
 # Change to true to include list of tables

@@ -4,12 +4,22 @@
 \alias{paged_report}
 \title{Function for UNHCR paged report template}
 \usage{
-paged_report(front_img = NULL, other_css = NULL, ...)
+paged_report(
+  front_img = NULL,
+  other_css = NULL,
+  toc = TRUE,
+  toc_depth = 2,
+  ...
+)
 }
 \arguments{
 \item{front_img}{Cover image}
 
 \item{other_css}{Add extra css}
+
+\item{toc}{Table of content}
+
+\item{toc_depth}{Table of content depth}
 
 \item{...}{Arguments passed to pagedown::html_paged}
 }

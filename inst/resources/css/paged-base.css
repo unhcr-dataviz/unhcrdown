@@ -321,7 +321,8 @@ table {
 
 .bg-blue,
 .bg-grey {
-  padding: 1.6em;
+  padding: 1.2em;
+  margin-bottom: 1em;
 }
 
 .bg-blue {
