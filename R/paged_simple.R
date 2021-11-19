@@ -1,4 +1,4 @@
-#' Function for UNHCR paged simple report template
+#' Function for UNHCR paged simple template
 #'
 #' @param back_html Back-cover HTML including contact information
 #' @param other_css Add extra css
