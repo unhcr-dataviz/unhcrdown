@@ -2,7 +2,7 @@
 % Please edit documentation in R/paged_simple.R
 \name{paged_simple}
 \alias{paged_simple}
-\title{Function for UNHCR paged report template}
+\title{Function for UNHCR paged simple template}
 \usage{
 paged_simple(back_html = TRUE, other_css = NULL, ...)
 }
@@ -17,5 +17,5 @@ paged_simple(back_html = TRUE, other_css = NULL, ...)
 A pagedown report
 }
 \description{
-Function for UNHCR paged report template
+Function for UNHCR paged simple template
 }

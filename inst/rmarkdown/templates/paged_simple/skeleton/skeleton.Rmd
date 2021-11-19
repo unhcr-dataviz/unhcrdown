@@ -8,8 +8,6 @@ author:
     email: email@unhcr.org
 output:
   unhcrdown::paged_simple:
-    # change to true for a self-contained document, but it'll be a litte slower for Pandoc to render
-    self_contained: false
 paged-footnotes: true
 links-to-footnotes: true
 # uncomment this line to produce HTML and PDF in RStudio:
