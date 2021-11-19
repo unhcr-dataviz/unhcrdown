@@ -16,7 +16,36 @@ knitr::opts_chunk$set(
 # unhcrdown
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/vidonne/unhcrdown/workflows/R-CMD-check/badge.svg)](https://github.com/vidonne/unhcrdown/actions)
 <!-- badges: end -->
 
-Just a repo to start working on unhcrdown.
+The **unhcrdown** package provides a set of templates following [UNHCR Brand](https://www.unhcr.org/brand) recommendations. The goal of this package is to ease and speed up the creation of reports, presentation and website while promoting the UNHCR visual identity. 
 
+## Installation
+
+This package is not on yet on CRAN and to install it, you will need the remotes package.
+
+```{r, eval = FALSE}
+# install.packages("remotes")
+remotes::install_github("vidonne/unhcrdown")
+```
+
+## Content
+
+A package with all **necessary templates** to quickly create UNHCR branded reports, presentations and more:
+
+1. Powerpoint presentation
+2. Xaringan presentation
+3. HTML paged report that can be exported to PDF document
+    - `paged_report`, advanced report template including page cover, table of content, back-cover and more.
+    - `paged_simple`, simple document template to create quick reports, updates, etc.
+
+**Upcoming templates:**
+
+1. Word
+2. HTML
+3. [Distill](https://rstudio.github.io/distill/)
+4. [Rolldown](https://github.com/yihui/rolldown)
+
+```{r child="man/rmdfragments/unhcrverse.Rmd"} 
+```
