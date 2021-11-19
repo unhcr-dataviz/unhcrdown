@@ -338,3 +338,18 @@ table {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
+/* url in text */
+a[href^="http"]:not([class="uri"])::after {
+  content: " (" attr(href) ")";
+  font-size: 90%;
+  hyphens: none;
+  word-break: break-all;
+}
+.main a[href^="#"]:not([class^="footnote-"]):not([href*=":"])::after {
+  content: " (page " target-counter(attr(href), page) ")";
+}
+/* do not include page references in code blocks */
+.sourceCode a[href^="#"]:not([class^="footnote-"]):not([href*=":"])::after {
+  content: unset;
+}

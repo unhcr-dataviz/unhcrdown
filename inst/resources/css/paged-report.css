@@ -15,7 +15,7 @@
     --accent-color: 250, 235, 0;
     --font-color: 0, 0, 0;
   }
-
+  
   /* ---------------------- For debugging -------------------- */
 /* two pages in a row if possible on screen */
 @media screen {
@@ -309,11 +309,11 @@ a.email {
   padding-left: 15mm;
   padding-right: 15mm;
 }
-
+ 
 .title {
   color: #ffffff;
 }
-
+ 
 .subtitle {
   color: rgba(var(--accent-color), 1);
 }
@@ -351,12 +351,12 @@ a.email {
   padding-left: 15mm;
   padding-right: 15mm;
 }
-
+ 
 .back-title,
 .back-footer {
   color: #ffffff;
 }
-
+ 
 .back-subtitle {
   color: rgba(var(--accent-color), 1);
 }
@@ -451,10 +451,11 @@ a.email {
   break-before: always;
   break-after: always;
 }
+.bg-blue,
+.bg-grey,
 .figure {
   break-inside: avoid;
 }
-
 /* do not break captions */
 caption {
   break-inside: avoid;
