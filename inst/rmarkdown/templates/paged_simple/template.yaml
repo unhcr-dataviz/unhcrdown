@@ -1,0 +1,4 @@
+name: UNHCR Paged Simple
+description: >
+ UNHCR branded paged HTML simple report that can be exported as PDF
+create_dir: false

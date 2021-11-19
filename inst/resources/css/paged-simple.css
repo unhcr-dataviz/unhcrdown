@@ -1,0 +1,261 @@
+/* ------------------------------- */
+/* Main CSS for UNHCR paged simple */
+/* ------------------------------- */
+
+/* -------------------- CSS variables ---------------------- */
+:root {
+    --background: whitesmoke;
+    --pagedjs-width: 210mm;
+    --pagedjs-height: 297mm;
+    --color-paper: white;
+    --color-mbox: rgba(0, 0, 0, 0.2);
+    --running-title-width: 2.5in;
+    --screen-pages-spacing: 5mm;
+    --main-color: 0, 114, 188;
+    --accent-color: 250, 235, 0;
+    --font-color: 0, 0, 0;
+  }
+  
+  /* ---------------------- For debugging -------------------- */
+/* two pages in a row if possible on screen */
+@media screen {
+  body {
+      background-color: var(--background);
+      margin: var(--screen-pages-spacing) auto 0 auto;
+  }
+  .pagedjs_pages {
+      display: flex;
+      max-width: calc(var(--pagedjs-width) * 2);
+      flex: 0;
+      flex-wrap: wrap;
+      margin: 0 auto;
+  }
+  .pagedjs_page {
+      background-color: var(--color-paper);
+      box-shadow: 0 0 0 1px var(--color-mbox);
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin: auto auto var(--screen-pages-spacing) auto;
+  }
+}
+
+/* when a row can hold two pages, start first page on the right */
+@media screen and (min-width: 12.32in) {
+  .pagedjs_page {
+      margin: auto 0 var(--screen-pages-spacing) 0;
+  }
+  .pagedjs_first_page {
+      margin-left: var(--pagedjs-width);
+  }
+}
+
+/* use a fixed width body for mobiles */
+@media screen and (max-width:1180px)  {
+  body {
+    width: calc(var(--pagedjs-width) + 2 * var(--screen-pages-spacing));
+  }
+}
+
+/* ------------------------ Pages -------------------------- */
+/* page size */
+@page {
+  size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
+  margin: 45mm 25mm 25mm 25mm;
+}
+
+@page:blank {
+  
+}
+
+/* string variables */
+h1.title {
+  string-set: h1-title content(text);
+}
+
+h1.subtitle {
+  string-set: h1-subtitle content(text);
+}
+h2.date {
+  string-set: h2-date content(text);
+}
+h2.author {
+  string-set: h2-author content(text);
+}
+address.author-afil {
+  string-set: address-author-afil content(text);
+}
+a.email {
+  string-set: a-author-email content(text);
+}
+
+/* normal page */
+@page {
+  /* top ruler */
+  background-image: url(../logo/unhcr-logo-blue.svg), url(../utils/header-ruler-simple.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 15mm 10mm, 15mm 22mm;
+  background-size: 36mm, 180mm;
+  /* running title */
+  @top-right {
+    content: string(h1-title) " > " string(h1-subtitle);
+    margin-right: -10mm;
+    margin-top: 14mm;
+    color: rgba(var(--font-color), 0.6);;
+    font-size: 1em;
+    text-transform: uppercase;
+    vertical-align: top;
+  }
+  /* numbering */
+  @bottom-right {
+    content: counter(page);
+    margin-right: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: rgb(var(--main-color));
+    font-size: 0.8em;
+    vertical-align: top;
+    border-top: 0.5px solid rgb(var(--main-color));
+  }
+  /* running date */
+  @bottom-left {
+    content: "UNHCR / " string(h2-date);
+    margin-left: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: rgb(var(--main-color));
+    font-size: 0.8em;
+    vertical-align: top;
+    border-top: 0.5px solid rgb(var(--main-color));
+  }
+}
+
+/* ------------------------ Front Cover --------------------- */
+@page:first {
+  /* top ruler */
+  background-image: url(../logo/unhcr-logo-blue.svg), url(../utils/header-ruler-left.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 15mm 10mm, 15mm 28mm;
+  background-size: 55mm, 180mm;
+  /* running title */
+  @top-right {
+    content: string(h1-subtitle);
+    margin-right: -10mm;
+    margin-top: 16.5mm;
+    color: rgba(var(--main-color), 1);;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    vertical-align: top;
+  }
+  /* numbering */
+  @bottom-right {
+    content: counter(page);
+    margin-right: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: rgb(var(--main-color));
+    font-size: 0.9em;
+    vertical-align: top;
+    border-top: 0.5px solid rgb(var(--main-color));
+  }
+  /* running date */
+  @bottom-left {
+    content: "www.unhcr.org";
+    margin-left: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: rgb(var(--main-color));
+    font-size: 0.9em;
+    vertical-align: top;
+    border-top: 0.5px solid rgb(var(--main-color));
+  }
+}
+
+/* ------------------------ Back Cover ---------------------- */
+@page back-cover {
+  
+}
+.back-cover {
+  page: back-cover;
+}
+.back-name:after {
+  content: string(h2-author);
+}
+.back-afil:after {
+  content: string(address-author-afil);
+}
+.back-email:after {
+  content: string(a-author-email);
+}
+
+/* ------------------------ Style ----------------------------- */
+/* front cover */
+.title-page {
+  margin: 0mm -10mm 22mm -10mm;
+}
+
+.title,
+.date {
+  color: rgba(var(--font-color), 1); 
+}
+
+.title{
+  font-size: 3em;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.date {
+  font-size: 1.2em;
+}
+
+.front-page .author,
+.front-page .author-afil,
+.front-page .subtitle,
+.front-page .abstract {
+  display: none;
+}
+
+/* toc, lot, lof, loa */
+.toc, .lot, .lof, .loa {
+  display: none; /* make sure they don't appear even if turn on in the yaml */
+}
+
+/* backcover */
+.back-cover {
+  position: absolute;
+  bottom: 0;
+  margin: 10mm 20mm 5mm 20mm;
+}
+
+/* footnote */
+.footnote sup,
+.footnote-ref {
+  color: rgba(var(--main-color), 1);
+  font-weight: 700;
+}
+
+/* --------------------- CSS Fragmentation --------------------------- */
+/* page breaks; aka CSS fragmentation */
+
+.front-page {
+  counter-reset: page 1;
+}
+.section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
+  break-after: avoid;
+}
+.footenotes {
+  break-before: always;
+  break-after: always;
+}
+.bg-blue,
+.bg-grey,
+.figure {
+  break-inside: avoid;
+}
+
+/* do not break captions */
+caption {
+  break-inside: avoid;
+  break-after: avoid;
+}
