@@ -325,9 +325,9 @@ a.email {
 }
 
 .front-page div.abstract {
-  width: 100%;
-  margin: 0;
-  padding: 10mm 25mm;
+  width: 194mm;
+  margin: 0 -2mm -2mm -2mm;
+  padding: 10mm 27mm 12mm 27mm;
   background-color: #ffffff;
   position: absolute;
   bottom: 0;

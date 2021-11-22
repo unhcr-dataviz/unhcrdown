@@ -6,6 +6,7 @@
 \usage{
 paged_report(
   front_img = NULL,
+  img_to_dark = FALSE,
   other_css = NULL,
   toc = TRUE,
   toc_depth = 2,
@@ -14,6 +15,8 @@ paged_report(
 }
 \arguments{
 \item{front_img}{Cover image}
+
+\item{img_to_dark}{Darken cover image}
 
 \item{other_css}{Add extra css}
 
