@@ -1,0 +1,168 @@
+/*! =========================================================
+@name             html_slides.css
+@description      UNHCR HTML slides styles
+@lastUpdated      01.12.2021
+============================================================= */
+
+/*** Layout ***/
+.remark-slide-content {
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 5em;
+}
+.remark-slide-number {
+  display: none;
+}
+.inverse {
+  background-color: var(--unhcr-blue);
+  color: var(--unhcr-white);
+  text-shadow: none;
+}
+.inverse h1, .inverse h2, .inverse a {
+  color: var(--unhcr-white);
+}
+.inverse h2, .inverse h3{
+  color: var(--unhcr-yellow);
+}
+
+/*** Footer ***/
+.footer {
+  position: absolute;
+  bottom: 0em;
+  left: 0em;
+  width: 100%;
+  height: 4em;
+  z-index: 0;
+  border-top: 1px solid var(--unhcr-mediumgrey);
+}
+.footer span {
+  position: absolute;
+  bottom: 1em;
+  right: 2em;
+  width: 10em;
+  height: 2em;
+  background-image: url("../logo/unhcr-logo-blue.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.inverse .footer {
+  border-top: 1px solid var(--unhcr-white);
+}
+.inverse .footer span {
+  background-image: url("../logo/unhcr-logo-white.svg");
+}
+
+/*** Fonts ***/
+h1, h2, h3 {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+h1, h2 {
+  color: var(--unhcr-blue);
+}
+a, a > code {
+  color: var(--unhcr-blue);
+}
+.footnote {
+  position: absolute;
+  bottom: 7.5em;
+  font-size: 0.6em;
+  font-style: italic;
+}
+.footnote p {
+  margin-top: 0;
+  margin-bottom: 0.2em;
+}
+.remark-code-line-highlighted {
+  background-color: var(--unhcr-lightyellow);
+}
+blockquote {
+  quotes: "“" "”" "‘" "’";
+}
+blockquote>:first-child {
+  font-size: 1.2em;
+  font-style: italic;
+  margin-bottom: 0;
+  color: var(--unhcr-blue);
+  quotes: "“" "”" "‘" "’";
+}
+blockquote>:first-child::before {
+  content: open-quote;
+}
+blockquote>:first-child::after {
+  content: close-quote;
+}
+blockquote>:last-child {
+  font-weight: 700;
+  text-align: end;
+}
+blockquote>:last-child::before {
+  content: "— ";
+}
+blockquote>:only-child {
+  font-weight: 400;
+  text-align: start;
+}
+blockquote>:only-child::before,
+blockquote>:only-child::after {
+  content: none;
+}
+ul {
+  list-style: square;
+}
+img, video, iframe {
+  max-width: 100%;
+}
+
+/*** Title slide ***/
+.title-slide h1 {
+  font-size: 60px;
+  padding-top: 1.3em;
+  margin-bottom: 0.3em;
+}
+.title-slide h2 {
+  font-size: 40px;
+  font-weight: 400;
+}
+.title-slide h3 {
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+/*** Two-column layout ***/
+.left-column {
+  width: 20%;
+  float: left;
+}
+.right-column {
+  width: 75%;
+  float: right;
+}
+.right-column + * {
+  clear: both;
+}
+.pull-left {
+  float: left;
+  width: 47.5%;
+}
+.pull-right {
+  float: right;
+  width: 47.5%;
+}
+.pull-right + * {
+  clear: both;
+}
+
+/*** Tables ***/
+/* TODO */
+.remark-slide table {
+  margin: auto;
+  border-top: 1px solid var(--unhcr-grey);
+  border-bottom: 1px solid var(--unhcr-grey);
+}
+.remark-slide table thead th { border-bottom: 1px solid var(--unhcr-mediumgrey); }
+th, td { padding: 5px; }
+.remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) { background: var(--unhcr-lightgrey); }
