@@ -15,7 +15,7 @@ html_slides <- function(other_css = NULL,
                         nature =  list(countIncrementalSlides = "no",
                                        highlightLines = "yes",
                                        highlightStyle = "github",
-                                       ratio = 16:9),
+                                       ratio = "16:9"),
                         ...) {
   # css files
   color_variables_css <- pkg_resource("css/color_variables.css")
@@ -28,6 +28,7 @@ html_slides <- function(other_css = NULL,
   xaringan::moon_reader(
     css = c(color_variables_css, fonts_css , html_slides_css, other_css),
     includes = list(after_body = footer_html),
+    nature = nature,
     ...
   )
 }

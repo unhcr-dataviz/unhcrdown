@@ -109,8 +109,9 @@ blockquote>:only-child::before,
 blockquote>:only-child::after {
   content: none;
 }
-ul {
-  list-style: square;
+ul li::marker,
+ol li::marker {
+  color: var(--unhcr-blue);
 }
 img, video, iframe {
   max-width: 100%;

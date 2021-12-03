@@ -7,7 +7,7 @@
 html_slides(
   other_css = NULL,
   nature = list(countIncrementalSlides = "no", highlightLines = "yes", highlightStyle =
-    "github", ratio = 16:9),
+    "github", ratio = "16:9"),
   ...
 )
 }
