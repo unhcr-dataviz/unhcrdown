@@ -1,0 +1,124 @@
+---
+title: "Main presentation title"
+subtitle: "Subtitle if needed"
+author: "Your name"
+institute: "Bureau/Divisions"
+date: "`r format(Sys.Date(),  '%d %B %Y')`"
+output: unhcrdown::html_slides
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# HTML presentation
+
+**`html_slides`** is a simple online presentation template part of the [`unhcrdown`](https://github.com/vidonne/unhcrdown) package.
+
+Install the **`unhcrdown`** package from [Github](https://github.com/vidonne/unhcrdown):
+
+```{r eval=FALSE, tidy=FALSE}
+# install.packages("remotes")
+remotes::install_github("vidonne/unhcrdown")
+```
+
+--
+
+See the `xaringan::moon_reader()` package documentation<sup>1</sup> and examples<sup>2</sup> for more information regarding usage.
+
+
+.footnote[
+[1] https://github.com/yihui/xaringan
+
+[2] https://slides.yihui.org/xaringan/
+]
+
+
+---
+class: center, middle
+
+# Section title
+
+### An interesting new Section
+
+---
+
+# Basic style
+
+The templates comes with predefined styles for inline text, such as *italic*, **bold** or <u>underline text</u>.
+
+It also includes the requires styles for common elements such as:
+
+.pull-left[
+**Headers:**
+
+## Heading 2
+
+### Heading 3
+
+**Lists:**
+
+* item 1
+* item 2
+    1. sub-item 2.1
+    2. sub-item 2.2
+]
+
+.pull-right[
+
+**Or quotes:**
+
+> It is further proof that refugee movements and the broader issue of migration of populations ... is a global challenge that cannot be confined to a few countries.
+>
+> Filippo Grandi
+
+]
+
+---
+class: inverse, center, middle
+
+# Section title - Dark
+
+### An interesting new Section
+
+---
+
+# Tables
+
+If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
+
+```{r}
+knitr::kable(head(iris), format = 'html')
+```
+
+---
+background-image: url(`r xaringan:::karl`)
+background-position: 50% 50%
+class: bottom, inverse, hide-logo
+
+### Or a full page picture with no logo
+
+---
+
+# Reveal
+
+Here's a new slide that show piece by piece
+
+--
+
+* One
+
+--
+
+* Two
+
+--
+
+* Three
+
+---
+class: inverse, center, middle
+
+# Thank you
+
+### Goodbye slide
