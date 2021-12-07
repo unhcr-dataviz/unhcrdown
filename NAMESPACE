@@ -3,6 +3,5 @@
 export(html_slides)
 export(paged_report)
 export(paged_simple)
-export(ppt_presentation)
-importFrom(rmarkdown,powerpoint_presentation)
+export(pptx_slides)
 importFrom(xaringan,moon_reader)
