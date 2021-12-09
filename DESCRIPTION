@@ -25,7 +25,9 @@ RoxygenNote: 7.1.2
 Imports:
     magick,
     pagedown,
+    officedown,
     rmarkdown,
+    officer,
     xaringan
 URL: https://github.com/vidonne/unhcrdown
 BugReports: https://github.com/vidonne/unhcrdown/issues
