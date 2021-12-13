@@ -11,6 +11,14 @@ docx_simple <- function(...) {
 
   docx_template <- pkg_resource("templates/docx_template.docx")
 
+  page_margins <- list(
+    bottom = 0.8,
+    top = 1.75,
+    right = 1,
+    left = 1,
+    gutter = 0
+  )
+
   lists <- list(
     ol.style = "Number",
     ul.style = "Bullet"
@@ -39,6 +47,7 @@ docx_simple <- function(...) {
 
   officedown::rdocx_document(
     reference_docx = docx_template,
+    page_margins = page_margins,
     tables = tables,
     plots = plots,
     lists = lists,
