@@ -1,0 +1,98 @@
+---
+title: "Document Title"
+date: "`r format(Sys.Date(),  '%d %B %Y')`"
+output:
+  unhcrdown::docx_simple
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.cap = TRUE, fig.width = 6.27)
+library(officedown)
+library(officer)
+```
+
+# Title 1
+
+Delest, nonserspis est, **aditae de versped iscipsandunt** fuga. On plia arum quo beation sequatio eosaecestrum earumquatem rempor rest, optas non rem est, estrupt aecus, quaepro blanimusdam, que nis es arum eiusandandae quo vollore eos am quiatet ma cuscimus dit aspernatque volesed exerum eossimus, conseri utem fugitatur aceaquos.
+
+Caecum fugiam re ligendae nos as es ut min cusa ex et pa dolupta as abore ea verum rem anda dunt ium id moluptat eum rerore volore comnim volesti umquae moloria ndendam fugit estiatiatur? Natusam, si inihil ma solorerferum rem dolor a desequos est venem. Accuptatecae nimus que pelita doloribus ende deliqua ecerum sint, solorume.
+
+## Custom styles
+
+Some custom styles can be applied using fenced div or direct inline styling: [This text will be blue]{custom-style="Blue"}.
+
+Example of a **quote**:
+
+::: {custom-style="Quote"}
+
+"It is further proof that refugee movements and the broader issue of migration of populations ... is a global challenge that cannot be confined to a few countries."
+
+:::
+
+**Filippo Grandi**
+
+Footnotes are also included and will be added automatically to the bottom of the page like the following ones. This is a footnote^[Text of the footnote], it can include anything and can also be stylize UNHCR^[The **United Nations** High Commissioner for Refugees <https://www.unhcr.org/>]
+
+Example of **list**:
+
+Lists also are automatic but they will need extra manual tweaking if you want to apply a more adapted paragraph style with less spacing. This apply for both ordered and unordered lists.
+
+* item 1
+* item 2
+* item 3
+
+## Tables
+
+Tables will come with a default style. More advanced layout can be achieved using the [flextable](https://ardata-fr.github.io/flextable-book/index.html) package. Like the lists there is a built-in paragraph style if you want to improve the look and feel of your tables.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, tab.cap="Example of an Iris table"}
+tail(iris, 8)
+```
+
+<br>
+
+Finally, be sure to remove this message! This is a good place to demonstrate special features that your template provides. Ideally it [should knit out-of-the-box](https://www.unhcr.org/), or at least contain clear instructions as to what needs changing.
+
+\newpage
+
+# Plots
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+```{r single-bar, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Plot caption"}
+library(ggplot2)
+library(unhcrthemes)
+ggplot(data = mtcars, aes(factor(cyl))) +
+  geom_bar(fill = unhcr_pal(n = 1, name = "pal_unhcr")) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.1))) +
+  labs(x = "Number of Cylinders",
+       y = "Count", title = "Bar chart example",
+       subtitle = "Simple plot to showcase theme_unhcr default style",
+       caption = "Data from mtcars") +
+  theme_unhcr(grid = "Y")
+```
+
+# And now part 3 {-}
+
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+## Second level {-}
+
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!
+
+
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
