@@ -1,62 +1,10 @@
-/* ------------------------------- */
-/* Main CSS for UNHCR paged simple */
-/* ------------------------------- */
+/*! =========================================================
+@name             paged_simple.css
+@description      UNHCR paged_simple specific CSS
+@lastUpdated      13.12.2021
+============================================================= */
 
-/* -------------------- CSS variables ---------------------- */
-:root {
-    --background: whitesmoke;
-    --pagedjs-width: 210mm;
-    --pagedjs-height: 297mm;
-    --color-paper: white;
-    --color-mbox: rgba(0, 0, 0, 0.2);
-    --running-title-width: 2.5in;
-    --screen-pages-spacing: 5mm;
-    --main-color: 0, 114, 188;
-    --accent-color: 250, 235, 0;
-    --font-color: 0, 0, 0;
-  }
-  
-  /* ---------------------- For debugging -------------------- */
-/* two pages in a row if possible on screen */
-@media screen {
-  body {
-      background-color: var(--background);
-      margin: var(--screen-pages-spacing) auto 0 auto;
-  }
-  .pagedjs_pages {
-      display: flex;
-      max-width: calc(var(--pagedjs-width) * 2);
-      flex: 0;
-      flex-wrap: wrap;
-      margin: 0 auto;
-  }
-  .pagedjs_page {
-      background-color: var(--color-paper);
-      box-shadow: 0 0 0 1px var(--color-mbox);
-      flex-shrink: 0;
-      flex-grow: 0;
-      margin: auto auto var(--screen-pages-spacing) auto;
-  }
-}
-
-/* when a row can hold two pages, start first page on the right */
-@media screen and (min-width: 12.32in) {
-  .pagedjs_page {
-      margin: auto 0 var(--screen-pages-spacing) 0;
-  }
-  .pagedjs_first_page {
-      margin-left: var(--pagedjs-width);
-  }
-}
-
-/* use a fixed width body for mobiles */
-@media screen and (max-width:1180px)  {
-  body {
-    width: calc(var(--pagedjs-width) + 2 * var(--screen-pages-spacing));
-  }
-}
-
-/* ------------------------ Pages -------------------------- */
+/*** Pages ***/
 /* page size */
 @page {
   size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
@@ -100,7 +48,7 @@ a.email {
     content: string(h1-title) " > " string(h1-subtitle);
     margin-right: -10mm;
     margin-top: 14mm;
-    color: rgba(var(--font-color), 0.6);;
+    color: var(--unhcr-grey);
     font-size: 1em;
     text-transform: uppercase;
     vertical-align: top;
@@ -111,10 +59,10 @@ a.email {
     margin-right: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: rgb(var(--main-color));
+    color: var(--unhcr-blue);
     font-size: 0.8em;
     vertical-align: top;
-    border-top: 0.5px solid rgb(var(--main-color));
+    border-top: 0.5px solid var(--unhcr-blue);
   }
   /* running date */
   @bottom-left {
@@ -122,10 +70,10 @@ a.email {
     margin-left: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: rgb(var(--main-color));
+    color: var(--unhcr-blue);
     font-size: 0.8em;
     vertical-align: top;
-    border-top: 0.5px solid rgb(var(--main-color));
+    border-top: 0.5px solid var(--unhcr-blue);
   }
 }
 
@@ -141,7 +89,7 @@ a.email {
     content: string(h1-subtitle);
     margin-right: -10mm;
     margin-top: 16.5mm;
-    color: rgba(var(--main-color), 1);;
+    color: var(--unhcr-blue);
     font-size: 1.5em;
     text-transform: uppercase;
     vertical-align: top;
@@ -152,10 +100,10 @@ a.email {
     margin-right: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: rgb(var(--main-color));
+    color: var(--unhcr-blue);
     font-size: 0.9em;
     vertical-align: top;
-    border-top: 0.5px solid rgb(var(--main-color));
+    border-top: 0.5px solid var(--unhcr-blue);
   }
   /* running date */
   @bottom-left {
@@ -163,10 +111,10 @@ a.email {
     margin-left: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: rgb(var(--main-color));
+    color: var(--unhcr-blue);
     font-size: 0.9em;
     vertical-align: top;
-    border-top: 0.5px solid rgb(var(--main-color));
+    border-top: 0.5px solid var(--unhcr-blue);
   }
 }
 
@@ -195,7 +143,7 @@ a.email {
 
 .title,
 .date {
-  color: rgba(var(--font-color), 1); 
+  color: var(--unhcr-black); 
 }
 
 .title{
@@ -231,7 +179,7 @@ a.email {
 /* footnote */
 .footnote sup,
 .footnote-ref {
-  color: rgba(var(--main-color), 1);
+  color: var(--unhcr-blue);
   font-weight: 700;
 }
 

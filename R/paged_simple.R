@@ -9,22 +9,25 @@
 paged_simple <- function(back_html = TRUE,
                          other_css = NULL,
                          ...) {
-  # arguments
-  base_css <-
-    pkg_resource("css/paged-base.css")
-  main_css <-
-    pkg_resource("css/paged-simple.css")
+  # css files
+  reset_css <- pkg_resource("css/reset.css")
+  color_variables_css <- pkg_resource("css/color_variables.css")
+  fonts_css <- pkg_resource("css/fonts.css")
+  paged_base_css <- pkg_resource("css/paged_base.css")
+  paged_simple_css <- pkg_resource("css/paged_simple.css")
 
-  # back-cover
+  # html back-cover
   if (back_html) {
     back_html <-
-      pkg_resource("html/back-cover-paged-simple.html")
+      pkg_resource("html/back_paged_simple.html")
   } else {
     back_html <- NULL
   }
   # template
   pagedown::html_paged(
-    css = c(base_css, main_css, other_css),
+    css = c(reset_css, color_variables_css,
+            fonts_css, paged_base_css,
+            paged_simple_css, other_css),
     includes = list(after_body = back_html),
     ...)
 }

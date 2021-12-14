@@ -15,13 +15,15 @@ paged_report <- function(front_img = NULL,
                          toc = TRUE,
                          toc_depth = 2,
                          ...) {
-  # arguments
-  base_css <-
-    pkg_resource("css/paged-base.css")
-  main_css <-
-    pkg_resource("css/paged-report.css")
-  back_html <-
-    pkg_resource("html/back-cover-paged-report.html")
+  # css files
+  reset_css <- pkg_resource("css/reset.css")
+  color_variables_css <- pkg_resource("css/color_variables.css")
+  fonts_css <- pkg_resource("css/fonts.css")
+  paged_base_css <- pkg_resource("css/paged_base.css")
+  paged_report_css <- pkg_resource("css/paged_report.css")
+
+  # html back-cover
+  back_html <- pkg_resource("html/back_paged_report.html")
 
   # default front-cover
   if (is.null(front_img)) {
@@ -45,7 +47,9 @@ paged_report <- function(front_img = NULL,
 
   # template
   pagedown::html_paged(
-    css = c(base_css, main_css, other_css),
+    css = c(reset_css, color_variables_css,
+            fonts_css, paged_base_css,
+            paged_report_css, other_css),
     front_cover = front_img,
     includes = list(after_body = back_html),
     toc = toc,
