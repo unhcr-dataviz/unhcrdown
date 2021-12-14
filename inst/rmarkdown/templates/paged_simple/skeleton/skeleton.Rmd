@@ -8,6 +8,7 @@ author:
     email: email@unhcr.org
 output:
   unhcrdown::paged_simple:
+    back_html: true
 paged-footnotes: true
 links-to-footnotes: true
 # uncomment this line to produce HTML and PDF in RStudio:
