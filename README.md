@@ -1,8 +1,5 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# unhcrdown
-
 <!-- badges: start -->
 
 [![Project Status: WIP – Initial development is in progress, but there
@@ -12,6 +9,8 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 [![CRAN
 status](https://www.r-pkg.org/badges/version/unhcrdown)](https://CRAN.R-project.org/package=unhcrdown)
 <!-- badges: end -->
+
+# unhcrdown
 
 The **`unhcrdown`** package provides a set of templates following [UNHCR
 Brand](https://www.unhcr.org/brand) recommendations. The goal of this
