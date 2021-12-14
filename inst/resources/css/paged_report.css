@@ -1,62 +1,10 @@
-/* ------------------------------- */
-/* Main CSS for UNHCR paged report */
-/* ------------------------------- */
+/*! =========================================================
+@name             paged_report.css
+@description      UNHCR paged_report specific CSS
+@lastUpdated      13.12.2021
+============================================================= */
 
-/* -------------------- CSS variables ---------------------- */
-:root {
-    --background: whitesmoke;
-    --pagedjs-width: 210mm;
-    --pagedjs-height: 297mm;
-    --color-paper: white;
-    --color-mbox: rgba(0, 0, 0, 0.2);
-    --running-title-width: 2.5in;
-    --screen-pages-spacing: 5mm;
-    --main-color: 0, 114, 188;
-    --accent-color: 250, 235, 0;
-    --font-color: 0, 0, 0;
-  }
-  
-  /* ---------------------- For debugging -------------------- */
-/* two pages in a row if possible on screen */
-@media screen {
-  body {
-      background-color: var(--background);
-      margin: var(--screen-pages-spacing) auto 0 auto;
-  }
-  .pagedjs_pages {
-      display: flex;
-      max-width: calc(var(--pagedjs-width) * 2);
-      flex: 0;
-      flex-wrap: wrap;
-      margin: 0 auto;
-  }
-  .pagedjs_page {
-      background-color: var(--color-paper);
-      box-shadow: 0 0 0 1px var(--color-mbox);
-      flex-shrink: 0;
-      flex-grow: 0;
-      margin: auto auto var(--screen-pages-spacing) auto;
-  }
-}
-
-/* when a row can hold two pages, start first page on the right */
-@media screen and (min-width: 12.32in) {
-  .pagedjs_page {
-      margin: auto 0 var(--screen-pages-spacing) 0;
-  }
-  .pagedjs_first_page {
-      margin-left: var(--pagedjs-width);
-  }
-}
-
-/* use a fixed width body for mobiles */
-@media screen and (max-width:1180px)  {
-  body {
-    width: calc(var(--pagedjs-width) + 2 * var(--screen-pages-spacing));
-  }
-}
-
-/* ------------------------ Pages -------------------------- */
+/*** Pages ***/
 /* page size */
 @page {
     size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
@@ -96,7 +44,7 @@ a.email {
     content: string(h1-title) " > " string(h1-subtitle);
     margin-left: -10mm;
     margin-top: 10mm;
-    color: rgba(var(--font-color), 0.6);
+    color: var(--unhcr-grey);
     font-size: 0.8em;
     text-transform: uppercase;
     vertical-align: top;
@@ -107,10 +55,10 @@ a.email {
     margin-left: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: rgb(var(--main-color));
+    color: var(--unhcr-blue);
     font-size: 0.8em;
     vertical-align: top;
-    border-top: 0.5px solid rgb(var(--main-color));
+    border-top: 0.5px solid var(--unhcr-blue);
   }
   /* running date */
   @bottom-right {
@@ -118,10 +66,10 @@ a.email {
     margin-right: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: rgb(var(--main-color));
+    color: var(--unhcr-blue);
     font-size: 0.8em;
     vertical-align: top;
-    border-top: 0.5px solid rgb(var(--main-color));
+    border-top: 0.5px solid var(--unhcr-blue);
   }
   /* top ruler */
   background-image: url(../utils/header-ruler-left.svg);
@@ -137,7 +85,7 @@ a.email {
     content: string(h1-title) " > " string(h1-subtitle);
     margin-right: -10mm;
     margin-top: 10mm;
-    color: rgba(var(--font-color), 0.6);;
+    color: var(--unhcr-grey);;
     font-size: 0.8em;
     text-transform: uppercase;
     vertical-align: top;
@@ -148,10 +96,10 @@ a.email {
     margin-right: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: rgb(var(--main-color));
+    color: var(--unhcr-blue);
     font-size: 0.8em;
     vertical-align: top;
-    border-top: 0.5px solid rgb(var(--main-color));
+    border-top: 0.5px solid var(--unhcr-blue);
   }
   /* running date */
   @bottom-left {
@@ -159,10 +107,10 @@ a.email {
     margin-left: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: rgb(var(--main-color));
+    color: var(--unhcr-blue);
     font-size: 0.8em;
     vertical-align: top;
-    border-top: 0.5px solid rgb(var(--main-color));
+    border-top: 0.5px solid var(--unhcr-blue);
   }
   /* top ruler */
   background-image: url(../utils/header-ruler-right.svg);
@@ -174,7 +122,7 @@ a.email {
 /* ------------------------ Front Cover --------------------- */
 @page:first{
   /* logo + tick + cover */
-  background-color: #ffffff;
+  background-color: var(--unhcr-white);
   background-image: url(../logo/unhcr-logo-blue.svg), url(../utils/header-white-tick.svg), var(--front-cover);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 10mm 10mm, 29mm 26.5mm, 10mm 30mm;
@@ -211,7 +159,7 @@ a.email {
 
 /* ------------------------ Back Cover ---------------------- */
 @page back-cover {
-  background-color: #ffffff;
+  background-color: var(--unhcr-white);
   background-image: url(../utils/back-cover.svg);
   background-repeat: no-repeat;
   background-position: 10mm 30mm;
@@ -311,11 +259,11 @@ a.email {
 }
  
 .title {
-  color: #ffffff;
+  color: var(--unhcr-white);
 }
  
 .subtitle {
-  color: rgba(var(--accent-color), 1);
+  color: var(--unhcr-yellow);
 }
 
 .front-page .author,
@@ -328,7 +276,7 @@ a.email {
   width: 194mm;
   margin: 0 -2mm -2mm -2mm;
   padding: 10mm 27mm 12mm 27mm;
-  background-color: #ffffff;
+  background-color: var(--unhcr-white);
   position: absolute;
   bottom: 0;
   text-align: left;
@@ -354,11 +302,11 @@ a.email {
  
 .back-title,
 .back-footer {
-  color: #ffffff;
+  color: var(--unhcr-white);
 }
  
 .back-subtitle {
-  color: rgba(var(--accent-color), 1);
+  color: var(--unhcr-yellow);
 }
 
 .back-footer {
@@ -409,12 +357,12 @@ a.email {
 .toc li li a,
 .lot a,
 .lof a {
-  color: rgb(var(--font-color));
+  color: var(--unhcr-black);
 }
 
 .lot a::after,
 .lof a::after {
-  color: rgb(var(--main-color));
+  color: var(--unhcr-blue);
   font-weight: 700;
 }
 
@@ -427,7 +375,7 @@ a.email {
 /* footnote */
 .footnote sup,
 .footnote-ref {
-  color: rgba(var(--main-color), 1);
+  color: var(--unhcr-blue);
   font-weight: 700;
 }
 
