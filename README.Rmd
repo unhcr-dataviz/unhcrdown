@@ -13,13 +13,15 @@ knitr::opts_chunk$set(
 )
 ```
 
+# unhcrdown <a href="https://github.com/vidonne/unhcrdown"><img src='man/figures/unhcrdown_sticker.png' align="right" height="140" /></a>
+
 <!-- badges: start -->
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![R-CMD-check](https://github.com/vidonne/unhcrdown/workflows/R-CMD-check/badge.svg)](https://github.com/vidonne/unhcrdown/actions)
 [![CRAN status](https://www.r-pkg.org/badges/version/unhcrdown)](https://CRAN.R-project.org/package=unhcrdown)
 <!-- badges: end -->
 
-# unhcrdown
+## Overview
 
 The **`unhcrdown`** package provides a set of templates following [UNHCR Brand](https://www.unhcr.org/brand) recommendations. The goal of this package is to ease and speed up the creation of reports, presentation and website while promoting the UNHCR visual identity. 
 

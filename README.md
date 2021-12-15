@@ -1,5 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# unhcrdown <a href="https://github.com/vidonne/unhcrdown"><img src='man/figures/unhcrdown_sticker.png' align="right" height="140" /></a>
+
 <!-- badges: start -->
 
 [![Project Status: WIP – Initial development is in progress, but there
@@ -10,7 +13,7 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 status](https://www.r-pkg.org/badges/version/unhcrdown)](https://CRAN.R-project.org/package=unhcrdown)
 <!-- badges: end -->
 
-# unhcrdown
+## Overview
 
 The **`unhcrdown`** package provides a set of templates following [UNHCR
 Brand](https://www.unhcr.org/brand) recommendations. The goal of this
@@ -59,7 +62,7 @@ or `html_slides` engine in your R Markdown header. For example:
 ---
 title: "UNHCR Branded Rmarkdown"
 author: First Last Name
-date: "14 December, 2021"
+date: "15 December, 2021"
 output: unhcrdown::paged_report
 ---
 ```
