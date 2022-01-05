@@ -28,10 +28,12 @@ html_slides <- function(other_css = NULL,
   )
   logo_var <- paste0("  --unhcr-", names(unhcrlogos), ": url(\"", unname(unlist(unhcrlogos)), "\");")
   logo_css <- tempfile(fileext = ".css")
-  writeLines(c(":root {", logo_var, "}"), logo_css)
+  writeLines(c(":root {", logo_var, "}"), con = logo_css)
 
   # specific css file
   html_slides_css <- pkg_resource("css/html_slides.css")
+
+  file.append(html_slides_css, logo_css)
 
   # html footer
   footer_html <- pkg_resource("html/footer_html_slides.html")
