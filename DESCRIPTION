@@ -28,6 +28,8 @@ Imports:
     officedown,
     rmarkdown,
     officer,
-    xaringan
+    xaringan,
+    unhcrdesign
 URL: https://github.com/vidonne/unhcrdown
 BugReports: https://github.com/vidonne/unhcrdown/issues
+Remotes: vidonne/unhcrdesign
