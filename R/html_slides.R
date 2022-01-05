@@ -30,10 +30,10 @@ html_slides <- function(other_css = NULL,
   logo_css <- tempfile(fileext = ".css")
   writeLines(c(":root {", logo_var, "}"), con = logo_css)
 
+  file.append(base_css, logo_css)
+
   # specific css file
   html_slides_css <- pkg_resource("css/html_slides.css")
-
-  file.append(html_slides_css, logo_css)
 
   # html footer
   footer_html <- pkg_resource("html/footer_html_slides.html")
