@@ -1,7 +1,7 @@
 /*! =========================================================
 @name             paged_simple.css
 @description      UNHCR paged_simple specific CSS
-@lastUpdated      13.12.2021
+@lastUpdated      05.01.2022
 ============================================================= */
 
 /*** Pages ***/
@@ -12,7 +12,7 @@
 }
 
 @page:blank {
-  
+
 }
 
 /* string variables */
@@ -39,7 +39,7 @@ a.email {
 /* normal page */
 @page {
   /* top ruler */
-  background-image: url(../logo/unhcr-logo-blue.svg), url(../utils/header-ruler-simple.svg);
+  background-image: var(--unhcr-logoblue), url(../utils/header-ruler-simple.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: 15mm 10mm, 15mm 22mm;
   background-size: 36mm, 180mm;
@@ -80,7 +80,7 @@ a.email {
 /* ------------------------ Front Cover --------------------- */
 @page:first {
   /* top ruler */
-  background-image: url(../logo/unhcr-logo-blue.svg), url(../utils/header-ruler-left.svg);
+  background-image: var(--unhcr-logoblue), url(../utils/header-ruler-left.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: 15mm 10mm, 15mm 28mm;
   background-size: 55mm, 180mm;
@@ -120,7 +120,7 @@ a.email {
 
 /* ------------------------ Back Cover ---------------------- */
 @page back-cover {
-  
+
 }
 .back-cover {
   page: back-cover;
@@ -143,7 +143,7 @@ a.email {
 
 .title,
 .date {
-  color: var(--unhcr-black); 
+  color: var(--unhcr-black);
 }
 
 .title{

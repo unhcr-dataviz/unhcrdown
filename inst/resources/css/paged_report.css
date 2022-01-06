@@ -1,7 +1,7 @@
 /*! =========================================================
 @name             paged_report.css
 @description      UNHCR paged_report specific CSS
-@lastUpdated      13.12.2021
+@lastUpdated      05.01.2022
 ============================================================= */
 
 /*** Pages ***/
@@ -123,7 +123,7 @@ a.email {
 @page:first{
   /* logo + tick + cover */
   background-color: var(--unhcr-white);
-  background-image: url(../logo/unhcr-logo-blue.svg), url(../utils/header-white-tick.svg), var(--front-cover);
+  background-image: var(--unhcr-logoblue), url(../utils/header-white-tick.svg), var(--front-cover);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 10mm 10mm, 29mm 26.5mm, 10mm 30mm;
   background-size:  60mm, 7mm, 190mm 257mm;
@@ -257,11 +257,11 @@ a.email {
   padding-left: 15mm;
   padding-right: 15mm;
 }
- 
+
 .title {
   color: var(--unhcr-white);
 }
- 
+
 .subtitle {
   color: var(--unhcr-yellow);
 }
@@ -299,12 +299,12 @@ a.email {
   padding-left: 15mm;
   padding-right: 15mm;
 }
- 
+
 .back-title,
 .back-footer {
   color: var(--unhcr-white);
 }
- 
+
 .back-subtitle {
   color: var(--unhcr-yellow);
 }
