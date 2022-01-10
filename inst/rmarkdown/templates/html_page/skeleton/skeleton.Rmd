@@ -1,0 +1,148 @@
+---
+title: "Website title"
+output:
+  unhcrdown::html_page:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+# Typography
+
+## Headings
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+## Text
+
+::: {.lead}
+This is a lead paragraph. It stands out from regular paragraphs.
+:::
+
+You can use the mark tag to <mark>highlight text</mark>.
+
+~~This line of text is meant to be treated as deleted text.~~
+
+
+<u>This line of text will render as underlined.</u>
+
+**This line rendered as bold text.**
+
+*This line rendered as italicized text.*
+
+This ^text or number^ rendered as ^superscript^.
+
+<abbr title="The United Nations High Commissioner for Refugees">UNHCR</abbr>
+
+Full link <https://pagedown.rbind.io/>
+
+Inline one [my link](https://pagedown.rbind.io/)
+
+> A well-known quote, contained in a blockquote element.
+>
+> Someone famous in Source Title
+
+> A well-known quote, contained in a blockquote element.
+
+`Some inline code example`
+
+```{r some-code, echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE}
+Some code in code block example
+```
+
+## Lists
+
+- This is a list.
+- Style also applies to immediate child elements.
+- Nested lists:
+    - are unaffected by this style
+    - will still show a bullet
+    - and have appropriate left margin
+- This may still come in handy in some situations.
+
+1. item 1
+2. item 2
+    1. item 2.1
+    2. item 2.2
+3. item 3
+    1. item 3.1
+    2. item 3.2
+    
+1. item 1
+* item 2
+    1. item 2.1
+    2. item 2.2
+3. item 3
+    * item 3.1
+    * item 3.2
+    
+# Tables
+
+```{r table-simple, echo=FALSE, message=FALSE, warning=FALSE }
+knitr::kable(head(iris),
+             table.attr = "class=\'table\'",
+             format = "html",
+             caption = "Population of concern to UNHCR for the last 5 years")
+```
+
+```{r table-striped, echo=FALSE, message=FALSE, warning=FALSE }
+knitr::kable(head(iris),
+             table.attr = "class=\'table table-striped\'",
+             format = "html",
+             caption = "Population of concern to UNHCR for the last 5 years")
+```
+
+# Tabs
+
+## Results {.tabset}
+
+### Tab One
+
+Content of tab 1
+
+### Tab Two
+
+Content of tab 2
+
+## {-}
+
+With the above unnumbered (`{-}`) and empty section header,
+we can end the tabset and continue to write more paragraphs.
+
+## Results {.tabset .tabset-pills}
+
+### Tab One
+
+Content of tab 1
+
+### Tab Two
+
+Content of tab 2
+
+## {-}
+
+With the above unnumbered (`{-}`) and empty section header,
+we can end the tabset and continue to write more paragraphs.
+
+# Buttons
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
