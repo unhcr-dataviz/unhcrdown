@@ -5,6 +5,7 @@
 #' @param other_css Add extra css
 #' @param toc Table of content
 #' @param toc_depth Table of content depth
+#' @param number_sections Number section headings
 #' @param ... Arguments passed to pagedown::html_paged
 #'
 #' @return A pagedown report
@@ -14,6 +15,7 @@ paged_report <- function(front_img = NULL,
                          other_css = NULL,
                          toc = TRUE,
                          toc_depth = 2,
+                         number_sections = FALSE,
                          ...) {
   # base css files
   base_css <- unhcrdesign::use_unhcr_css(c("reset", "color_variables", "fonts"))
@@ -60,5 +62,6 @@ paged_report <- function(front_img = NULL,
     includes = list(after_body = back_html),
     toc = toc,
     toc_depth = toc_depth,
+    number_sections = number_sections,
     ...)
 }
