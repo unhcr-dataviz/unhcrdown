@@ -4,12 +4,14 @@
 \alias{paged_simple}
 \title{Function for UNHCR paged simple template}
 \usage{
-paged_simple(back_html = TRUE, other_css = NULL, ...)
+paged_simple(back_html = TRUE, other_css = NULL, number_sections = FALSE, ...)
 }
 \arguments{
 \item{back_html}{Back-cover HTML including contact information}
 
 \item{other_css}{Add extra css}
+
+\item{number_sections}{Number section headings}
 
 \item{...}{Arguments passed to pagedown::html_paged}
 }

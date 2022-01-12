@@ -10,6 +10,7 @@ paged_report(
   other_css = NULL,
   toc = TRUE,
   toc_depth = 2,
+  number_sections = FALSE,
   ...
 )
 }
@@ -23,6 +24,8 @@ paged_report(
 \item{toc}{Table of content}
 
 \item{toc_depth}{Table of content depth}
+
+\item{number_sections}{Number section headings}
 
 \item{...}{Arguments passed to pagedown::html_paged}
 }

@@ -179,25 +179,24 @@ caption, .caption {
 
 /*** Tables ***/
 .remark-slide table {
-  --unhcr-table-bg: transparent;
   --unhcr-table-accent-bg: transparent;
-  --unhcr-table-striped-bg: rgba(0, 0, 0, 0.05);
-  --unhcr-table-border-color: var(--unhcr-mediumgrey);
+  width: 100%;
+  margin-bottom: 1em;
+  vertical-align: top;
   border-collapse: collapse;
 	border-spacing: 0;
-  margin: 0 auto 1rem auto;
-  vertical-align: top;
 }
 
 .remark-slide table > :not(caption) > * > * {
-  padding: 0.5rem 0.75rem;
-  background-color: var(--unhcr-table-bg);
-  border-bottom: 1px solid var(--unhcr-table-border-color);
+  padding: 0.5em 0.5em;
+  background-color: transparent;
+  border-bottom: 1px solid var(--unhcr-mediumgrey);
   box-shadow: inset 0 0 0 9999px var(--unhcr-table-accent-bg);
 }
 
 .remark-slide table > caption {
   caption-side: bottom;
+  margin-top: 0.25em;
 }
 
 .remark-slide table > tbody {
@@ -208,11 +207,24 @@ caption, .caption {
   vertical-align: bottom;
 }
 
-.remark-slide table > thead th {
-  border-bottom: 2px solid var(--unhcr-blue);
+.remark-slide table > thead > * > * {
+  border-bottom: 1.5px solid var(--unhcr-blue);
   font-weight: 700;
 }
 
-.table-striped > tbody > tr:nth-of-type(odd) > * {
-  --unhcr-table-accent-bg: var(--unhcr-table-striped-bg);
+.remark-slide .table-noborder > tbody > * > * {
+  border-bottom: 0 solid transparent;
+}
+
+.table-grey > tbody > tr:nth-of-type(odd) > * {
+  --unhcr-table-accent-bg: rgba(0, 0, 0, 0.05);
+}
+
+.table-blue > tbody > tr:nth-of-type(odd) > * {
+  --unhcr-table-accent-bg: rgba(0, 114, 188, 0.1);
+}
+.remark-slide .table-narrow {
+  width: inherit;
+  margin-right: auto;
+  margin-left: auto;
 }

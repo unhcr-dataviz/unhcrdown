@@ -2,12 +2,14 @@
 #'
 #' @param back_html Back-cover HTML including contact information
 #' @param other_css Add extra css
+#' @param number_sections Number section headings
 #' @param ... Arguments passed to pagedown::html_paged
 #'
 #' @return A pagedown report
 #' @export
 paged_simple <- function(back_html = TRUE,
                          other_css = NULL,
+                         number_sections = FALSE,
                          ...) {
   # base css files
   base_css <- unhcrdesign::use_unhcr_css(c("reset", "color_variables", "fonts"))
@@ -35,5 +37,6 @@ paged_simple <- function(back_html = TRUE,
     css = c(base_css, paged_base_css,
             paged_simple_css, other_css),
     includes = list(after_body = back_html),
+    number_sections = number_sections,
     ...)
 }

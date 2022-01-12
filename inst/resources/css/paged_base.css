@@ -1,6 +1,6 @@
 /*! =========================================================
 @name             paged_base.css
-@description      UNHCR paged document base CSS 
+@description      UNHCR paged document base CSS
 @lastUpdated      13.12.2021
 ============================================================= */
 
@@ -247,7 +247,52 @@ caption, .caption {
 
 /*** table ***/
 table {
+  --unhcr-table-accent-bg: transparent;
+  width: 100%;
   margin-bottom: 1em;
+  vertical-align: top;
+}
+
+table > :not(caption) > * > * {
+  padding: 0.25em 0.5em;
+  background-color: transparent;
+  border-bottom: 1px solid var(--unhcr-mediumgrey);
+  box-shadow: inset 0 0 0 9999px var(--unhcr-table-accent-bg);
+}
+
+table > caption {
+  caption-side: bottom;
+  margin-top: 0.25em;
+}
+
+table > tbody {
+  vertical-align: inherit;
+}
+
+table > thead {
+  vertical-align: bottom;
+}
+
+table > thead > * > * {
+  border-bottom: 1.5px solid var(--unhcr-blue);
+  font-weight: 700;
+}
+
+.table-noborder > tbody > * > * {
+  border-bottom: 0 solid transparent;
+}
+
+.table-grey > tbody > tr:nth-of-type(odd) > * {
+  --unhcr-table-accent-bg: rgba(0, 0, 0, 0.05);
+}
+
+.table-blue > tbody > tr:nth-of-type(odd) > * {
+  --unhcr-table-accent-bg: rgba(0, 114, 188, 0.1);
+}
+.table-narrow {
+  width: inherit;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /*** helper ***/
