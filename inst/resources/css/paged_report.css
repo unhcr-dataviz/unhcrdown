@@ -207,12 +207,14 @@ a.email {
 .back-name:after {
   content: string(h2-author);
 }
+/*
 .back-afil:after {
   content: string(address-author-afil);
 }
 .back-email:after {
   content: string(a-author-email);
 }
+*/
 
 @page:blank {
   @top-left-corner {
@@ -268,6 +270,8 @@ a.email {
 
 .front-page .author,
 .front-page .author-afil,
+.front-page .author-email,
+.front-page .email,
 .front-page .date {
   display: none;
 }

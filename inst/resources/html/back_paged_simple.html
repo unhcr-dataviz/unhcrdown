@@ -7,5 +7,19 @@
     <br>
     <span class="back-email"></span>
   </p>
-  <p class="blue">www.unhcr.org</p>
+  <p><a class="uri" href="https://www.unhcr.org/" style="text-decoration: none;">www.unhcr.org</a></p>
 </div>
+<script>
+  let userAfil = document.querySelector('.front-page .author-afil')?.childNodes[0].nodeValue;
+  if (userAfil == undefined) {
+    null
+  } else {
+    document.querySelector('.back-afil').innerHTML = document.querySelector('.front-page .author-afil')?.childNodes[0].nodeValue;
+  }
+  let userEmail = document.querySelector('.front-page .email')?.childNodes[0].nodeValue;
+  if (userEmail == undefined) {
+    null
+  } else {
+    document.querySelector('.back-email').innerHTML = '<a href=mailto:"'+userEmail+'" style="color: var(--unhcr-black); text-decoration: none;">'+userEmail+'</a>';
+  }
+</script>

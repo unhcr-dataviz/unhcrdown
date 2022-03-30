@@ -8,3 +8,17 @@
     <div class="back-email"></div>
   </div>
 </div>
+<script>
+  let userAfil = document.querySelector('.front-page .author-afil')?.childNodes[0].nodeValue;
+  if (userAfil == undefined) {
+    null
+  } else {
+    document.querySelector('.back-afil').innerHTML = document.querySelector('.front-page .author-afil')?.childNodes[0].nodeValue;
+  }
+  let userEmail = document.querySelector('.front-page .email')?.childNodes[0].nodeValue;
+  if (userEmail == undefined) {
+    null
+  } else {
+    document.querySelector('.back-email').innerHTML = '<a href=mailto:"'+userEmail+'" style="color: var(--unhcr-white); text-decoration: none;">'+userEmail+'</a>';
+  }
+</script>
