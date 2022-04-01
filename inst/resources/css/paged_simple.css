@@ -128,12 +128,14 @@ a.email {
 .back-name:after {
   content: string(h2-author);
 }
+/*
 .back-afil:after {
   content: string(address-author-afil);
 }
+
 .back-email:after {
   content: string(a-author-email);
-}
+*/
 
 /* ------------------------ Style ----------------------------- */
 /* front cover */
@@ -159,6 +161,8 @@ a.email {
 
 .front-page .author,
 .front-page .author-afil,
+.front-page .author-email,
+.front-page .email,
 .front-page .subtitle,
 .front-page .abstract {
   display: none;
