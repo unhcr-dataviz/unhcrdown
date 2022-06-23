@@ -22,6 +22,9 @@ paged_simple <- function(back_html = TRUE,
   file.append(base_css, logo_css)
 
   # specific css files
+  icon_css <- pkg_resource("css/all.css")
+
+  # specific css files
   paged_base_css <- pkg_resource("css/paged_base.css")
   paged_simple_css <- pkg_resource("css/paged_simple.css")
 
@@ -34,7 +37,7 @@ paged_simple <- function(back_html = TRUE,
   }
   # template
   pagedown::html_paged(
-    css = c(base_css, paged_base_css,
+    css = c(base_css, icon_css, paged_base_css,
             paged_simple_css, other_css),
     includes = list(after_body = back_html),
     number_sections = number_sections,
