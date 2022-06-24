@@ -21,8 +21,8 @@ paged_simple <- function(back_html = TRUE,
 
   file.append(base_css, logo_css)
 
-  # specific css files
-  icon_css <- pkg_resource("css/all.css")
+  # icon css files
+  icon_css <- pkg_resource("css/fontawesome_all.css")
 
   # specific css files
   paged_base_css <- pkg_resource("css/paged_base.css")

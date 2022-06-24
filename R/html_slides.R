@@ -32,6 +32,9 @@ html_slides <- function(other_css = NULL,
 
   file.append(base_css, logo_css)
 
+  # icon css files
+  icon_css <- pkg_resource("css/fontawesome_all.css")
+
   # specific css file
   html_slides_css <- pkg_resource("css/html_slides.css")
 
@@ -39,7 +42,7 @@ html_slides <- function(other_css = NULL,
   footer_html <- pkg_resource("html/footer_html_slides.html")
 
   xaringan::moon_reader(
-    css = c(base_css, logo_css, html_slides_css, other_css),
+    css = c(base_css, logo_css, icon_css, html_slides_css, other_css),
     includes = list(after_body = footer_html),
     nature = nature,
     ...

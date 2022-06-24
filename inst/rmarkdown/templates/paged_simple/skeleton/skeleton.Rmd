@@ -16,7 +16,11 @@ links-to-footnotes: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,
+                      fig.retina = 2,
+                      fig.showtext = TRUE,
+                      dev = "ragg_png",
+                      dpi = 300)
 ```
 
 # This is part 1 {-}
