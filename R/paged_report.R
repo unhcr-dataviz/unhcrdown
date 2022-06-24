@@ -27,6 +27,9 @@ paged_report <- function(front_img = NULL,
 
   file.append(base_css, logo_css)
 
+  # icon css files
+  icon_css <- pkg_resource("css/fontawesome_all.css")
+
   # specific css files
   paged_base_css <- pkg_resource("css/paged_base.css")
   paged_report_css <- pkg_resource("css/paged_report.css")
@@ -56,7 +59,7 @@ paged_report <- function(front_img = NULL,
 
   # template
   pagedown::html_paged(
-    css = c(base_css, paged_base_css,
+    css = c(base_css, icon_css, paged_base_css,
             paged_report_css, other_css),
     front_cover = front_img,
     includes = list(after_body = back_html),
