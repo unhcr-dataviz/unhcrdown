@@ -6,7 +6,7 @@
 \usage{
 html_slides(
   other_css = NULL,
-  nature = list(countIncrementalSlides = "no", highlightLines = "yes", highlightStyle =
+  nature = list(countIncrementalSlides = FALSE, highlightLines = TRUE, highlightStyle =
     "github", ratio = "16:9"),
   ...
 )

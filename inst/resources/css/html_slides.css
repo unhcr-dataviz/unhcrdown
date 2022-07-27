@@ -80,9 +80,18 @@ a:hover, a > code:hover {
   margin-top: 0;
   margin-bottom: 0.2em;
 }
+.remark-code {
+  display: block;
+  overflow-x: auto;
+}
 .remark-code-line-highlighted {
   background-color: var(--unhcr-lightyellow);
 }
+.remark-inline-code {
+  color: var(--unhcr-blue);
+  word-spacing: -0.3em;
+}
+
 blockquote {
   quotes: "“" "”" "‘" "’";
 }
@@ -228,3 +237,41 @@ caption, .caption {
   margin-right: auto;
   margin-left: auto;
 }
+
+/*** Helper ***/
+.large {
+  font-size: 1.25em;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+.blue {
+  color: var(--unhcr-blue);
+}
+
+.grey {
+  color: var(--unhcr-grey);
+}
+
+.bg-blue,
+.bg-grey {
+  padding: 1.2em;
+  margin-bottom: 1em;
+}
+
+.bg-blue {
+  background-color: var(--unhcr-lightblue);
+}
+
+.bg-grey {
+  background-color: var(--unhcr-lightgrey);
+}
+
+.bg-blue > *:last-child,
+.bg-grey > *:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+

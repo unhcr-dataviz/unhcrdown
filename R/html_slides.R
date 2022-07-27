@@ -13,8 +13,8 @@
 #'
 #' @export
 html_slides <- function(other_css = NULL,
-                        nature =  list(countIncrementalSlides = "no",
-                                       highlightLines = "yes",
+                        nature =  list(countIncrementalSlides = FALSE,
+                                       highlightLines = TRUE,
                                        highlightStyle = "github",
                                        ratio = "16:9"),
                         ...) {

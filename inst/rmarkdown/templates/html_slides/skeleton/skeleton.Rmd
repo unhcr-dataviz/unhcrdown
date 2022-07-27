@@ -4,7 +4,9 @@ subtitle: "Subtitle if needed"
 author: "Your name"
 institute: "Bureau/Divisions"
 date: "`r format(Sys.Date(),  '%d %B %Y')`"
-output: unhcrdown::html_slides
+output:
+  unhcrdown::html_slides:
+    self_contained: true
 ---
 
 ```{r setup, include=FALSE}
