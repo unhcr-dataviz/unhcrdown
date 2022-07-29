@@ -80,9 +80,17 @@ a:hover, a > code:hover {
   margin-top: 0;
   margin-bottom: 0.2em;
 }
+pre {
+  overflow-x: auto;
+}
 .remark-code-line-highlighted {
   background-color: var(--unhcr-lightyellow);
 }
+.remark-inline-code {
+  color: var(--unhcr-blue);
+  word-spacing: -0.3em;
+}
+
 blockquote {
   quotes: "“" "”" "‘" "’";
 }
@@ -227,4 +235,62 @@ caption, .caption {
   width: inherit;
   margin-right: auto;
   margin-left: auto;
+}
+
+/*** Helper ***/
+.large {
+  font-size: 1.25em;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+.blue {
+  color: var(--unhcr-blue);
+}
+
+.grey {
+  color: var(--unhcr-grey);
+}
+
+.bg-blue,
+.bg-grey {
+  padding: 0.1em 0.5em;
+  margin-bottom: 1em;
+}
+.bg-blue {
+  background-color: var(--unhcr-lightblue);
+}
+.bg-grey {
+  background-color: var(--unhcr-lightgrey);
+}
+
+.scroll-box-8 {
+  height:8em;
+  overflow-y: scroll;
+}
+.scroll-box-10 {
+  height:10em;
+  overflow-y: scroll;
+}
+.scroll-box-12 {
+  height:12em;
+  overflow-y: scroll;
+}
+.scroll-box-14 {
+  height:14em;
+  overflow-y: scroll;
+}
+.scroll-box-16 {
+  height:16em;
+  overflow-y: scroll;
+}
+.scroll-box-18 {
+  height:18em;
+  overflow-y: scroll;
+}
+.scroll-box-20 {
+  height:20em;
+  overflow-y: scroll;
 }
