@@ -4,17 +4,10 @@
 \alias{html_slides}
 \title{Convert to UNHCR branded HTML presentation}
 \usage{
-html_slides(
-  other_css = NULL,
-  nature = list(countIncrementalSlides = FALSE, highlightLines = TRUE, highlightStyle =
-    "github", ratio = "16:9"),
-  ...
-)
+html_slides(other_css = NULL, ...)
 }
 \arguments{
 \item{other_css}{Add extra css}
-
-\item{nature}{See ?xaringan::moon_reader}
 
 \item{...}{extra parameters to pass to \code{xaringan::moon_reader}}
 }

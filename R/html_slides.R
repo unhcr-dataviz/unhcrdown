@@ -8,16 +8,20 @@
 #' @importFrom unhcrdesign use_unhcr_logo
 #'
 #' @param other_css Add extra css
-#' @param nature See ?xaringan::moon_reader
 #' @param ... extra parameters to pass to `xaringan::moon_reader`
 #'
 #' @export
 html_slides <- function(other_css = NULL,
-                        nature =  list(countIncrementalSlides = FALSE,
-                                       highlightLines = TRUE,
-                                       highlightStyle = "github",
-                                       ratio = "16:9"),
                         ...) {
+  # Xaringan resources
+  xaringan_resource = function(...) system.file(
+    'rmarkdown', 'templates', 'xaringan', 'resources', ..., package = 'xaringan',
+    mustWork = TRUE
+  )
+
+  xaringan_css <- xaringan_resource("default.css")
+
+
   # base css files
   base_css <- unhcrdesign::use_unhcr_css(c("color_variables", "fonts"))
 
@@ -42,9 +46,8 @@ html_slides <- function(other_css = NULL,
   footer_html <- pkg_resource("html/footer_html_slides.html")
 
   xaringan::moon_reader(
-    css = c(base_css, logo_css, icon_css, html_slides_css, other_css),
+    css = c(base_css, logo_css, icon_css, xaringan_css, html_slides_css, other_css),
     includes = list(after_body = footer_html),
-    nature = nature,
     ...
   )
 }
