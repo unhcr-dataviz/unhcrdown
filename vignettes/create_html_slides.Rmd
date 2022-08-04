@@ -237,7 +237,7 @@ Depending of your needs and control over the image output you can use the follow
 
 The brand unit recommend the use of the [Humanitarian icons](https://brand.unocha.org/d/xEPytAUjC3sH/icons) which are now part of the [Fontawesome](https://fontawesome.com/icons/categories/humanitarian) set. We recommend the use of the [`fontawesome`](https://rstudio.github.io/fontawesome/) R package, simply install and load the package to access directly the whole Fontawesome set:
 
-* r fa("hands-holding-circle", fill = "var(--unhcr-blue)") = `r fa("hands-holding-circle", fill = "#0072bc")`
+* <code>r fa("hands-holding-circle", fill = "var(--unhcr-blue)")</code> = `r fa("hands-holding-circle", fill = "#0072bc")`
 
 ### Background
 
