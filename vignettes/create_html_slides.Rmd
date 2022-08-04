@@ -286,7 +286,7 @@ background-position: center 25%
 ```
 
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_bgimage.png")
+knitr::include_graphics("../man/figures/html_slides_bgimage.jpg")
 ```
 
 
