@@ -24,7 +24,7 @@ library(fontawesome)
 
 The **`unhcrdown::html_slides` ** template is using the [xaringan](https://slides.yihui.org/xaringan/#1) package for **creating UNHCR branded HTML presentations** with [remark.js](https://remarkjs.com/#1) through R Markdown.
 
-To create a UNHCR branded HTML presentation just create a new R Markdown document with the YAML section, as shown below:
+<span id="yaml_code">To create a UNHCR branded HTML presentation just create a new R Markdown document with the YAML section, as shown below:</span>
 
 ```yaml
 ---
@@ -294,8 +294,139 @@ knitr::include_graphics("../man/figures/html_slides_bgimage.jpg")
 
 Because **`unhcrdown::html_slides`** is an R Markdown document you can natively include R code chunks but also tables and plots.
 
-### Highlight code
+### Highlighting code
+
+If you use the **`unhcrdown::html_slides`** skeleton template or copy the [YAML](#yaml_code) at the top of the page, the highlighting code option will be **turned on** by default. To change this behavior simply edit the following YAML lines, all the highlight style options can be found [here](https://github.com/gnab/remark/wiki/Configuration):
+
+```
+nature:
+      highlightStyle: github
+      highlightLines: true
+```
+
+To highlight lines of code simply add `#<<` at the end of each targeted row and a light yellow background will be added.
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("../man/figures/html_slides_code_highlight.png")
+```
+
+It is also possible to highlight the code output by adding `highlight.output = c(3,4)` to the code chunk options.
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("../man/figures/html_slides_output_highlight.png")
+```
 
 ### Tables
 
+You could display table directly in a R chunk, but for simple table we recommend the use of `kable` from the `knitr` package. To ensure the proper representation of the table, make sure to add the format HTML to your `kable` call: `knitr::kable(format = "html")`. You can also set this as a global option for all your slides using `options(knitr.table.format = "html")`.
+
+The `kable` function can also help format the output format, like formatting numbers, changing column names or add caption. You can see more information on `kable` and what it can do  [here](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html#customize-html-tables).
+
+```
+head(aus_displ) |> 
+  knitr::kable(format = "html",
+               col.names = c("Country of origin", "Country of asylum",
+                            "Population type", "Number of people"),
+               caption = "Displaced population in Australia | 2021")
+```
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("../man/figures/html_slides_table.png")
+```
+
+For more flexibility and advanced table style refer to other R packages like [`GT`](https://gt.rstudio.com/) for static tables or [`DT`](https://rstudio.github.io/DT/) if you need some interactivity.
+
+#### UNHCR table classes
+
+For simple tables, we included a series of **classes** that can be applied to `kable` output format. Simply add the required class names to the `table.attr` parameter of the `kable` call, don't forget to use `\` to escape the quote character.
+
+The following classes are available:
+
+* `.table`: initiate the possibility to stylize the table and provide base style. This class is **mandatory**.
+* `.table-blue`: add light blue background for alternate rows.
+* `.table-grey`: add light grey background for alternate rows.
+* `.table-narrow`: when `.table` is set, the width is 100%. `.table-narrow` allows to fit the width to the content.
+* `.table-noborder`: remove all borders from the table.
+
+```
+head(aus_displ) |> 
+  knitr::kable(format = "html",
+               col.names = c("Country of origin", "Country of asylum", "Population type", "Number of people"),
+               caption = "Displaced population in Australia | 2021",
+               table.attr = "class=\"table  table-blue table-narrow table-noborder\"")
+```
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("../man/figures/html_slides_table_class.png")
+```
+
 ### Plots
+
+For the creation of charts, we recommend the use of the [**`unhcrthemes`**](https://vidonne.github.io/unhcrthemes/index.html) as it provides a `ggplot2` theme and a set of colour palettes for making charts and graphics based on [UNHCR Data Visualization Guidelines](https://dataviz.unhcr.org/general_guidance/). The charts ade with [`unhcrthemes`](https://vidonne.github.io/unhcrthemes/index.html) will be perfectly integrated in the `unhcrdown::html_slides` presentation and will be fully aligned with the UNHCR brand.
+
+Inserting a plot is as easy as a table and only require a few lines of code. For more information on how to make a plot using `unhcrthemes` please refer to [package documentation](https://vidonne.github.io/unhcrthemes/articles/intro-unhcrthemes.html) and the [UNHCR Data Visualization Platform R tutorials](https://dataviz.unhcr.org/tools/r/).
+
+````
+```{r, fig.showtext = TRUE, fig.retina = 4, out.width="60%", fig.height=5}`r ''`
+library(tidyverse)
+library(scales)
+library(unhcrthemes)
+
+idp_total_sex <- idp |>
+  group_by(year, sex) |>
+  summarise(idp = sum(idp, na.rm = TRUE) / 1e6) |>
+  ungroup()
+
+ggplot(idp_total_sex) +
+  geom_col(aes(x = year, y = idp, fill = sex),
+           width = 0.8,
+           position = position_dodge(width = 0.9)) +
+  scale_fill_unhcr_d(palette = "pal_unhcr") +
+  scale_y_continuous(expand = expansion(c(0, 0.1))) +
+  labs(title = "Globalement IDP displacement | 2010 - 2020",
+       y = "Number of people (in million)",
+       caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency") +
+  scale_x_continuous(breaks = pretty_breaks(10)) +
+  theme_unhcr(grid = "Y", axis_title = "y")
+```
+````
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("../man/figures/html_slides_plot.png")
+```
+
+Getting your plot right is not always easy, but you can control your plots by playing with individual chunk options like `fig.retina` and `out.width` (plus `fig.width` and `fig.height`). Often this require some trials and errors but look at [html_slides sample presentation](#) or the **template skeleton** for setup examples. Also check Hadley/Garrett's recommended [ggplot2 chunk options](https://r4ds.had.co.nz/graphics-for-communication.html#figure-sizing) and Christophe Nicault blog's post on [understanding text size and resolution in ggplot2](https://www.christophenicault.com/post/understand_size_dimension_ggplot2/) for guidance. 
+
+You can also set your global chunk options in a setup chunk, all the code chunk following the setup will get the same options. This can always be overridden by setting the desired parameter in the required code chunk. As `unhcrthemes` package use specific fonts it's always a good thing to include the `showtext` setup to avoid unexpected results:
+
+````
+```{r setup}`r ''`
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.showtext = TRUE, fig.retina = 4)
+```
+````
+**Nice tips** for teaching purpose, use the `fig.show` and the `ref.label` code chunk options to avoid repeating your code.
+
+* Chunk showing code: `` {r plot-name, fig.show = 'hide'} ``
+* Chunk showing plot: `` {r ref.label = 'plot-name', echo = FALSE} ``
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("../man/figures/html_slides_plot_code.png")
+```
+
+### Scrolling R output
+
+We would recommend to make sure your content fit the height of the slide but sometimes R output can be extensive. For this scenario, we included some custom classes depending on how many lines you want to show, just wrap the targeted content in the desired class:
+
+* `.scroll-box-8[]`: show 8 lines
+* `.scroll-box-10[]`: show 10 lines
+* `.scroll-box-12[]`: show 12 lines
+* `.scroll-box-14[]`: show 14 lines
+* `.scroll-box-16[]`: show 16 lines
+* `.scroll-box-18[]`: show 18 lines
+* `.scroll-box-20[]`: show 20 lines
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("../man/figures/html_slides_plot_code.png")
+```
+
+<small>Thanks to [Garth Tarr from the University of Sydney](https://garthtarr.github.io/sydney_xaringan/#13) for the idea.</small>
