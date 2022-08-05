@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# unhcrdown <a href="https://github.com/vidonne/unhcrdown"><img src='man/figures/unhcrdown_sticker.png' align="right" height="140" /></a>
+# unhcrdown <a href="https://github.com/vidonne/unhcrdown"><img src='man/figures/unhcrdown_sticker.png' align="right" width="140" /></a>
 
 <!-- badges: start -->
 
@@ -62,7 +62,7 @@ or `html_slides` engine in your R Markdown header. For example:
 ---
 title: "UNHCR Branded Rmarkdown"
 author: First Last Name
-date: "15 December, 2021"
+date: "05 August, 2022"
 output: unhcrdown::paged_report
 ---
 ```

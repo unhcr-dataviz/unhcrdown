@@ -30,7 +30,8 @@ Imports:
     officer,
     xaringan,
     unhcrdesign
-URL: https://github.com/vidonne/unhcrdown
+URL: https://github.com/vidonne/unhcrdown,
+    https://vidonne.github.io/unhcrdown/
 BugReports: https://github.com/vidonne/unhcrdown/issues
 Remotes: vidonne/unhcrdesign
 Suggests: 
