@@ -38,3 +38,5 @@ Suggests:
     knitr,
     fontawesome
 VignetteBuilder: knitr
+Config/Needs/website:
+    vidonne/unhcrtemplate
