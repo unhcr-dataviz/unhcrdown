@@ -92,7 +92,9 @@ pre {
 }
 
 blockquote {
-  quotes: "“" "”" "‘" "’";
+    quotes: "“" "”" "‘" "’";
+    border-left: none;
+    padding-left: 0;
 }
 blockquote>:first-child {
   font-size: 1.2em;
