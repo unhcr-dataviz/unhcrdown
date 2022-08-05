@@ -33,3 +33,7 @@ Imports:
 URL: https://github.com/vidonne/unhcrdown
 BugReports: https://github.com/vidonne/unhcrdown/issues
 Remotes: vidonne/unhcrdesign
+Suggests: 
+    knitr,
+    fontawesome
+VignetteBuilder: knitr
