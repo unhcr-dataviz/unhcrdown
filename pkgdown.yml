@@ -3,7 +3,7 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   create_html_slides: create_html_slides.html
-last_built: 2022-08-08T10:27Z
+last_built: 2022-08-08T15:29Z
 urls:
   reference: https://vidonne.github.io/unhcrdown/reference
   article: https://vidonne.github.io/unhcrdown/articles
