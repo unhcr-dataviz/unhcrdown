@@ -82,14 +82,14 @@
 <div class="section level2">
 <h2 id="template">Template<a class="anchor" aria-label="anchor" href="#template"></a>
 </h2>
-<p>The <strong><code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code></strong> template is using the <a href="https://slides.yihui.org/xaringan/#1" class="external-link">xaringan</a> package for <strong>creating UNHCR branded HTML presentations</strong> with <a href="https://remarkjs.com/#1" class="external-link">remark.js</a> through R Markdown.</p>
-<p><span id="yaml_code">To create a UNHCR branded HTML presentation just create a new R Markdown document with the YAML section, as shown below:</span></p>
+<p>The <strong><code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code></strong> template uses the <a href="https://slides.yihui.org/xaringan/#1" class="external-link">xaringan</a> package for <strong>creating UNHCR branded HTML presentations</strong> with <a href="https://remarkjs.com/#1" class="external-link">remark.js</a> through R Markdown.</p>
+<p><span id="yaml_code">To create a UNHCR branded HTML presentation, just create a new R Markdown document with the YAML section, as shown below:</span></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Main presentation title"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Subtitle if needed"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your name"</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">institute</span><span class="kw">:</span><span class="at"> </span><span class="st">"Bureau/Divisions"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"05 August 2022"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"08 August 2022"</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  unhcrdown:</span><span class="fu">:html_slides</span><span class="kw">:</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self_contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
@@ -99,7 +99,7 @@
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">countIncrementalSlides</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">ratio</span><span class="kw">:</span><span class="at"> </span><span class="st">"16:9"</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>or just open the template provided if you are using RStudio IDE (see <a href="https://vidonne.github.io/unhcrdown/">here</a>).</p>
+<p>or just open the template provided, if you are using RStudio IDE (see <a href="https://vidonne.github.io/unhcrdown/">here</a>).</p>
 <p>Click the <code>Knit</code> button to compile it and you get the title slide of your presentation.</p>
 <p><strong>Default title slide:</strong></p>
 <div class="mb-5">
@@ -108,7 +108,7 @@
 <div class="section level3">
 <h3 id="yaml">YAML<a class="anchor" aria-label="anchor" href="#yaml"></a>
 </h3>
-<p>Not all the <code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code> YAML arguments are mandatory, for example include only the <code>title</code> if sufficient for your presentation. All the arguments, coming after the <code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code> call, are part of the <strong>xaringan</strong> package. See the help page <code><a href="https://rdrr.io/pkg/xaringan/man/moon_reader.html" class="external-link">?xaringan::moon_reader</a></code> for all possible configurations. The template skeleton or above YAML example is using the recommended setup.</p>
+<p>Not all the <code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code> YAML arguments are mandatory. For example, include only the <code>title</code> if sufficient for your presentation. All the arguments, coming after the <code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code> call, are part of the <strong>xaringan</strong> package. See the help page <code><a href="https://rdrr.io/pkg/xaringan/man/moon_reader.html" class="external-link">?xaringan::moon_reader</a></code> for all possible configurations. The template skeleton or above YAML example uses the recommended setup.</p>
 </div>
 <div class="section level3">
 <h3 id="navigate">Navigate<a class="anchor" aria-label="anchor" href="#navigate"></a>
@@ -132,7 +132,7 @@
 <div class="section level2">
 <h2 id="basic-slides">Basic slides<a class="anchor" aria-label="anchor" href="#basic-slides"></a>
 </h2>
-<p>Beside the title slide, the default style is top-left aligned content on a white background. The template includes some helper classes to override the default and create custom looking slides, such as section break.</p>
+<p>Other than the title slide, the default style is top-left aligned content on a white background. The template includes some helper classes to override the default and create custom slides, such as a section break.</p>
 <div class="section level3">
 <h3 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h3>
@@ -178,13 +178,13 @@ Lorem ispum...
 <p>Use the following classes to align content within a slide:</p>
 <ul>
 <li>
-<strong>Vertical alignment:</strong> <code>left</code>, <code>middle</code>, <code>right</code>
+<strong>Horizontal alignment:</strong> <code>left</code>, <code>center</code>, <code>right</code>
 </li>
 <li>
-<strong>Horizontal alignment:</strong> <code>top</code>, <code>center</code>, <code>bottom</code>
+<strong>Vertical alignment:</strong> <code>top</code>, <code>middle</code>, <code>bottom</code>
 </li>
 </ul>
-<p>The alignment classes can be applied to the whole slide or some specific content within it. A mix of vertical and horizontal alignment can be use to affect the position of the whole slide content, by default the content is <code>top-left</code> aligned.</p>
+<p>The alignment classes can be applied to the whole slide or to specific content within a slide. A mix of vertical and horizontal alignment can be used to affect the position of the entire slide content. By default, the content is <code>top-left</code> aligned.</p>
 <p><strong>Whole slide alignment:</strong></p>
 <pre><code>---
 class: middle, center
@@ -193,7 +193,7 @@ class: middle, center
 <div class="border mb-5">
 <p><img src="../reference/figures/html_slides_alignment.png" width="100%"></p>
 </div>
-<p>The horizontal alignment classes <strong>only</strong> can also be used to move specific content within the overall slide alignment.</p>
+<p>The horizontal alignment classes can <strong>only</strong> also be used to move specific content within the overall slide alignment.</p>
 <p><strong>Content alignment:</strong></p>
 <pre><code>---
 class: middle, center
@@ -208,7 +208,7 @@ class: middle, center
 <div class="section level3">
 <h3 id="layout">Layout<a class="anchor" aria-label="anchor" href="#layout"></a>
 </h3>
-<p>You can place content to the left or right using the following classes <code>.pull-left[]</code> and <code>.pull-right[]</code>. This will create a two-columns layout, where each column take up to 47% of the page width. All the column content needs to go within the respective <code>[]</code>. You can similarly use <code>.left-column[]</code> and <code>.right-column[]</code>, the sizes are then 20% and 75%.</p>
+<p>You can place content to the left or right using the following classes <code>.pull-left[]</code> and <code>.pull-right[]</code>. This will create a two-column layout, where each column take up to 47% of the page width. All the column content needs to go within the respective <code>[]</code>. You can similarly use <code>.left-column[]</code> and <code>.right-column[]</code>, the sizes are then 20% and 75%.</p>
 <p><strong>Basic two columns layout:</strong></p>
 <pre><code># Two columns
 
@@ -220,7 +220,7 @@ Each column takes 47% of the total width
 <div class="border mb-5">
 <p><img src="../reference/figures/html_slides_twocolumns.png" width="100%"></p>
 </div>
-<p>The layout classes are really helpful and can create complex layout by nesting them:</p>
+<p>The layout classes are really helpful and can create a complex layout by nesting them:</p>
 <p><strong>Advanced layout example:</strong></p>
 <pre><code>---
 # Columns within columns
@@ -253,7 +253,7 @@ This is a `.pull-right[]` within a `.pull-right[]`
 <div class="section level3">
 <h3 id="unhcr-helpers">UNHCR helpers<a class="anchor" aria-label="anchor" href="#unhcr-helpers"></a>
 </h3>
-<p>To further ease the creation of UNHCR branded presentation some specific classes have been added to stylize even more the content of a slide. The font family and styles are already set to fit within the brand but in some cases you might need more flexibility.</p>
+<p>To further ease the creation of UNHCR branded presentations some specific classes have been added to further stylize the content of a slide. The font family and styles are already set to fit within the brand, but in some cases you might need more flexibility.</p>
 <p>Some classes allow to alter the text size, colour and background:</p>
 <ul>
 <li>
@@ -288,7 +288,7 @@ You can change the **background** of the text by using the `.bg-blue[]` or `.bg-
 <div class="section level3">
 <h3 id="images-and-icons">Images and icons<a class="anchor" aria-label="anchor" href="#images-and-icons"></a>
 </h3>
-<p>Depending of your needs and control over the image output you can use the following approaches to include images in your slides:</p>
+<p>Depending on your needs and control over the image output, you can use the following approaches to include images in your slides:</p>
 <ul>
 <li>Inline R Markdown: <code>![](path_to_image)</code>
 </li>
@@ -298,7 +298,7 @@ You can change the **background** of the text by using the `.bg-blue[]` or `.bg-
 <li>Plain <a href="https://www.w3schools.com/html/html_images.asp" class="external-link">HTML</a>: <code>&lt;img src="path_to_image" width="90%"/&gt;</code>
 </li>
 </ul>
-<p>The brand unit recommend the use of the <a href="https://brand.unocha.org/d/xEPytAUjC3sH/icons" class="external-link">Humanitarian icons</a> which are now part of the <a href="https://fontawesome.com/icons/categories/humanitarian" class="external-link">Fontawesome</a> set. We recommend the use of the <a href="https://rstudio.github.io/fontawesome/" class="external-link"><code>fontawesome</code></a> R package, simply install and load the package to access directly the whole Fontawesome set:</p>
+<p>The brand unit recommends the use of the <a href="https://brand.unocha.org/d/xEPytAUjC3sH/icons" class="external-link">Humanitarian icons</a> which are now part of the <a href="https://fontawesome.com/icons/categories/humanitarian" class="external-link">Fontawesome</a> set. We recommend the use of the <a href="https://rstudio.github.io/fontawesome/" class="external-link"><code>fontawesome</code></a> R package. Simply install and load the package to directly access the whole Fontawesome set:</p>
 <ul>
 <li>
 <code>r fa(“hands-holding-circle”, fill = “var(–unhcr-blue)”)</code> = <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#0072bc;overflow:visible;position:relative;"><path d="M208 112C208 50.14 258.1 0 320 0C381.9 0 432 50.14 432 112C432 173.9 381.9 224 320 224C258.1 224 208 173.9 208 112zM80 258.7L140.3 339C149.7 351.6 167.7 353.8 179.9 343.8C190.4 335.1 193.1 319.1 186 308.3L164.6 272.5C155.9 258 159.9 239.3 173.7 229.7C187.6 220.1 206.5 222.9 216.1 236L263.5 294.1C279.3 313.1 288 338.6 288 364.1V480C288 497.7 273.7 512 256 512H160C150.3 512 141.1 507.6 135 499.1L14.02 348.8C4.946 337.4 0 323.3 0 308.8V103.1C0 81.91 17.91 63.1 40 63.1C62.09 63.1 80 81.91 80 103.1V258.7zM640 104V308.8C640 323.3 635.1 337.4 625.1 348.8L504.1 499.1C498.9 507.6 489.7 512 480 512H384C366.3 512 352 497.7 352 480V364.1C352 338.6 360.7 313.1 376.5 294.1L423 236C433.5 222.9 452.4 220.1 466.3 229.7C480.1 239.3 484.1 258 475.4 272.5L453.1 308.3C446.9 319.1 449.6 335.1 460.2 343.8C472.3 353.8 490.3 351.6 499.7 339L560 258.7V104C560 81.91 577.9 64 600 64C622.1 64 640 81.91 640 104V104z"></path></svg>
@@ -309,7 +309,7 @@ You can change the **background** of the text by using the `.bg-blue[]` or `.bg-
 <h3 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a>
 </h3>
 <p><strong>Colour:</strong></p>
-<p>The default slide background is white but you can apply a branded UNHCR blue by adding the class <code>inverse</code> to the slide. This can be useful to create section break in your presentation. The <code>inverse</code> class can be coupled with the alignment classes.</p>
+<p>The default slide background is white, but you can apply a branded UNHCR blue by adding the class <code>inverse</code> to the slide. This can be useful to create a section break in your presentation. The <code>inverse</code> class can be coupled with the alignment classes.</p>
 <p><strong>Inverse background example:</strong></p>
 <pre><code><span><span class="op">-</span><span class="op">-</span><span class="op">-</span></span>
 <span><span class="va">class</span><span class="op">:</span> <span class="va">inverse</span></span>
@@ -353,11 +353,11 @@ background-position: center 25%</code></pre>
 <div class="section level2">
 <h2 id="r-content">R content<a class="anchor" aria-label="anchor" href="#r-content"></a>
 </h2>
-<p>Because <strong><code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code></strong> is an R Markdown document you can natively include R code chunks but also tables and plots.</p>
+<p>Because <strong><code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code></strong> is an R Markdown document you can natively include R code chunks as well as tables and plots.</p>
 <div class="section level3">
 <h3 id="highlighting-code">Highlighting code<a class="anchor" aria-label="anchor" href="#highlighting-code"></a>
 </h3>
-<p>If you use the <strong><code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code></strong> skeleton template or copy the <a href="#yaml_code">YAML</a> at the top of the page, the highlighting code option will be <strong>turned on</strong> by default. To change this behavior simply edit the following YAML lines, all the highlight style options can be found <a href="https://github.com/gnab/remark/wiki/Configuration" class="external-link">here</a>:</p>
+<p>If you use the <strong><code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code></strong> skeleton template or copy the <a href="#yaml_code">YAML</a> at the top of the page, the highlighting code option will be <strong>turned on</strong> by default. To change this behavior simply edit the following YAML lines. All the highlight style options can be found <a href="https://github.com/gnab/remark/wiki/Configuration" class="external-link">here</a>:</p>
 <pre><code><span><span class="va">nature</span><span class="op">:</span></span>
 <span>      <span class="va">highlightStyle</span><span class="op">:</span> <span class="va">github</span></span>
 <span>      <span class="va">highlightLines</span><span class="op">:</span> <span class="va">true</span></span></code></pre>
@@ -375,8 +375,8 @@ background-position: center 25%</code></pre>
 <div class="section level3">
 <h3 id="tables">Tables<a class="anchor" aria-label="anchor" href="#tables"></a>
 </h3>
-<p>You could display table directly in a R chunk, but for simple table we recommend the use of <code>kable</code> from the <code>knitr</code> package. To ensure the proper representation of the table, make sure to add the format HTML to your <code>kable</code> call: <code>knitr::kable(format = "html")</code>. You can also set this as a global option for all your slides using <code>options(knitr.table.format = "html")</code>.</p>
-<p>The <code>kable</code> function can also help format the output format, like formatting numbers, changing column names or add caption. You can see more information on <code>kable</code> and what it can do <a href="https://bookdown.org/yihui/rmarkdown-cookbook/kable.html#customize-html-tables" class="external-link">here</a>.</p>
+<p>You can display a table directly in an R chunk, but for a simple table we recommend the use of <code>kable</code> from the <code>knitr</code> package. To ensure the proper representation of the table, make sure to add the format HTML to your <code>kable</code> call: <code>knitr::kable(format = "html")</code>. You can also set this as a global option for all your slides using <code>options(knitr.table.format = "html")</code>.</p>
+<p>The <code>kable</code> function can also help format the output format, like formatting numbers, changing column names or adding a caption. You can see more information on <code>kable</code> and what it can do <a href="https://bookdown.org/yihui/rmarkdown-cookbook/kable.html" class="external-link">here</a>.</p>
 <p><strong>Simple kable table:</strong></p>
 <pre><code><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">aus_displ</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">"html"</span>,</span>
@@ -390,7 +390,7 @@ background-position: center 25%</code></pre>
 <div class="section level4">
 <h4 id="unhcr-table-classes">UNHCR table classes<a class="anchor" aria-label="anchor" href="#unhcr-table-classes"></a>
 </h4>
-<p>For simple tables, we included a series of <strong>classes</strong> that can be applied to <code>kable</code> output format. Simply add the required class names to the <code>table.attr</code> parameter of the <code>kable</code> call, don’t forget to use <code>\</code> to escape the quote character.</p>
+<p>For simple tables, we included a series of <strong>classes</strong> that can be applied to the <code>kable</code> output format. Simply add the required class names to the <code>table.attr</code> parameter of the <code>kable</code> call, don’t forget to use <code>\</code> to escape the quote character.</p>
 <p>The following classes are available:</p>
 <ul>
 <li>
@@ -418,8 +418,8 @@ background-position: center 25%</code></pre>
 <div class="section level3">
 <h3 id="plots">Plots<a class="anchor" aria-label="anchor" href="#plots"></a>
 </h3>
-<p>For the creation of charts, we recommend the use of the <a href="https://vidonne.github.io/unhcrthemes/index.html" class="external-link"><strong><code>unhcrthemes</code></strong></a> as it provides a <code>ggplot2</code> theme and a set of colour palettes for making charts and graphics based on <a href="https://dataviz.unhcr.org/general_guidance/" class="external-link">UNHCR Data Visualization Guidelines</a>. The charts ade with <a href="https://vidonne.github.io/unhcrthemes/index.html" class="external-link"><code>unhcrthemes</code></a> will be perfectly integrated in the <code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code> presentation and will be fully aligned with the UNHCR brand.</p>
-<p>Inserting a plot is as easy as a table and only require a few lines of code. For more information on how to make a plot using <code>unhcrthemes</code> please refer to <a href="https://vidonne.github.io/unhcrthemes/articles/intro-unhcrthemes.html" class="external-link">package documentation</a> and the <a href="https://dataviz.unhcr.org/tools/r/" class="external-link">UNHCR Data Visualization Platform R tutorials</a>.</p>
+<p>For the creation of charts, we recommend the use of the <a href="https://vidonne.github.io/unhcrthemes/index.html" class="external-link"><strong><code>unhcrthemes</code></strong></a> as it provides a <code>ggplot2</code> theme and a set of colour palettes for making charts and graphics based on the <a href="https://dataviz.unhcr.org/general_guidance/" class="external-link">UNHCR Data Visualization Guidelines</a>. The charts made with <a href="https://vidonne.github.io/unhcrthemes/index.html" class="external-link"><code>unhcrthemes</code></a> will be perfectly integrated in the <code><a href="../reference/html_slides.html">unhcrdown::html_slides</a></code> presentation and will be fully aligned with the UNHCR brand.</p>
+<p>Inserting a plot is as easy as a table and only requires a few lines of code. For more information on how to make a plot using <code>unhcrthemes</code> please refer to <a href="https://vidonne.github.io/unhcrthemes/articles/intro-unhcrthemes.html" class="external-link">package documentation</a> and the <a href="https://dataviz.unhcr.org/tools/r/" class="external-link">UNHCR Data Visualization Platform R tutorials</a>.</p>
 <p><strong><code>unhcrthemes</code> plot example:</strong></p>
 <pre><code>```{r, fig.showtext = TRUE, fig.retina = 4, out.width="60%", fig.height=5}
 library(tidyverse)
@@ -446,13 +446,13 @@ ggplot(idp_total_sex) +
 <div class="border mb-5">
 <p><img src="../reference/figures/html_slides_plot.png" width="100%"></p>
 </div>
-<p>Getting your plot right is not always easy, but you can control your plots by playing with individual chunk options like <code>fig.retina</code> and <code>out.width</code> (plus <code>fig.width</code> and <code>fig.height</code>). Often this require some trials and errors but look at <a href="#">html_slides sample presentation</a> or the <strong>template skeleton</strong> for setup examples. Also check Hadley/Garrett’s recommended <a href="https://r4ds.had.co.nz/graphics-for-communication.html#figure-sizing" class="external-link">ggplot2 chunk options</a> and Christophe Nicault blog’s post on <a href="https://www.christophenicault.com/post/understand_size_dimension_ggplot2/" class="external-link">understanding text size and resolution in ggplot2</a> for guidance.</p>
+<p>Getting your plot right is not always easy, but you can control your plots by playing with individual chunk options like <code>fig.retina</code> and <code>out.width</code> (plus <code>fig.width</code> and <code>fig.height</code>). Often this requires some trial and error, but look at <a href="#">html_slides sample presentation</a> or the <strong>template skeleton</strong> for setup examples. Also check Hadley/Garrett’s recommended <a href="https://r4ds.had.co.nz/graphics-for-communication.html#figure-sizing" class="external-link">ggplot2 chunk options</a> and Christophe Nicault blog’s post on <a href="https://www.christophenicault.com/post/understand_size_dimension_ggplot2/" class="external-link">understanding text size and resolution in ggplot2</a> for guidance.</p>
 <p>You can also set your global chunk options in a setup chunk, all the code chunk following the setup will get the same options. This can always be overridden by setting the desired parameter in the required code chunk. As <code>unhcrthemes</code> package use specific fonts it’s always a good thing to include the <code>showtext</code> setup to avoid unexpected results:</p>
 <pre><code>```{r setup}
 knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.showtext = TRUE, fig.retina = 4)
 ```</code></pre>
 <p><strong>Show code alongside resulting plot:</strong></p>
-<p>Nice tips for teaching purpose, use the <code>fig.show</code> and the <code>ref.label</code> code chunk options to avoid repeating your code.</p>
+<p>A nice tip for the purpose of teaching is to use the <code>fig.show</code> and the <code>ref.label</code> code chunk options to avoid repeating your code.</p>
 <ul>
 <li>Chunk showing code: <code>{r plot-name, fig.show = 'hide'}</code>
 </li>
@@ -466,7 +466,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.showtext = TRUE, fig
 <div class="section level3">
 <h3 id="scrolling-r-output">Scrolling R output<a class="anchor" aria-label="anchor" href="#scrolling-r-output"></a>
 </h3>
-<p>We would recommend to make sure your content fit the height of the slide but sometimes R output can be extensive. For this scenario, we included some custom classes depending on how many lines you want to show, just wrap the targeted content in the desired class:</p>
+<p>We would recommend making sure your content fits the height of the slide but sometimes R output can be extensive. For this scenario, we included some custom classes depending on how many lines you want to show, just wrap the targeted content in the desired class:</p>
 <ul>
 <li>
 <code>.scroll-box-8[]</code>: show 8 lines</li>
