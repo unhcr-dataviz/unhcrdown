@@ -9,56 +9,186 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, fig.cap = TRUE)
 library(officedown)
-options(scipen = 999) # turn-off scientific notation like 1e+48
+library(unhcrthemes)
+library(ggplot2)
+library(rvg)
+library(tidyverse)
+library(scales)
+
+# Loading data
+df_1 <- read_csv("https://raw.githubusercontent.com/GDS-ODSSS/unhcr-dataviz-platform/master/data/comparison/column.csv")
+
+df_2 <- read_csv("https://raw.githubusercontent.com/GDS-ODSSS/unhcr-dataviz-platform/master/data/comparison/bar_grouped.csv")
 ```
 
-## Slide header
+## Table
 
-Some content
-
-*  list 1
-*  list 2
-
----
-
-# Section header
-
----
-
-## Tables
-
-
-```{r table}
-knitr::kable(mtcars[1:5, 1:5], caption = "An example table")
+```{r layout='Two Content', ph=officer::ph_location_left()}
+head(df_1)
 ```
 
----
-
-## Plots
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r layout='Two Content', ph=officer::ph_location_right()}
+head(df_2)
 ```
 
+## ggplot in right column
 
----
 
-## Columns & Images
+- Some
+- Bullets
 
-:::::: {.columns}
-::: {.column}
-Content of the left column.
+```{r ph=officer::ph_location_right()}
+mygg <- ggplot(df_1) +
+  geom_col(aes(
+    x = year,
+    y = displaced_number
+  ),
+  fill = unhcr_pal(n = 1, "pal_blue"),
+  width = 0.8
+  ) +
+  labs(
+    title = "Total displaced population | 2011 - 2021",
+    y = "Number of people (in million)",
+    caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency"
+  ) +
+  scale_x_continuous(breaks = pretty_breaks(n = 10)) +
+  scale_y_continuous(
+    expand = expansion(c(0, 0.1)),
+    labels = label_number_si()
+  ) +
+  theme_unhcr(
+    grid = "Y",
+    axis = "x",
+    axis_title = "y"
+  )
+dml(ggobj = mygg)
+``` 
 
-*  list 1
-*  list 2
-:::
+## Slide with ggplot 1
 
-::: {.column}
-Content of the right column.
+```{r layout='Title and Content', ph=officer::ph_location_type(type="body")}
+mygg <- ggplot(df_1) +
+  geom_col(aes(
+    x = year,
+    y = displaced_number
+  ),
+  fill = unhcr_pal(n = 1, "pal_blue"),
+  width = 0.8
+  ) +
+  labs(
+    title = "Total displaced population | 2011 - 2021",
+    y = "Number of people (in million)",
+    caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency"
+  ) +
+  scale_x_continuous(breaks = pretty_breaks(n = 10)) +
+  scale_y_continuous(
+    expand = expansion(c(0, 0.1)),
+    labels = label_number_si()
+  ) +
+  theme_unhcr(
+    grid = "Y",
+    axis = "x",
+    axis_title = "y"
+  )
+dml(ggobj = mygg)
+```
 
-1.  list 1
-2.  list 2
-:::
-::::::
+## Slide with ggplot 2
+
+```{r ph=officer::ph_location_fullsize()}
+mygg <- ggplot(df_2) +
+  geom_col(aes(
+    x = asylum_application,
+    y = fct_rev(factor(region)),
+    fill = as.character(year)
+  ),
+  position = position_dodge(0.7),
+  width = 0.6
+  ) +
+  scale_fill_unhcr_d(palette = "pal_unhcr") +
+  labs(
+    title = "Individual asylum applications registered by region | 2019-2020",
+    x = "Number of people",
+    caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency"
+  ) +
+  scale_x_continuous(
+    expand = expansion(c(0, 0.1)),
+    labels = label_number_si()
+  ) +
+  scale_y_discrete(labels = scales::label_wrap(17)) +
+  theme_unhcr(
+    grid = "X",
+    axis = "y",
+    axis_title = "x"
+  )
+dml(ggobj = mygg, fonts = 'Lato')
+``` 
+
+## ggplot in left column
+
+```{r ph=officer::ph_location_left()}
+mygg <- ggplot(pressure, aes(x = temperature, y = pressure)) +
+  geom_point()
+dml(ggobj = mygg)
+``` 
+
+## ggplot in right column
+
+
+- Some
+- Bullets
+
+```{r ph=officer::ph_location_right()}
+mygg <- ggplot(df_2) +
+  geom_col(aes(
+    x = asylum_application,
+    y = fct_rev(factor(region)),
+    fill = as.character(year)
+  ),
+  position = position_dodge(0.7),
+  width = 0.6
+  ) +
+  scale_fill_unhcr_d(palette = "pal_unhcr") +
+  labs(
+    title = "Individual asylum applications registered by region | 2019-2020",
+    x = "Number of people",
+    caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency"
+  ) +
+  scale_x_continuous(
+    expand = expansion(c(0, 0.1)),
+    labels = label_number_si()
+  ) +
+  scale_y_discrete(labels = scales::label_wrap(17)) +
+  theme_unhcr(
+    grid = "X",
+    axis = "y",
+    axis_title = "x"
+  )
+dml(ggobj = mygg)
+``` 
+
+## ggplot in both columns
+
+
+```{r ph=officer::ph_location_left()}
+dml(ggobj = mygg)
+``` 
+
+```{r ph=officer::ph_location_right()}
+dml(ggobj = mygg)
+``` 
+
+
+## custom plot locations
+
+
+```{r ph=officer::ph_location(width = 2, height = 2, left = 2, top = 2)}
+dml(ggobj = mygg)
+```
+
+```{r ph=officer::ph_location(width = 3, height = 3, left = 4, top = 4)}
+dml(ggobj = mygg)
+```
+
