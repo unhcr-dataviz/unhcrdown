@@ -18,8 +18,8 @@ library(tidyverse)
 library(scales)
 library(lubridate)
 
-showtext::showtext_auto(FALSE)
-
+# turn off the automatic use of showtext functionality, so that the dml function can works properly
+showtext::showtext_auto(FALSE) 
 
 # Loading data
 df_1 <- read_csv("https://raw.githubusercontent.com/GDS-ODSSS/unhcr-dataviz-platform/master/data/comparison/column.csv")
