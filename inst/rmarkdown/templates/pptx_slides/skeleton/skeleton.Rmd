@@ -69,8 +69,7 @@ mygg <- ggplot(df_1) +
     grid = "Y",
     axis = "x",
     axis_title = "y"
-  ) +
-  theme(text=element_text(family="Lato"))
+  )
 
 dml(ggobj = mygg, fonts = list(serif = 'Lato'))
 ``` 
@@ -100,8 +99,7 @@ mygg <- ggplot(df_1) +
     grid = "Y",
     axis = "x",
     axis_title = "y"
-  ) +
-  theme(text=element_text(family="Lato"))
+  )
 
 dml(ggobj = mygg, fonts = list(serif = 'Lato'))
 ```
@@ -133,8 +131,7 @@ mygg <- ggplot(df_2) +
     grid = "X",
     axis = "y",
     axis_title = "x"
-  ) +
-  theme(text=element_text(family="Lato"))
+  )
 
 dml(ggobj = mygg, fonts = list(serif = 'Lato'))
 ```
@@ -163,8 +160,7 @@ mygg <- ggplot(df_3) +
     grid = "Y",
     axis = "x",
     axis_title = "y"
-  ) +
-  theme(text=element_text(family="Lato"))
+  )
 
 dml(ggobj = mygg, fonts = list(serif = 'Lato'))
 ```
@@ -200,8 +196,7 @@ mygg <- ggplot(df_2) +
     grid = "X",
     axis = "y",
     axis_title = "x"
-  ) +
-  theme(text=element_text(family="Lato"))
+  )
 
 dml(ggobj = mygg, fonts = list(serif = 'Lato'))
 ```
