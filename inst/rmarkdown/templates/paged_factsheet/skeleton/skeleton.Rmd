@@ -1,0 +1,24 @@
+---
+title: "Main title"
+subtitle: "Sub title"
+date: "`r format(Sys.Date(),  '%d %B %Y')`"
+author:
+  - name: Contact Name
+    affiliation: Job title
+    email: email@unhcr.org
+output:
+  unhcrdown::paged_factsheet:
+    number_sections: false
+# uncomment this line to produce HTML and PDF in RStudio:
+#knit: pagedown::chrome_print
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      fig.retina = 2,
+                      fig.showtext = TRUE,
+                      dev = "ragg_png",
+                      dpi = 300)
+```
+
+ 
