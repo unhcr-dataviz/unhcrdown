@@ -1,6 +1,4 @@
 ---
-title: "Main title"
-subtitle: "Sub title"
 date: "`r format(Sys.Date(),  '%d %B %Y')`"
 author:
   - name: Contact Name
@@ -11,14 +9,277 @@ output:
     number_sections: false
 # uncomment this line to produce HTML and PDF in RStudio:
 #knit: pagedown::chrome_print
+params:
+  country_code: "BRA"
+  year_report: 2022
+  doc_type: "Factsheet"
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(unhcrthemes)
+library(tidyverse)
+library(scales)
+library(directlabels)
+library(ggtext)
+library(ggforce)
+year <- params$year_report
+country_code <- params$country_code
+country_name <- unhcrdatapackage::reference |>
+  filter(UNHCRcode == country_code) |>
+  filter(LASTCENSUS == max(LASTCENSUS)) |>
+  distinct(ctryname) |>
+  pull()
+```
+
+---
+title: "<span class='text-uppercase grey'>`r params$doc_type`</span><br><span class='fs-4'><strong>`r country_name` | `r year`</strong></span>"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,
-                      fig.retina = 2,
-                      fig.showtext = TRUE,
-                      dev = "ragg_png",
-                      dpi = 300)
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.retina = 2,
+  fig.showtext = TRUE,
+  dev = "ragg_png",
+  dpi = 300
+)
+total_poc <- unhcrdatapackage::end_year_population_totals_long |>
+  filter(
+    Year == year,
+    CountryAsylumCode == country_code
+  ) |>
+  summarise(sum(Value)) |>
+  pull()
+diff_poc <- unhcrdatapackage::end_year_population_totals_long |>
+  filter(
+    (Year == year | Year == year - 1),
+    CountryAsylumCode == country_code
+  ) |>
+  group_by(Year) |>
+  arrange(Year) |>
+  summarise(Value = sum(Value)) |>
+  mutate(Value_diff = (Value - lag(Value)) / lag(Value)) |>
+  filter(!is.na(Value_diff)) |>
+  pull(Value_diff)
 ```
 
- 
+
+### Overview
+
+:::{.text-center .col-2 .col-rule}
+[**`r label_number(scale_cut = cut_si(""), accuracy=1.0)(total_poc)`**]{.fs-4 .blue} <br>Total people of concern
+
+[**`r label_percent(accuracy=1.1)(diff_poc)`**]{.fs-4 .blue} <br>Difference in relation to **last year**
+:::
+
+\newline
+
+### Trend
+
+:::{.text-center}
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height=3.5, out.width="80%"}
+unhcrdatapackage::end_year_population_totals_long |>
+  filter(
+    Year >= year - 10,
+    CountryAsylumCode == country_code
+  ) |>
+  group_by(Year, Population.type.label.short) |>
+  summarise(Value = sum(Value)) |>
+  ungroup() |>
+  select(
+    year = Year,
+    population_type = Population.type.label.short,
+    population_number = Value
+  ) |>
+  ggplot(aes(
+    x = year,
+    y = population_number,
+    color = population_type
+  )) +
+  geom_line(size = 1) +
+  geom_dl(aes(label = population_type),
+    method = list(dl.trans(x = x + 0.1), "last.points"),
+    size = 8 / .pt
+  ) +
+  labs(
+    title = paste0(country_name, ": People of concern to UNHCR | ", year - 10, "-", year),
+    subtitle = "Number of people",
+    caption = "Source: UNHCR, The UN Refugee Agency"
+  ) +
+  scale_x_continuous(breaks = pretty_breaks(n = 10)) +
+  scale_y_continuous(
+    expand = expansion(c(0, 0.1)),
+    breaks = pretty_breaks(),
+    labels = label_number_si(),
+  ) +
+  scale_color_unhcr_d(
+    palette = "pal_unhcr",
+    nmax = 10,
+    order = c(5, 1)
+  ) +
+  coord_cartesian(clip = "off") +
+  theme_unhcr(
+    grid = "Y",
+    axis = "x",
+    axis_title = "",
+    legend = FALSE
+  ) +
+  theme(plot.margin = margin(r = 50))
+```
+:::
+
+\newline
+
+### Asylum Application
+
+:::{.col-2}
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height=5.2}
+df <- unhcrdatapackage::asylum_decisions |>
+  filter(
+    Year == year,
+    CountryAsylumCode == country_code
+  ) |>
+  group_by(Year) |>
+  summarise(
+    Rejected = sum(Rejected),
+    Recognized = sum(Recognized)
+  ) |>
+  ungroup() |>
+  pivot_longer(!Year, names_to = "decision_type", values_to = "decision_value")
+df |>
+  ggplot() +
+  geom_arc_bar(
+    aes(
+      x0 = 0,
+      y0 = 0,
+      r0 = 0.6,
+      r = 1,
+      amount = decision_value,
+      fill = decision_type
+    ),
+    stat = "pie",
+    size = 1,
+    color = "#FFFFFF"
+  ) +
+  geom_richtext(
+    x = c(1.25, -1.25),
+    y = c(-0.3, 0.3),
+    aes(label = paste0(
+      decision_type,
+      "<br><strong>",
+      decision_value,
+      "</strong>", "<br>",
+      label_percent(accuracy = 1.1)(decision_value / sum(decision_value))
+    )),
+    size = 14 / .pt,
+    fill = NA,
+    label.color = NA
+  ) +
+  geom_richtext(
+    x = 0,
+    y = 0,
+    label = paste0(
+      "Total decisions",
+      "<br><strong>",
+      sum(df$decision_value),
+      "</strong>"
+    ),
+    size = 18 / .pt,
+    fill = NA,
+    label.color = NA
+  ) +
+  labs(
+    title = paste0(country_name, ": Asylum decisions | ", year),
+    caption = "Source: UNHCR, The UN Refugee Agency"
+  ) +
+  scale_fill_unhcr_d(
+    palette = "pal_unhcr",
+    direction = -1
+  ) +
+  scale_x_continuous(expand = expansion(c(0.3, 0.5))) +
+  theme_unhcr(
+    font_size = 16,
+    grid = FALSE,
+    axis = FALSE,
+    axis_title = FALSE,
+    axis_text = FALSE,
+    legend = FALSE
+  )
+```
+
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.height=6}
+df <- unhcrdatapackage::asylum_applications |>
+  filter(
+    Year == year,
+    CountryAsylumCode == country_code
+  ) |>
+  group_by(CountryOriginName) |>
+  summarise(NumberApplications = sum(NumberApplications)) |>
+  ungroup() |>
+  mutate(
+    top_country_origin = forcats::fct_lump_n(
+      f = CountryOriginName,
+      n = 5,
+      w = NumberApplications,
+      other_level = "Other nationalities",
+      ties.method = "last"
+    )
+  ) |>
+  ungroup() |>
+  mutate(top_country_origin = forcats::fct_explicit_na(
+    top_country_origin,
+    "Other nationalities"
+  )) |>
+  group_by(top_country_origin) |>
+  summarise(NumberApplications = sum(NumberApplications, na.rm = TRUE)) |>
+  arrange(NumberApplications) |>
+  mutate(
+    top_country_origin = forcats::fct_inorder(top_country_origin),
+    top_country_origin = suppressWarnings(
+      dplyr::case_when(
+        top_country_origin == "Other nationalities" ~ forcats::fct_relevel(top_country_origin,
+          "Other nationalities",
+          after = 0
+        ),
+        TRUE ~ top_country_origin
+      )
+    )
+  )
+ggplot(df) +
+  geom_col(
+    aes(
+      x = NumberApplications,
+      y = top_country_origin
+    ),
+    fill = unhcr_pal(n = 1, "pal_blue"),
+    width = 0.8
+  ) +
+  geom_text(
+    aes(
+      x = NumberApplications,
+      y = top_country_origin,
+      label = label_number(scale_cut = cut_si(""), accuracy = 1.0)(NumberApplications)
+    ),
+    hjust = -0.5,
+    size = 14 / .pt
+  ) +
+  labs(
+    title = paste0(country_name, ": Asylum application by nationality | ", year),
+    subtitle = "Number of people",
+    caption = "Source: UNHCR, The UN Refugee Agency"
+  ) +
+  scale_x_continuous(expand = expansion(c(0, 0.1))) +
+  theme_unhcr(
+    font_size = 16,
+    grid = FALSE,
+    axis = "y",
+    axis_title = FALSE,
+    axis_text = "y"
+  )
+```
+
+:::

@@ -1,4 +1,4 @@
-name: paged_factsheet
+name: UNHCR Paged Factsheet
 description: >
-   Factsheet Template
-create_dir: TRUE
+ UNHCR branded paged Factsheet that can be exported as PDF
+create_dir: false

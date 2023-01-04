@@ -5,9 +5,8 @@
 #   template_create_dir = TRUE
 # )
 
-#' Function for UNHCR paged simple template
+#' Function for UNHCR paged Factsheet
 #'
-#' @param back_html Back-cover HTML including contact information
 #' @param other_css Add extra css
 #' @param number_sections Number section headings
 #' @param ... Arguments passed to pagedown::html_paged
@@ -17,8 +16,7 @@
 #'
 #' @return A pagedown report
 #' @export
-paged_factsheet <- function(back_html = TRUE,
-                         other_css = NULL,
+paged_factsheet <- function(other_css = NULL,
                          number_sections = FALSE,
                          ...) {
 
@@ -42,20 +40,13 @@ paged_factsheet <- function(back_html = TRUE,
   paged_base_css <- pkg_resource("css/paged_base.css")
   factsheet_css <- pkg_resource("css/factsheet.css")
 
-  # html back-cover
-  if (back_html) {
-    back_html <-
-      pkg_resource("html/back_paged_simple.html")
-  } else {
-    back_html <- NULL
-  }
+
 
   # template
   pagedown::html_paged(
     css = c(base_css, icon_css, base_css,
             paged_base_css,
             factsheet_css, other_css),
-    includes = list(after_body = back_html),
     number_sections = number_sections,
     ...)
 }
