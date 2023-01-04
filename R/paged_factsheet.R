@@ -12,12 +12,18 @@
 #' @param number_sections Number section headings
 #' @param ... Arguments passed to pagedown::html_paged
 #'
+#' @importFrom unhcrdesign use_unhcr_logo
+#' @importFrom pagedown html_paged
+#'
 #' @return A pagedown report
 #' @export
 paged_factsheet <- function(back_html = TRUE,
                          other_css = NULL,
                          number_sections = FALSE,
                          ...) {
+
+
+
   # base css files
   base_css <- unhcrdesign::use_unhcr_css(c("reset", "color_variables", "fonts"))
 

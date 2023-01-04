@@ -6,6 +6,10 @@
 #'
 #' @param ... extra parameters to pass to `officedown::rpptx_document`
 #'
+#' @importFrom officedown rpptx_document
+#' @importFrom officer fp_text_lite table_conditional_formatting
+#' @importFrom rvg dml
+#'
 #' @export
 pptx_slides <- function(...) {
 
