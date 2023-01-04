@@ -1,6 +1,6 @@
 Package: unhcrdown
 Title: UNHCR Templates for R Markdown
-Version: 0.0.3.9000
+Version: 0.0.4.9000
 Authors@R:
     c(person(given = "Cedric",
            family = "Vidonne",
@@ -21,7 +21,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Imports:
     magick,
     pagedown,
@@ -30,6 +30,13 @@ Imports:
     officer,
     xaringan,
     unhcrdesign
-URL: https://github.com/vidonne/unhcrdown
+URL: https://github.com/vidonne/unhcrdown,
+    https://vidonne.github.io/unhcrdown/
 BugReports: https://github.com/vidonne/unhcrdown/issues
 Remotes: vidonne/unhcrdesign
+Suggests: 
+    knitr,
+    fontawesome
+VignetteBuilder: knitr
+Config/Needs/website:
+    vidonne/unhcrtemplate
