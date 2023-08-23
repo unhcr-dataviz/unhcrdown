@@ -30,7 +30,7 @@ Imports:
     officer,
     xaringan,
     unhcrdesign
-URL:  https://github.com/unhcr-dataviz/unhcrdown
+URL: https://github.com/unhcr-dataviz/unhcrdown, https://unhcr-dataviz.github.io/unhcrdown/
 BugReports: https://github.com/unhcr-dataviz/unhcrdown/issues
 Remotes: vidonne/unhcrdesign
 Suggests: 
