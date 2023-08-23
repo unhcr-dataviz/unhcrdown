@@ -8,7 +8,7 @@
 [![Project Status: WIP – Initial development is in progress, but there
 has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-[![R-CMD-check](https://github.com/vidonne/unhcrdown/workflows/R-CMD-check/badge.svg)](https://github.com/vidonne/unhcrdown/actions)
+[![R-CMD-check](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/unhcrdown)](https://CRAN.R-project.org/package=unhcrdown)
 <!-- badges: end -->
@@ -23,11 +23,13 @@ and website while promoting the UNHCR visual identity.
 ## Installation
 
 This package is not on yet on CRAN and to install it, you will need the
-remotes package.
+`{pak}` package.
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("vidonne/unhcrdown")
+# If pak is not yet installed, uncomment the following line:
+# install.packages("pak")
+
+pak::pkg_install("unhcr-dataviz/unhcrdown")
 ```
 
 ## Content
@@ -38,9 +40,9 @@ presentations and more:
 
 1.  Microsoft **Word document** (based on `officedown::rdocx_document`)
 2.  HTML to **PDF paged reports** (based on `pagedown::html_paged`)
-    -   `unhcrdown::paged_report`, advanced report template including
+      - `unhcrdown::paged_report`, advanced report template including
         page cover, table of content, back-cover and more.
-    -   `unhcrdown::paged_simple`, simple document template to create
+      - `unhcrdown::paged_simple`, simple document template to create
         quick reports, updates, etc.
 3.  Microsoft **PowerPoint presentation** (based on
     `officedown::rpptx_document`)
@@ -62,7 +64,7 @@ or `html_slides` engine in your R Markdown header. For example:
 ---
 title: "UNHCR Branded Rmarkdown"
 author: First Last Name
-date: "05 August, 2022"
+date: "23 August, 2023"
 output: unhcrdown::paged_report
 ---
 ```
@@ -86,15 +88,15 @@ templates.
 unhcrthemes is part of **unhcrverse**, a set of packages to ease the
 production of statistical evidence and data stories.
 
--   [unhcrdown](https://github.com/vidonne/unhcrdown): UNHCR templates
+  - [unhcrdown](https://github.com/vidonne/unhcrdown): UNHCR templates
     for R Markdown
--   [unhcrdatapackage](https://github.com/Edouard-Legoupil/unhcrdatapackage):
+  - [unhcrdatapackage](https://github.com/Edouard-Legoupil/unhcrdatapackage):
     Use UNHCR Open data
--   [hcrdata](https://github.com/UNHCR-WEB/hcrdata/): API to connect to
+  - [hcrdata](https://github.com/UNHCR-WEB/hcrdata/): API to connect to
     internal data source
--   [HighFrequencyChecks](https://github.com/unhcr/HighFrequencyChecks/):
+  - [HighFrequencyChecks](https://github.com/unhcr/HighFrequencyChecks/):
     Perform High Frequency Check
--   [koboloadeR](https://github.com/unhcr/koboloadeR/): Process data
+  - [koboloadeR](https://github.com/unhcr/koboloadeR/): Process data
     crunching for survey dataset
 
 You can install them all with the following:
@@ -115,8 +117,8 @@ remotes::install_github('unhcr/koboloadeR')
 ## Getting help
 
 Please report any issues or bugs on
-[GitHub](https://github.com/vidonne/unhcrdown/issues), try to include a
-minimal reproducible example to help us understand.
+[GitHub](https://github.com/unhcr-dataviz/unhcrdown/issues), try to
+include a minimal reproducible example to help us understand.
 
 ## Code of Conduct
 

@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-[![R-CMD-check](https://github.com/vidonne/unhcrdown/workflows/R-CMD-check/badge.svg)](https://github.com/vidonne/unhcrdown/actions)
+[![R-CMD-check](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/unhcrdown)](https://CRAN.R-project.org/package=unhcrdown)
 <!-- badges: end -->
 
@@ -27,11 +27,13 @@ The **`unhcrdown`** package provides a set of templates following [UNHCR Brand](
 
 ## Installation
 
-This package is not on yet on CRAN and to install it, you will need the remotes package.
+This package is not on yet on CRAN and to install it, you will need the `{pak}` package.
 
 ```{r, eval = FALSE}
-# install.packages("remotes")
-remotes::install_github("vidonne/unhcrdown")
+# If pak is not yet installed, uncomment the following line:
+# install.packages("pak")
+
+pak::pkg_install("unhcr-dataviz/unhcrdown")
 ```
 
 ## Content
@@ -86,7 +88,7 @@ knitr::include_graphics("man/figures/new_template.png")
 
 ## Getting help
 
-Please report any issues or bugs on [GitHub](https://github.com/vidonne/unhcrdown/issues), try to include a minimal reproducible example to help us understand.
+Please report any issues or bugs on [GitHub](https://github.com/unhcr-dataviz/unhcrdown/issues), try to include a minimal reproducible example to help us understand.
 
 ## Code of Conduct
 

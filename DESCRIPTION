@@ -30,13 +30,11 @@ Imports:
     officer,
     xaringan,
     unhcrdesign
-URL: https://github.com/vidonne/unhcrdown,
-    https://vidonne.github.io/unhcrdown/
-BugReports: https://github.com/vidonne/unhcrdown/issues
+URL:  https://github.com/unhcr-dataviz/unhcrdown
+BugReports: https://github.com/unhcr-dataviz/unhcrdown/issues
 Remotes: vidonne/unhcrdesign
 Suggests: 
     knitr,
     fontawesome
 VignetteBuilder: knitr
-Config/Needs/website:
-    vidonne/unhcrtemplate
+Config/Needs/website: unhcr-dataviz/unhcrtemplate
