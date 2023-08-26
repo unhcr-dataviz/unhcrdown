@@ -6,6 +6,9 @@
 #'
 #' @param ... extra parameters to pass to `officedown::rdocx_document`
 #'
+#' @importFrom officedown rdocx_document
+#' @importFrom officer fp_text_lite
+#'
 #' @export
 docx_simple <- function(...) {
 

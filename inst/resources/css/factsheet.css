@@ -1,0 +1,114 @@
+/*! =========================================================
+@name             factsheet.css
+@description      UNHCR factsheet specific CSS
+@lastUpdated      05.01.2022
+============================================================= */
+
+/*** Pages ***/
+/* page size */
+@page {
+  size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
+  margin: 32.5mm 10mm 17mm 10mm;
+}
+
+
+@page:blank {
+
+}
+
+/* string variables */
+h1.title {
+  position: running(doc_title);
+  font-size: 1.15rem;
+  color: var(--unhcr-black);
+}
+
+h2.date {
+  string-set: date content(text);
+}
+/* h2.author {
+  string-set: h2-author content(text);
+}
+address.author-afil {
+  string-set: address-author-afil content(text);
+}
+*/
+a.email {
+  string-set: email content(text);
+} 
+
+/* normal page */
+@page {
+  /* top ruler */
+  background-image: var(--unhcr-logoblue), url(header-ruler-factsheet.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 10mm 10mm, 10mm 25mm;
+  background-size: 50mm, 190mm;
+  /* title-subtitle */
+  @top-right {
+    content: element(doc_title);
+  }
+  /* contact */
+  @bottom-left {
+    content: "Creation date: " string(date) "  -  " "Contact: " string(email);
+    font-size: 0.85em;
+    color: var(--unhcr-grey);
+    margin-top: 20px;
+    padding-top: 4px;
+    vertical-align: top;
+    border-top: 1px solid var(--unhcr-blue);
+  }
+}
+
+/* ------------------------ Front Cover --------------------- */
+
+
+/* ------------------------ Style ----------------------------- */
+/* front cover */
+.front-page .author,
+.front-page .author-afil,
+.front-page .author-email,
+.front-page .email,
+.front-page .title,
+.front-page .date,
+.front-page .subtitle,
+.front-page .abstract {
+  display: none;
+}
+
+/* toc, lot, lof, loa */
+.toc, .lot, .lof, .loa {
+  display: none; /* make sure they don't appear even if turn on in the yaml */
+}
+
+/* footnote */
+.footnote sup,
+.footnote-ref {
+  color: var(--unhcr-blue);
+  font-weight: 700;
+}
+
+/* --------------------- CSS Fragmentation --------------------------- */
+/* page breaks; aka CSS fragmentation */
+
+.front-page {
+  counter-reset: page 1;
+}
+.section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
+  break-after: avoid;
+}
+.footenotes {
+  break-before: always;
+  break-after: always;
+}
+.bg-blue,
+.bg-grey,
+.figure {
+  break-inside: avoid;
+}
+
+/* do not break captions */
+caption {
+  break-inside: avoid;
+  break-after: avoid;
+}

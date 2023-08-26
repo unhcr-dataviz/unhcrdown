@@ -296,6 +296,36 @@ table > thead > * > * {
 }
 
 /*** helper ***/
+.fs-1 {
+  font-size: 2.5rem;
+}
+
+.fs-2 {
+  font-size: 2rem;
+}
+
+.fs-3 {
+  font-size: 1.75rem;
+}
+
+.fs-4 {
+  font-size: 1.5rem;
+}
+
+.fs-5 {
+  font-size: 1.25rem;
+}
+
+.fs-6 {
+  font-size: 1rem;
+}
+.text-center {
+  text-align: center;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+
 .img75, .img66,
 .img50, .img33,
 .img25 {
@@ -323,8 +353,45 @@ table > thead > * > * {
   max-width: 75%;
 }
 
-.col2 {
-  columns: 2;
+.col-2 {
+  column-count: 2;
+}
+
+.col-3 {
+  column-count: 3;
+}
+
+.col-4 {
+  column-count: 4;
+}
+
+.col-2,
+.col-3,
+.col-4  {
+  column-gap: 2em;
+  margin-bottom: 1.2em;
+}
+
+.col-2 > p,
+.col-3 > p,
+.col-4 > p {
+  margin-bottom: 0;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.col-rule {
+  column-rule: 1.5px solid #0072bc;
+}
+
+.col-break {
+  -webkit-column-break-before: always;
+  break-before: column;
+}
+
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .float-start {
