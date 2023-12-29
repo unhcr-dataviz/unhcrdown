@@ -1,11 +1,11 @@
 Package: unhcrdown
 Title: UNHCR Templates for R Markdown
-Version: 0.0.4.9000
+Version: 0.0.5.9000
 Authors@R:
     c(person(given = "Cedric",
            family = "Vidonne",
            role = c("aut", "cre"),
-           email = "vidonne@unhcr.org"),
+           email = "cedric@vidonne.me"),
       person(given = "Ahmadou",
            family = "Dicko",
            role = "aut",
