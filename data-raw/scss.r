@@ -19,3 +19,11 @@ compile_css(
   scss_file = "paged_report.scss",
   css_file = "paged_report.css"
 )
+
+
+# Generate html_slides.css
+
+compile_css(
+  scss_file = "html_slides.scss",
+  css_file = "html_slides.css"
+)

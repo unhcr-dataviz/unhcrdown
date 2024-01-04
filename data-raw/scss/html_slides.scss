@@ -1,0 +1,313 @@
+// 1. Include base UNHCR styles
+@import 'logo.scss';
+@import 'colors.scss';
+@import 'fonts.scss';
+
+// 2. set overall fonts
+html, body { font-family: 'Lato', Arial, sans-serif; }
+
+pre, code, kbd, samp { font-family: 'Source Code Pro', monospace; }
+
+// 3. Include Xaringan defaults
+@import 'xaringan.scss';
+
+// 4. Custom styles
+/*** Layout ***/
+.remark-slide-content {
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 5em;
+}
+.remark-slide-number {
+  display: none;
+}
+.inverse {
+  background-color: $unhcr-blue;
+  color: $unhcr-white;
+  text-shadow: none;
+}
+.inverse h1, .inverse h2, .inverse a {
+  color: $unhcr-white;
+}
+.inverse h2, .inverse h3{
+  color: $unhcr-yellow;
+}
+
+/*** Footer ***/
+.footer {
+  position: absolute;
+  bottom: 0em;
+  left: 0em;
+  width: 100%;
+  height: 4em;
+  z-index: 0;
+  border-top: 1px solid $unhcr-mediumgrey;
+}
+.footer span {
+  position: absolute;
+  bottom: 1em;
+  right: 2em;
+  width: 10em;
+  height: 2em;
+  background-image: url($unhcr-logoblue);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.inverse .footer {
+  border-top: 1px solid $unhcr-white;
+}
+.inverse .footer span {
+  background-image: url($unhcr-logowhite);
+}
+
+/*** Fonts ***/
+h1, h2, h3 {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+h1, h2 {
+  color: $unhcr-blue;
+}
+a, a > code {
+  color: $unhcr-blue;
+  text-decoration: none;
+}
+a:hover, a > code:hover {
+  color: $unhcr-black;
+  text-decoration: underline;
+}
+.footnote {
+  position: absolute;
+  bottom: 7.5em;
+  font-size: 0.6em;
+  font-style: italic;
+}
+.footnote p {
+  margin-top: 0;
+  margin-bottom: 0.2em;
+}
+pre {
+  overflow-x: auto;
+}
+.remark-code-line-highlighted {
+  background-color: $unhcr-lightyellow;
+}
+.remark-inline-code {
+  color: $unhcr-blue;
+  word-spacing: -0.3em;
+}
+
+blockquote {
+    quotes: "“" "”" "‘" "’";
+    border-left: none;
+    padding-left: 0;
+}
+blockquote>:first-child {
+  font-size: 1.2em;
+  font-style: italic;
+  margin-bottom: 0;
+  color: $unhcr-blue;
+  quotes: "“" "”" "‘" "’";
+}
+blockquote>:first-child::before {
+  content: open-quote;
+}
+blockquote>:first-child::after {
+  content: close-quote;
+}
+blockquote>:last-child {
+  font-weight: 700;
+  text-align: end;
+}
+blockquote>:last-child::before {
+  content: "— ";
+}
+blockquote>:only-child {
+  font-weight: 400;
+  text-align: start;
+}
+blockquote>:only-child::before,
+blockquote>:only-child::after {
+  content: none;
+}
+ul li::marker,
+ol li::marker {
+  color: $unhcr-blue;
+}
+
+/* figure */
+figure {
+  margin-bottom: 1em;
+}
+
+img, svg, video, iframe  {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+img + em,
+caption, .caption {
+  font-size: 0.8em;
+  font-style: italic;
+  text-align: left;
+}
+
+
+/*** Title slide ***/
+.title-slide h1 {
+  font-size: 60px;
+  padding-top: 1.3em;
+  margin-bottom: 0.3em;
+}
+.title-slide h2 {
+  font-size: 40px;
+  font-weight: 400;
+}
+.title-slide h3 {
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+/*** Two-column layout ***/
+.left-column {
+  width: 20%;
+  float: left;
+}
+.right-column {
+  width: 75%;
+  float: right;
+}
+.right-column + * {
+  clear: both;
+}
+.pull-left {
+  float: left;
+  width: 47.5%;
+}
+.pull-right {
+  float: right;
+  width: 47.5%;
+}
+.pull-right + * {
+  clear: both;
+}
+
+/*** Tables ***/
+.remark-slide .table {
+  --unhcr-table-accent-bg: transparent;
+  width: 100%;
+  margin-bottom: 1em;
+  vertical-align: top;
+  border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;
+}
+
+.remark-slide .table thead,
+.remark-slide .table tfoot,
+.remark-slide .table tr:nth-child(even) {
+    background-color: transparent;
+}
+
+.remark-slide .table > :not(caption) > * > * {
+  padding: 0.5em 0.5em;
+  background-color: transparent;
+  border-bottom: 1px solid $unhcr-mediumgrey;
+  box-shadow: inset 0 0 0 9999px var(--unhcr-table-accent-bg);
+}
+
+.remark-slide .table > caption {
+  caption-side: bottom;
+  margin-top: 0.25em;
+}
+
+.remark-slide .table > tbody {
+  vertical-align: inherit;
+}
+
+.remark-slide .table > thead {
+  vertical-align: bottom;
+}
+
+.remark-slide .table > thead > * > * {
+  border-bottom: 1.5px solid $unhcr-blue;
+  font-weight: 700;
+}
+
+.remark-slide .table-noborder > tbody > * > * {
+  border-bottom: 0 solid transparent;
+}
+
+.table-grey > tbody > tr:nth-of-type(odd) > * {
+  --unhcr-table-accent-bg: rgba(0, 0, 0, 0.05);
+}
+
+.table-blue > tbody > tr:nth-of-type(odd) > * {
+  --unhcr-table-accent-bg: rgba(0, 114, 188, 0.1);
+}
+.remark-slide .table-narrow {
+  width: inherit;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*** Helper ***/
+.large {
+  font-size: 1.25em;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+.blue {
+  color: $unhcr-blue;
+}
+
+.grey {
+  color: $unhcr-grey;
+}
+
+.bg-blue,
+.bg-grey {
+  padding: 0.1em 0.5em;
+  margin-bottom: 1em;
+}
+.bg-blue {
+  background-color: $unhcr-lightblue;
+}
+.bg-grey {
+  background-color: $unhcr-lightgrey;
+}
+
+.scroll-box-8 {
+  height:8em;
+  overflow-y: scroll;
+}
+.scroll-box-10 {
+  height:10em;
+  overflow-y: scroll;
+}
+.scroll-box-12 {
+  height:12em;
+  overflow-y: scroll;
+}
+.scroll-box-14 {
+  height:14em;
+  overflow-y: scroll;
+}
+.scroll-box-16 {
+  height:16em;
+  overflow-y: scroll;
+}
+.scroll-box-18 {
+  height:18em;
+  overflow-y: scroll;
+}
+.scroll-box-20 {
+  height:20em;
+  overflow-y: scroll;
+}
