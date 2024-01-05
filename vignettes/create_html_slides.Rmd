@@ -44,7 +44,7 @@ output:
 ---
 ```
 
-or just open the template provided, if you are using RStudio IDE (see [here](https://vidonne.github.io/unhcrdown/)).
+or just open the template provided, if you are using RStudio IDE (see [here](https://unhcr-dataviz.github.io/unhcrdown/)).
 
 Click the `Knit` button to compile it and you get the title slide of your presentation.
 
@@ -314,7 +314,7 @@ background-position: center
 ```
 ---
 class: hide-logo
-background-image: url(https://raw.githubusercontent.com/vidonne/unhcrdown/master/inst/resources/img/cover-example.jpg)
+background-image: url(https://raw.githubusercontent.com/unhcr-dataviz/unhcrdown/master/inst/resources/img/cover-example.jpg)
 background-size: cover
 background-position: center 25%
 ```
@@ -410,9 +410,9 @@ knitr::include_graphics("../man/figures/html_slides_table_class.png")
 
 ### Plots
 
-For the creation of charts, we recommend the use of the [**`unhcrthemes`**](https://vidonne.github.io/unhcrthemes/index.html) as it provides a `ggplot2` theme and a set of colour palettes for making charts and graphics based on the [UNHCR Data Visualization Guidelines](https://dataviz.unhcr.org/general_guidance/). The charts made with [`unhcrthemes`](https://vidonne.github.io/unhcrthemes/index.html) will be perfectly integrated in the `unhcrdown::html_slides` presentation and will be fully aligned with the UNHCR brand.
+For the creation of charts, we recommend the use of the [**`unhcrthemes`**](https://unhcr-dataviz.github.io/unhcrthemes/) as it provides a `ggplot2` theme and a set of colour palettes for making charts and graphics based on the [UNHCR Data Visualization Guidelines](https://dataviz.unhcr.org/general_guidance/). The charts made with [`unhcrthemes`](https://unhcr-dataviz.github.io/unhcrthemes/) will be perfectly integrated in the `unhcrdown::html_slides` presentation and will be fully aligned with the UNHCR brand.
 
-Inserting a plot is as easy as a table and only requires a few lines of code. For more information on how to make a plot using `unhcrthemes` please refer to [package documentation](https://vidonne.github.io/unhcrthemes/articles/intro-unhcrthemes.html) and the [UNHCR Data Visualization Platform R tutorials](https://dataviz.unhcr.org/tools/r/).
+Inserting a plot is as easy as a table and only requires a few lines of code. For more information on how to make a plot using `unhcrthemes` please refer to [package documentation](https://unhcr-dataviz.github.io/unhcrthemes/articles/unhcrthemes.html) and the [UNHCR Data Visualization Platform R tutorials](https://dataviz.unhcr.org/tools/r/).
 
 **`unhcrthemes` plot example:**
 
@@ -429,13 +429,16 @@ idp_total_sex <- idp |>
 
 ggplot(idp_total_sex) +
   geom_col(aes(x = year, y = idp, fill = sex),
-           width = 0.8,
-           position = position_dodge(width = 0.9)) +
+    width = 0.8,
+    position = position_dodge(width = 0.9)
+  ) +
   scale_fill_unhcr_d(palette = "pal_unhcr") +
   scale_y_continuous(expand = expansion(c(0, 0.1))) +
-  labs(title = "Globalement IDP displacement | 2010 - 2020",
-       y = "Number of people (in million)",
-       caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency") +
+  labs(
+    title = "Globalement IDP displacement | 2010 - 2020",
+    y = "Number of people (in million)",
+    caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency"
+  ) +
   scale_x_continuous(breaks = pretty_breaks(10)) +
   theme_unhcr(grid = "Y", axis_title = "y")
 ```

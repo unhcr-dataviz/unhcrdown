@@ -27,14 +27,15 @@ Imports:
     pagedown,
     officedown,
     rmarkdown,
-    officer,
     xaringan,
+    officer,
     unhcrdesign
 URL: https://github.com/unhcr-dataviz/unhcrdown, https://unhcr-dataviz.github.io/unhcrdown/
 BugReports: https://github.com/unhcr-dataviz/unhcrdown/issues
 Remotes: vidonne/unhcrdesign
 Suggests: 
     knitr,
+    unhcrthemes,
     fontawesome
 VignetteBuilder: knitr
 Config/Needs/website: unhcr-dataviz/unhcrtemplate
