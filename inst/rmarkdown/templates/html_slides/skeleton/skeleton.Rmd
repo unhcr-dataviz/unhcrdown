@@ -28,22 +28,24 @@ library(fontawesome)
 
 # Template
 
-**`html_slides`** is a simple online presentation template which is part of the [`unhcrdown`](https://github.com/vidonne/unhcrdown) package.
+**`html_slides`** is a simple online presentation template which is part of the [`unhcrdown`](https://github.com/unhcr-dataviz/unhcrdown) package.
 
-Install the `unhcrdown` package from [Github](https://github.com/vidonne/unhcrdown):
+Install the `unhcrdown` package from [Github](https://github.com/unhcr-dataviz/unhcrdown):
 
 ```{r eval=FALSE, tidy=FALSE}
-# install.packages("remotes")
-remotes::install_github("vidonne/unhcrdown")
+# If pak is not yet installed, uncomment the following line:
+# install.packages("pak")
+
+pak::pkg_install("unhcr-dataviz/unhcrdown")
 ```
 
 **Main resources:**
 
-- [`unhcrdown::html_slides`](https://vidonne.github.io/unhcrdown/articles/create_html_slides.html) vignette
+- [`unhcrdown::html_slides`](https://unhcr-dataviz.github.io/unhcrdown/articles/create_html_slides.html) vignette
 - [`xaringan`](https://slides.yihui.org/xaringan/#1) slides
 - [`remark.js`](https://remarkjs.com/#1) slides
 - [R Markdown](https://rmarkdown.rstudio.com/lesson-1.html) documentation
-- [`unhcrthemes`](https://vidonne.github.io/unhcrthemes/index.html) package
+- [`unhcrthemes`](https://unhcr-dataviz.github.io/unhcrthemes/) package
 - [UNHCR Data Visualization Platform](https://dataviz.unhcr.org/)
 
 ---
@@ -508,11 +510,10 @@ To highlight lines of code simply add `#<<` at the end of each targeted row and 
 
 .pull-right[
 ```{r, eval = FALSE}
-library(unhcrthemes)
 library(tidyverse)
-idp_2019 <- unhcrthemes::idp |> 
-  filter(year == 2019) #<<
-glimpse(idp_2019)
+mtcars_select <- mtcars |> 
+  select(hp, mpg, cyl) #<<
+glimpse(mtcars_select)
 ```
 ]
 
@@ -523,12 +524,11 @@ It is also possible to highlight the code output by adding `highlight.output = c
 ]
 
 .pull-right[
-```{r, echo = FALSE, highlight.output = c(3, 6)}
-library(unhcrthemes)
+```{r, echo = FALSE, highlight.output = c(3, 5)}
 library(tidyverse)
-idp_2019 <- unhcrthemes::idp |> 
-  filter(year == 2019)
-glimpse(idp_2019)
+mtcars_select <- mtcars |> 
+  select(hp, mpg, cyl) #<<
+glimpse(mtcars_select)
 ```
 ]
 
@@ -548,16 +548,10 @@ glimpse(idp_2019)
 
 .pull-right[
 ```{r, echo = FALSE}
-library(unhcrthemes)
-library(tidyverse)
-idp_2019 <- unhcrthemes::idp |> 
-  filter(year == 2019) |> 
-  select(-year)
-head(idp_2019) |> 
+head(mtcars_select) |> 
   knitr::kable(format = "html",
-               col.names = c("Country", "Sex", "Number of people"),
-               format.args = list(big.mark = ",", scientific = FALSE),
-               caption = "IDP by country and gender | 2019")
+               col.names = c("Fuel efficiency", "Horsepower", "Num. of cylinder"),
+               caption = "Subset of mtcars dataset")
 ```
 ]
 
@@ -588,16 +582,10 @@ The following classes are available:
 
 .pull-right[
 ```{r, echo = FALSE}
-library(unhcrthemes)
-library(tidyverse)
-idp_2019 <- unhcrthemes::idp |> 
-  filter(year == 2019) |> 
-  select(-year)
-head(idp_2019) |> 
+head(mtcars_select) |> 
   knitr::kable(format = "html",
-               col.names = c("Country", "Sex", "Number of people"),
-               format.args = list(big.mark = ",", scientific = FALSE),
-               caption = "IDP by country and gender | 2019",
+               col.names = c("Fuel efficiency", "Horsepower", "Num. of cylinder"),
+               caption = "Subset of mtcars dataset",
                table.attr = "class=\"table  table-blue table-noborder\"")
 ```
 ]
@@ -606,35 +594,31 @@ head(idp_2019) |>
 
 # Plots
 
-For the creation of charts, we recommend using the [**`unhcrthemes`**](https://vidonne.github.io/unhcrthemes/index.html) as it provides a `ggplot2` theme and a set of colour palettes for making charts and graphics.
+For the creation of charts, we recommend using the [**`unhcrthemes`**](https://unhcr-dataviz.github.io/unhcrthemes/) as it provides a `ggplot2` theme and a set of colour palettes for making charts and graphics.
 
 .pull-left[
-For more information on how to make a plot using `unhcrthemes` please refer to [package documentation](https://vidonne.github.io/unhcrthemes/articles/intro-unhcrthemes.html) and the [UNHCR Data Visualization Platform R tutorials](https://dataviz.unhcr.org/tools/r/).
+For more information on how to make a plot using `unhcrthemes` please refer to [package documentation](https://unhcr-dataviz.github.io/unhcrthemes/articles/unhcrthemes.html) and the [UNHCR Data Visualization Platform R tutorials](https://dataviz.unhcr.org/tools/r/).
 
 Getting your plot right is not always easy, but you can control your plots by playing with individual chunk options like `fig.retina` and `out.width` (plus `fig.width` and `fig.height`). 
 ]
 
 .pull-right[
 ```{r, echo=FALSE, dev = "ragg_png", fig.retina = 4, out.width="100%", fig.height=5}
-library(tidyverse)
-library(unhcrthemes)
-
-idp_total_sex <- idp |>
-  group_by(year, sex) |>
-  summarise(idp = sum(idp, na.rm = TRUE) / 1e6) |>
-  ungroup()
-
-ggplot(idp_total_sex) +
-  geom_col(aes(x = year, y = idp, fill = sex),
-           width = 0.8,
-           position = position_dodge(width = 0.9)) +
-  scale_fill_unhcr_d(palette = "pal_unhcr", labels = c("Female", "Male")) +
-  scale_y_continuous(expand = expansion(c(0, 0.1))) +
-  labs(title = "Globalement IDP displacement | 2010 - 2020",
-       y = "Number of people (in million)",
-       caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency") +
-  scale_x_continuous(breaks = seq(2010, 2019, 1)) +
-  theme_unhcr(grid = "Y", axis_title = "y")
+ggplot(
+  mtcars,
+  aes(x = hp, y = mpg, color = as.factor(cyl))
+) +
+  geom_point(alpha = .8) +
+  labs(
+    title = "Simple scatterplot with ggplot",
+    subtitle = "This plot shows the default style of theme_unhcr()",
+    x = "Horsepower (hp)",
+    y = "Fuel efficiency (mpg)",
+    color = "Number of cylinder",
+    caption = "Source: mtcars"
+  ) +
+  scale_color_unhcr_d() +
+  theme_unhcr(legend_title = TRUE)
 ```
 ]
 
@@ -659,36 +643,29 @@ The chunk showing the plot will **NOT repeat** the code but rather reference the
 .pull-left[
 #### Code:
 
-```{r, echo=FALSE}
-library(tidyverse)
-library(unhcrthemes)
-
-idp_total_sex <- idp |>
-  group_by(year, sex) |>
-  summarise(idp = sum(idp, na.rm = TRUE) / 1e6) |>
-  ungroup()
-```
-
-```{r, global-idp,  fig.show='hide'}
-ggplot(idp_total_sex) +
-  geom_col(aes(x = year, y = idp, fill = sex),
-           width = 0.8,
-           position = position_dodge(width = 0.9)) +
-  scale_fill_unhcr_d(palette = "pal_unhcr",
-                     labels = c("Female", "Male")) +
-  scale_y_continuous(expand = expansion(c(0, 0.1))) +
-  labs(title = "Globalement IDP displacement | 2010 - 2020",
-       y = "Number of people (in million)",
-       caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency") +
-  scale_x_continuous(breaks = seq(2010, 2019, 1)) +
-  theme_unhcr(grid = "Y", axis_title = "y")
+```{r, mtcars-ex,  fig.show='hide'}
+ggplot(
+  mtcars,
+  aes(x = hp, y = mpg, color = as.factor(cyl))
+) +
+  geom_point(alpha = .8) +
+  labs(
+    title = "Simple scatterplot with ggplot",
+    subtitle = "This plot shows the default style of theme_unhcr()",
+    x = "Horsepower (hp)",
+    y = "Fuel efficiency (mpg)",
+    color = "Number of cylinder",
+    caption = "Source: mtcars"
+  ) +
+  scale_color_unhcr_d() +
+  theme_unhcr(legend_title = TRUE)
 ```
 ]
 
 .pull-right[
 #### Plot:
 
-```{r, ref.label="global-idp", echo=FALSE, dev = "ragg_png", fig.retina = 4, out.width="100%", fig.height=5}
+```{r, ref.label="mtcars-ex", echo=FALSE, dev = "ragg_png", fig.retina = 4, out.width="100%", fig.height=5}
 
 ```
 ]
@@ -721,22 +698,21 @@ For this scenario, we include custom classes, to wrap the targeted content in th
 library(tidyverse)
 library(unhcrthemes)
 
-idp_total_sex <- idp |>
-  group_by(year, sex) |>
-  summarise(idp = sum(idp, na.rm = TRUE) / 1e6) |>
-  ungroup()
-ggplot(idp_total_sex) +
-  geom_col(aes(x = year, y = idp, fill = sex),
-           width = 0.8,
-           position = position_dodge(width = 0.9)) +
-  scale_fill_unhcr_d(palette = "pal_unhcr",
-                     labels = c("Female", "Male")) +
-  scale_y_continuous(expand = expansion(c(0, 0.1))) +
-  labs(title = "Globalement IDP displacement | 2010 - 2020",
-       y = "Number of people (in million)",
-       caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency") +
-  scale_x_continuous(breaks = seq(2010, 2019, 1)) +
-  theme_unhcr(grid = "Y", axis_title = "y")
+ggplot(
+  mtcars,
+  aes(x = hp, y = mpg, color = as.factor(cyl))
+) +
+  geom_point(alpha = .8) +
+  labs(
+    title = "Simple scatterplot with ggplot",
+    subtitle = "This plot shows the default style of theme_unhcr()",
+    x = "Horsepower (hp)",
+    y = "Fuel efficiency (mpg)",
+    color = "Number of cylinder",
+    caption = "Source: mtcars"
+  ) +
+  scale_color_unhcr_d() +
+  theme_unhcr(legend_title = TRUE)
 ```
 ]
 ]
