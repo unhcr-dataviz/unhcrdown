@@ -25,3 +25,9 @@ compile_css(
   scss_file = "html_slides.scss",
   css_file = "html_slides.css"
 )
+
+# Generate paged_simple.css
+compile_css(
+  scss_file = "paged_simple.scss",
+  css_file = "paged_simple.css"
+)

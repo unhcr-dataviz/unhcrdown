@@ -1,0 +1,225 @@
+// 1. Include base UNHCR styles
+@import 'reset.scss';
+@import 'logo.scss';
+@import 'colors.scss';
+@import 'fonts.scss';
+
+// TODO remove
+// @import 'fontawesome.scss';
+
+// 2. set overall fonts
+html, body { font-family: 'Lato', Arial, sans-serif; }
+
+pre, code, kbd, samp { font-family: 'Source Code Pro', monospace; }
+
+// 3. Include paged html defaults
+@import 'paged.scss';
+
+// 4. Custom styles
+/*** Pages ***/
+/* page size */
+@page {
+  size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
+  margin: 45mm 25mm 25mm 25mm;
+}
+
+@page:blank {
+
+}
+
+/* string variables */
+h1.title {
+  string-set: h1-title content(text);
+}
+
+h1.subtitle {
+  string-set: h1-subtitle content(text);
+}
+h2.date {
+  string-set: h2-date content(text);
+}
+h2.author {
+  string-set: h2-author content(text);
+}
+address.author-afil {
+  string-set: address-author-afil content(text);
+}
+a.email {
+  string-set: a-author-email content(text);
+}
+
+/* normal page */
+@page {
+  /* top ruler */
+  background-image: url($unhcr-logoblue), url(../img/header-ruler-simple.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 15mm 10mm, 15mm 22mm;
+  background-size: 36mm, 180mm;
+  /* running title */
+  @top-right {
+    content: string(h1-title) " > " string(h1-subtitle);
+    margin-right: -10mm;
+    margin-top: 14mm;
+    color: var(--unhcr-grey);
+    font-size: 1em;
+    text-transform: uppercase;
+    vertical-align: top;
+  }
+  /* numbering */
+  @bottom-right {
+    content: counter(page);
+    margin-right: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: var(--unhcr-blue);
+    font-size: 0.8em;
+    vertical-align: top;
+    border-top: 0.5px solid var(--unhcr-blue);
+  }
+  /* running date */
+  @bottom-left {
+    content: "UNHCR / " string(h2-date);
+    margin-left: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: var(--unhcr-blue);
+    font-size: 0.8em;
+    vertical-align: top;
+    border-top: 0.5px solid var(--unhcr-blue);
+  }
+}
+
+/* ------------------------ Front Cover --------------------- */
+@page:first {
+  /* top ruler */
+  background-image: url($unhcr-logoblue), url(../img/header-ruler-left.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 15mm 10mm, 15mm 28mm;
+  background-size: 55mm, 180mm;
+  /* running title */
+  @top-right {
+    content: string(h1-subtitle);
+    margin-right: -10mm;
+    margin-top: 16.5mm;
+    color: var(--unhcr-blue);
+    font-size: 1.5em;
+    text-transform: uppercase;
+    vertical-align: top;
+  }
+  /* numbering */
+  @bottom-right {
+    content: counter(page);
+    margin-right: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: var(--unhcr-blue);
+    font-size: 0.9em;
+    vertical-align: top;
+    border-top: 0.5px solid var(--unhcr-blue);
+  }
+  /* running date */
+  @bottom-left {
+    content: "www.unhcr.org";
+    margin-left: -10mm;
+    margin-top: 10mm;
+    padding-top: 1.5mm;
+    color: var(--unhcr-blue);
+    font-size: 0.9em;
+    vertical-align: top;
+    border-top: 0.5px solid var(--unhcr-blue);
+  }
+}
+
+/* ------------------------ Back Cover ---------------------- */
+@page back-cover {
+
+}
+.back-cover {
+  page: back-cover;
+}
+.back-name:after {
+  content: string(h2-author);
+}
+/*
+.back-afil:after {
+  content: string(address-author-afil);
+}
+
+.back-email:after {
+  content: string(a-author-email);
+*/
+
+/* ------------------------ Style ----------------------------- */
+/* front cover */
+.title-page {
+  margin: 0mm -10mm 22mm -10mm;
+}
+
+.title,
+.date {
+  color: var(--unhcr-black);
+}
+
+.title{
+  font-size: 3em;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.date {
+  font-size: 1.2em;
+}
+
+.front-page .author,
+.front-page .author-afil,
+.front-page .author-email,
+.front-page .email,
+.front-page .subtitle,
+.front-page .abstract {
+  display: none;
+}
+
+/* toc, lot, lof, loa */
+.toc, .lot, .lof, .loa {
+  display: none; /* make sure they don't appear even if turn on in the yaml */
+}
+
+/* backcover */
+.back-cover {
+  position: absolute;
+  bottom: 0;
+  margin: 10mm 20mm 5mm 20mm;
+}
+
+/* footnote */
+.footnote sup,
+.footnote-ref {
+  color: var(--unhcr-blue);
+  font-weight: 700;
+}
+
+/* --------------------- CSS Fragmentation --------------------------- */
+/* page breaks; aka CSS fragmentation */
+
+.front-page {
+  counter-reset: page 1;
+}
+.section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
+  break-after: avoid;
+}
+.footenotes {
+  break-before: always;
+  break-after: always;
+}
+.bg-blue,
+.bg-grey,
+.figure {
+  break-inside: avoid;
+}
+
+/* do not break captions */
+caption {
+  break-inside: avoid;
+  break-after: avoid;
+}
