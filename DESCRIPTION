@@ -1,41 +1,34 @@
 Package: unhcrdown
 Title: UNHCR Templates for R Markdown
 Version: 0.0.5.9000
-Authors@R:
-    c(person(given = "Cedric",
-           family = "Vidonne",
-           role = c("aut", "cre"),
-           email = "cedric@vidonne.me"),
-      person(given = "Ahmadou",
-           family = "Dicko",
-           role = "aut",
-           email = "mail@ahmadoudicko.com"),
-      person(given = "Edouard",
-           family = "Legoupil",
-           role = "aut",
-           email = "legoupil@unhcr.org"),
-      person(family = "UNHCR",
-             role = "cph"))
+Authors@R:c(
+    person("Cedric", "Vidonne", , "cedric@vidonne.me", role = c("aut", "cre")),
+    person("Ahmadou", "Dicko", , "mail@ahmadoudicko.com", role = "aut"),
+    person("Edouard", "Legoupil", , "legoupil@unhcr.org", role = "aut"),
+    person(, "UNHCR", role = "cph")
+  )
 Description: Produce documents compliant with UNHCR brand identity.
 License: MIT + file LICENSE
+URL: https://github.com/unhcr-dataviz/unhcrdown,
+    https://unhcr-dataviz.github.io/unhcrdown/
+BugReports: https://github.com/unhcr-dataviz/unhcrdown/issues
+Imports:
+    bslib,
+    magick,
+    officedown,
+    pagedown,
+    rmarkdown,
+    unhcrdesign,
+    xaringan
+Suggests: 
+    fontawesome,
+    knitr
+VignetteBuilder: 
+    knitr
+Remotes: 
+    vidonne/unhcrdesign
+Config/Needs/website: unhcr-dataviz/unhcrtemplate
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
-Imports:
-    magick,
-    pagedown,
-    officedown,
-    rmarkdown,
-    xaringan,
-    officer,
-    unhcrdesign
-URL: https://github.com/unhcr-dataviz/unhcrdown, https://unhcr-dataviz.github.io/unhcrdown/
-BugReports: https://github.com/unhcr-dataviz/unhcrdown/issues
-Remotes: vidonne/unhcrdesign
-Suggests: 
-    knitr,
-    unhcrthemes,
-    fontawesome
-VignetteBuilder: knitr
-Config/Needs/website: unhcr-dataviz/unhcrtemplate
+RoxygenNote: 7.3.2
