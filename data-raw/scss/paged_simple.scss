@@ -60,7 +60,7 @@ a.email {
     content: string(h1-title) " > " string(h1-subtitle);
     margin-right: -10mm;
     margin-top: 14mm;
-    color: var(--unhcr-grey);
+    color: $unhcr-grey;
     font-size: 1em;
     text-transform: uppercase;
     vertical-align: top;
@@ -71,10 +71,10 @@ a.email {
     margin-right: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: var(--unhcr-blue);
+    color: $unhcr-blue;
     font-size: 0.8em;
     vertical-align: top;
-    border-top: 0.5px solid var(--unhcr-blue);
+    border-top: 0.5px solid $unhcr-blue;
   }
   /* running date */
   @bottom-left {
@@ -82,10 +82,10 @@ a.email {
     margin-left: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: var(--unhcr-blue);
+    color: $unhcr-blue;
     font-size: 0.8em;
     vertical-align: top;
-    border-top: 0.5px solid var(--unhcr-blue);
+    border-top: 0.5px solid $unhcr-blue;
   }
 }
 
@@ -101,7 +101,7 @@ a.email {
     content: string(h1-subtitle);
     margin-right: -10mm;
     margin-top: 16.5mm;
-    color: var(--unhcr-blue);
+    color: $unhcr-blue;
     font-size: 1.5em;
     text-transform: uppercase;
     vertical-align: top;
@@ -112,10 +112,10 @@ a.email {
     margin-right: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: var(--unhcr-blue);
+    color: $unhcr-blue;
     font-size: 0.9em;
     vertical-align: top;
-    border-top: 0.5px solid var(--unhcr-blue);
+    border-top: 0.5px solid $unhcr-blue;
   }
   /* running date */
   @bottom-left {
@@ -123,10 +123,10 @@ a.email {
     margin-left: -10mm;
     margin-top: 10mm;
     padding-top: 1.5mm;
-    color: var(--unhcr-blue);
+    color: $unhcr-blue;
     font-size: 0.9em;
     vertical-align: top;
-    border-top: 0.5px solid var(--unhcr-blue);
+    border-top: 0.5px solid $unhcr-blue;
   }
 }
 
@@ -157,7 +157,7 @@ a.email {
 
 .title,
 .date {
-  color: var(--unhcr-black);
+  color: $unhcr-black;
 }
 
 .title{
@@ -195,7 +195,7 @@ a.email {
 /* footnote */
 .footnote sup,
 .footnote-ref {
-  color: var(--unhcr-blue);
+  color: $unhcr-blue;
   font-weight: 700;
 }
 

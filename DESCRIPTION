@@ -1,7 +1,7 @@
 Package: unhcrdown
 Title: UNHCR Templates for R Markdown
 Version: 0.0.5.9000
-Authors@R:c(
+Authors@R: c(
     person("Cedric", "Vidonne", , "cedric@vidonne.me", role = c("aut", "cre")),
     person("Ahmadou", "Dicko", , "mail@ahmadoudicko.com", role = "aut"),
     person("Edouard", "Legoupil", , "legoupil@unhcr.org", role = "aut"),
@@ -18,7 +18,6 @@ Imports:
     officedown,
     pagedown,
     rmarkdown,
-    unhcrdesign,
     xaringan
 Suggests: 
     fontawesome,
