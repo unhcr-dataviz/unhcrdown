@@ -543,20 +543,8 @@ ggplot(idp_total_sex) +
 plots by playing with individual chunk options like
 <code>fig.retina</code> and <code>out.width</code> (plus
 <code>fig.width</code> and <code>fig.height</code>). Often this requires
-some trial and error, but look at <a href="#">html_slides sample
-presentation</a> or the <strong>template skeleton</strong> for setup
-examples. Also check Hadley/Garrett’s recommended <a href="https://r4ds.had.co.nz/graphics-for-communication.html#figure-sizing" class="external-link">ggplot2
-chunk options</a> and Christophe Nicault blog’s post on <a href="https://www.christophenicault.com/post/understand_size_dimension_ggplot2/" class="external-link">understanding
-text size and resolution in ggplot2</a> for guidance.</p>
-<p>You can also set your global chunk options in a setup chunk, all the
-code chunk following the setup will get the same options. This can
-always be overridden by setting the desired parameter in the required
-code chunk. As <code>unhcrthemes</code> package use specific fonts it’s
-always a good thing to include the <code>showtext</code> setup to avoid
-unexpected results:</p>
-<pre><code>```{r setup}
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.showtext = TRUE, fig.retina = 4)
-```</code></pre>
+some trial and error, but check Hadley/Garrett’s recommended <a href="https://r4ds.had.co.nz/graphics-for-communication.html#figure-sizing" class="external-link">ggplot2
+chunk options</a> for guidance.</p>
 <p><strong>Show code alongside resulting plot:</strong></p>
 <p>A nice tip for the purpose of teaching is to use the
 <code>fig.show</code> and the <code>ref.label</code> code chunk options
