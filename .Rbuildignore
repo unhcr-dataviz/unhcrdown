@@ -9,3 +9,4 @@
 ^pkgdown$
 ^dev$
 ^data-raw$
+^cran-comments\.md$

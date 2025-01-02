@@ -1,13 +1,17 @@
 Package: unhcrdown
-Title: UNHCR Templates for R Markdown
+Title: UNHCR Branded Templates for R Markdown Documents
 Version: 0.5.9000
 Authors@R: c(
-    person("Cedric", "Vidonne", , "cedric@vidonne.me", role = c("aut", "cre")),
+    person("Cédric", "Vidonne", , "cedric@vidonne.me", role = c("aut", "cre")),
     person("Ahmadou", "Dicko", , "mail@ahmadoudicko.com", role = "aut"),
     person("Edouard", "Legoupil", , "legoupil@unhcr.org", role = "aut"),
-    person(, "UNHCR", role = "cph")
+    person("UNHCR", role = "cph")
   )
-Description: Produce documents compliant with UNHCR brand identity.
+Description: Create United Nations High Commissioner for Refugees (UNHCR)
+    branded documents, presentations, and reports using R Markdown templates.
+    This package provides customized formats that align with UNHCR's official
+    brand guidelines for creating professional PDF reports, Word documents,
+    PowerPoint presentations, and HTML outputs.
 License: MIT + file LICENSE
 URL: https://github.com/unhcr-dataviz/unhcrdown,
     https://unhcr-dataviz.github.io/unhcrdown/
