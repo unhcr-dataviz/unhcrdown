@@ -24,8 +24,6 @@ Suggests:
     knitr
 VignetteBuilder: 
     knitr
-Remotes: 
-    vidonne/unhcrdesign
 Config/Needs/website: unhcr-dataviz/unhcrtemplate
 Encoding: UTF-8
 LazyData: true

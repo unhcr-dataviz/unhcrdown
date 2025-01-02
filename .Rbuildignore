@@ -8,3 +8,4 @@
 ^docs$
 ^pkgdown$
 ^dev$
+^data-raw$
