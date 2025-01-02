@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# unhcrdown <a href="https://github.com/vidonne/unhcrdown"><img src='man/figures/unhcrdown_sticker.png' align="right" width="140" /></a>
+# unhcrdown <a href="https://github.com/unhcr-dataviz/unhcrdown"><img src='man/figures/unhcrdown_sticker.png' align="right" width="140" alt="unhcrdown package hex sticker" /></a>
 
 <!-- badges: start -->
 
@@ -12,17 +12,24 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://www.r-pkg.org/badges/version/unhcrdown)](https://CRAN.R-project.org/package=unhcrdown)
 <!-- badges: end -->
 
-## Overview
+Streamline your document creation process with the `{unhcrdown}` R
+package. It provides a comprehensive set of templates designed to align
+your reports and presentations with [UNHCR’s brand
+guidelines](https://www.unhcr.org/brand). This package offers
+ready-to-use R Markdown templates for various document types, ensuring
+consistent UNHCR visual identity across your communications.
 
-The **`unhcrdown`** package provides a set of templates following [UNHCR
-Brand](https://www.unhcr.org/brand) recommendations. The goal of this
-package is to ease and speed up the creation of reports, presentation
-and website while promoting the UNHCR visual identity.
+## Features
+
+- A collection of professional templates following UNHCR brand
+  guidelines
+- Ready-to-use formats for reports, presentations, and websites
+- Easy-to-use functions that work seamlessly with R Markdown
+- Consistent styling across all document types
 
 ## Installation
 
-This package is not on yet on CRAN and to install it, you will need the
-`{pak}` package.
+Get started by installing the development version from GitHub with:
 
 ``` r
 # If pak is not yet installed, uncomment the following line:
@@ -31,97 +38,88 @@ This package is not on yet on CRAN and to install it, you will need the
 pak::pkg_install("unhcr-dataviz/unhcrdown")
 ```
 
-## Content
-
-A package with all **necessary templates** to quickly create [UNHCR
-branded](https://www.unhcr.org/brand/templates-tools/) reports,
-presentations and more:
-
-1.  Microsoft **Word document** (based on `officedown::rdocx_document`)
-2.  HTML to **PDF paged reports** (based on `pagedown::html_paged`)
-    - `unhcrdown::paged_report`, advanced report template including page
-      cover, table of content, back-cover and more.
-    - `unhcrdown::paged_simple`, simple document template to create
-      quick reports, updates, etc.
-3.  Microsoft **PowerPoint presentation** (based on
-    `officedown::rpptx_document`)
-4.  **HTML slides** (based on `xaringan::moon_reader`)
-
-**Work in progress:**
-
-1.  HTML document (based on `rmarkdown::html_document`)
-2.  [Distill](https://rstudio.github.io/distill/)
-3.  [Rolldown](https://github.com/yihui/rolldown)
-
 ## Usage
 
-The `unhcrdown` templates are designed for R Markdown projects, simply
-use the `docx_simple`, `paged_report` or `paged_simple`, `pptx_slides`,
-or `html_slides` engine in your R Markdown header. For example:
+The `{unhcrdown}` templates are designed for R Markdown projects, any of
+the available format can simply be added to `output` parameter of the R
+Markdown `yaml` header. For example:
 
 ``` yaml
 ---
-title: "UNHCR Branded Rmarkdown"
-author: First Last Name
-date: "02 January, 2025"
+title: "UNHCR Branded Report"
+author: "First Last Name"
+date: "`r Sys.Date()`"
 output: unhcrdown::paged_report
 ---
 ```
 
-### Templates
+### Available Formats
 
-You can also open a `unhcrdown` template using **RStudio**.
+- **PDF Reports**: Two HTML to PDF options:
 
-**Step 1:** Click the “File” menu then “New File” and choose “R
-Markdown”.
+  ``` yaml
+  output: unhcrdown::paged_report  # Full template with cover
+  # or
+  output: unhcrdown::paged_simple  # Streamlined version
+  ```
 
-<img src="man/figures/new_rmd.png" width="60%" />
+- **Word Documents**: Professional reports using
+  `officedown::rdocx_document`
 
-**Step 2:** In the “From Template” tab, choose one of the built-in
-templates.
+  ``` yaml
+  output: unhcrdown::docx_simple
+  ```
 
-<img src="man/figures/new_template.png" width="60%" />
+- **PowerPoint**: Presentation slides
 
-## UNHCR packages
+  ``` yaml
+  output: unhcrdown::pptx_slides
+  ```
 
-unhcrthemes is part of **unhcrverse**, a set of packages to ease the
-production of statistical evidence and data stories.
+- **HTML Slides**: Web presentations
 
-- [unhcrdown](https://github.com/vidonne/unhcrdown): UNHCR templates for
-  R Markdown
-- [unhcrdatapackage](https://github.com/Edouard-Legoupil/unhcrdatapackage):
-  Use UNHCR Open data
-- [hcrdata](https://github.com/UNHCR-WEB/hcrdata/): API to connect to
-  internal data source
-- [HighFrequencyChecks](https://github.com/unhcr/HighFrequencyChecks/):
-  Perform High Frequency Check
-- [koboloadeR](https://github.com/unhcr/koboloadeR/): Process data
-  crunching for survey dataset
+  ``` yaml
+  output: unhcrdown::html_slides
+  ```
 
-You can install them all with the following:
+- **HTML Page**: Web based documents
 
-``` r
-## unhcrdown
-remotes::install_github("vidonne/unhcrdown")
-## unhcrdatapackage
-remotes::install_github('unhcr/unhcrdatapackage')
-## hcrdata
-remotes::install_github('unhcr-web/hcrdata')
-## HighFrequencyChecks
-remotes::install_github('unhcr/HighFrequencyChecks')
-## koboloadeR
-remotes::install_github('unhcr/koboloadeR')
-```
+  ``` yaml
+  output: unhcrdown::html_page
+  ```
 
-## Getting help
+### RStudio Integration
 
-Please report any issues or bugs on
-[GitHub](https://github.com/unhcr-dataviz/unhcrdown/issues), try to
-include a minimal reproducible example to help us understand.
+Create new documents directly from RStudio:
 
-## Code of Conduct
+1.  File → New File → R Markdown
+2.  Select “From Template”
+3.  Choose any `unhcrdown` template
 
-Please note that the mynewpack project is released with a [Contributor
-Code of
+## Additional UNHCR Tools
+
+- `{unhcrthemes}`: UNHCR branded ggplot2 themes and palettes -
+  [GitHub](https://github.com/unhcr-dataviz/unhcrthemes)
+- `{refugees}`: Access to [UNHCR Refugee Population Statistics
+  Database](https://www.unhcr.org/refugee-statistics/download) -
+  [GitHub](https://github.com/PopulationStatistics/refugees)
+- `quarto-revealjs-unhcr`: UNHCR branded Quarto presentations -
+  [GitHub](https://github.com/unhcr-dataviz/quarto-revealjs-unhcr)
+- `quarto-html-unhcr`: UNHCR branded Quarto HTML documents -
+  [GitHub](https://github.com/unhcr-dataviz/quarto-html-unhcr)
+- [Data Visualization Platform](https://dataviz.unhcr.org/): UNHCR’s
+  comprehensive data visualization guidance
+
+## Contribution and Code of Conduct
+
+Contributions to `{unhcrdown}` are highly valued. To ensure a welcoming
+and inclusive community, we follow our [Contributor Code of
 Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.
+If you have suggestions, uncover bugs, or envision new features, kindly
+submit an [issue on
+GitHub](https://github.com/unhcr-dataviz/unhcrdown/issues).
+
+## License
+
+This package is distributed under the [MIT
+License](https://github.com/unhcr-dataviz/unhcrdown/blob/master/LICENSE.md).
