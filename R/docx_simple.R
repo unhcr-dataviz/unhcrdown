@@ -6,9 +6,9 @@
 #'
 #' @param ... extra parameters to pass to `officedown::rdocx_document`
 #'
+#' @return An R Markdown output format.
 #' @export
 docx_simple <- function(...) {
-
   docx_template <- pkg_resource("templates/docx_template.docx")
 
   page_margins <- list(
@@ -53,7 +53,6 @@ docx_simple <- function(...) {
     lists = lists,
     ...
   )
-
 }
 
 #' @rdname docx_simple

@@ -9,6 +9,7 @@
 #' @param other_css Add extra css
 #' @param ... extra parameters to pass to `xaringan::moon_reader`
 #'
+#' @return An R Markdown output format.
 #' @export
 html_slides <- function(other_css = NULL,
                         ...) {

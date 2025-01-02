@@ -8,6 +8,7 @@
 #'
 #' @param ... extra parameters to pass to `rmarkdown::html_document`
 #'
+#' @return An R Markdown output format.
 #' @export
 html_page <- function(...) {
   unhcr_theme <- bslib::bs_theme(

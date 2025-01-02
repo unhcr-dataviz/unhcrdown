@@ -5,7 +5,7 @@
 #' @param number_sections Number section headings
 #' @param ... Arguments passed to pagedown::html_paged
 #'
-#' @return A pagedown report
+#' @return An R Markdown output format.
 #' @export
 paged_simple <- function(back_html = TRUE,
                          other_css = NULL,
@@ -26,5 +26,6 @@ paged_simple <- function(back_html = TRUE,
     css = c(paged_simple_css, other_css),
     includes = list(after_body = back_html),
     number_sections = number_sections,
-    ...)
+    ...
+  )
 }

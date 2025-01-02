@@ -8,7 +8,7 @@
 #' @param number_sections Number section headings
 #' @param ... Arguments passed to pagedown::html_paged
 #'
-#' @return A pagedown report
+#' @return An R Markdown output format.
 #' @export
 paged_report <- function(front_img = NULL,
                          img_to_dark = FALSE,
@@ -51,5 +51,6 @@ paged_report <- function(front_img = NULL,
     toc = toc,
     toc_depth = toc_depth,
     number_sections = number_sections,
-    ...)
+    ...
+  )
 }

@@ -6,9 +6,9 @@
 #'
 #' @param ... extra parameters to pass to `officedown::rpptx_document`
 #'
+#' @return An R Markdown output format.
 #' @export
 pptx_slides <- function(...) {
-
   pptx_template <- pkg_resource("templates/pptx_template.pptx")
 
   officedown::rpptx_document(
