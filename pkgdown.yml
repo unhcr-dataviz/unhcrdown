@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   create_html_slides: create_html_slides.html
-last_built: 2025-01-02T14:39Z
+last_built: 2025-01-02T15:07Z
 urls:
   reference: https://unhcr-dataviz.github.io/unhcrdown/reference
   article: https://unhcr-dataviz.github.io/unhcrdown/articles
