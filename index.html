@@ -54,20 +54,26 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="unhcrdown-">unhcrdown <a href="https://github.com/vidonne/unhcrdown" class="external-link"><img src="reference/figures/unhcrdown_sticker.png" align="right" width="140"></a>
+<div class="page-header"><h1 id="unhcrdown-">unhcrdown <a href="https://github.com/unhcr-dataviz/unhcrdown" class="external-link"><img src="reference/figures/unhcrdown_sticker.png" align="right" width="140" alt="unhcrdown package hex sticker"></a>
 <a class="anchor" aria-label="anchor" href="#unhcrdown-"></a>
 </h1></div>
 <!-- badges: start -->
 
+<p>Streamline your document creation process with the <a href="https://github.com/unhcr-dataviz/unhcrdown" class="external-link">unhcrdown</a> R package. It provides a comprehensive set of templates designed to align your reports and presentations with <a href="https://www.unhcr.org/brand" class="external-link">UNHCR’s brand guidelines</a>. This package offers ready-to-use R Markdown templates for various document types, ensuring consistent UNHCR visual identity across your communications.</p>
 <div class="section level2">
-<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+<h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
 </h2>
-<p>The <strong><code>unhcrdown</code></strong> package provides a set of templates following <a href="https://www.unhcr.org/brand" class="external-link">UNHCR Brand</a> recommendations. The goal of this package is to ease and speed up the creation of reports, presentation and website while promoting the UNHCR visual identity.</p>
+<ul>
+<li>A collection of professional templates following UNHCR brand guidelines</li>
+<li>Ready-to-use formats for reports, presentations, and websites</li>
+<li>Easy-to-use functions that work seamlessly with R Markdown</li>
+<li>Consistent styling across all document types</li>
+</ul>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>This package is not on yet on CRAN and to install it, you will need the <a href="https://pak.r-lib.org/" class="external-link">pak</a> package.</p>
+<p>Get started by installing the development version from GitHub with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># If pak is not yet installed, uncomment the following line:</span></span>
 <span><span class="co"># install.packages("pak")</span></span>
@@ -75,88 +81,83 @@
 <span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">"unhcr-dataviz/unhcrdown"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="content">Content<a class="anchor" aria-label="anchor" href="#content"></a>
-</h2>
-<p>A package with all <strong>necessary templates</strong> to quickly create <a href="https://www.unhcr.org/brand/templates-tools/" class="external-link">UNHCR branded</a> reports, presentations and more:</p>
-<ol style="list-style-type: decimal">
-<li>Microsoft <strong>Word document</strong> (based on <code><a href="https://davidgohel.github.io/officedown/reference/rdocx_document.html" class="external-link">officedown::rdocx_document</a></code>)</li>
-<li>HTML to <strong>PDF paged reports</strong> (based on <code><a href="https://rdrr.io/pkg/pagedown/man/html_paged.html" class="external-link">pagedown::html_paged</a></code>)
-<ul>
-<li>
-<code><a href="reference/paged_report.html">unhcrdown::paged_report</a></code>, advanced report template including page cover, table of content, back-cover and more.</li>
-<li>
-<code><a href="reference/paged_simple.html">unhcrdown::paged_simple</a></code>, simple document template to create quick reports, updates, etc.</li>
-</ul>
-</li>
-<li>Microsoft <strong>PowerPoint presentation</strong> (based on <code><a href="https://davidgohel.github.io/officedown/reference/rpptx_document.html" class="external-link">officedown::rpptx_document</a></code>)</li>
-<li>
-<strong>HTML slides</strong> (based on <code><a href="https://rdrr.io/pkg/xaringan/man/moon_reader.html" class="external-link">xaringan::moon_reader</a></code>)</li>
-</ol>
-<p><strong>Work in progress:</strong></p>
-<ol style="list-style-type: decimal">
-<li>HTML document (based on <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/html_document.html" class="external-link">rmarkdown::html_document</a></code>)</li>
-<li><a href="https://rstudio.github.io/distill/" class="external-link">Distill</a></li>
-<li><a href="https://github.com/yihui/rolldown" class="external-link">Rolldown</a></li>
-</ol>
-</div>
-<div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>The <code>unhcrdown</code> templates are designed for R Markdown projects, simply use the <code>docx_simple</code>, <code>paged_report</code> or <code>paged_simple</code>, <code>pptx_slides</code>, or <code>html_slides</code> engine in your R Markdown header. For example:</p>
+<p>The <a href="https://github.com/unhcr-dataviz/unhcrdown" class="external-link">unhcrdown</a> templates are designed for R Markdown projects, any of the available format can simply be added to <code>output</code> parameter of the R Markdown <code>yaml</code> header. For example:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"UNHCR Branded Rmarkdown"</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> First Last Name</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"02 January, 2025"</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"UNHCR Branded Report"</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"First Last Name"</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"`r Sys.Date()`"</span></span>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> unhcrdown::paged_report</span></span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <div class="section level3">
-<h3 id="templates">Templates<a class="anchor" aria-label="anchor" href="#templates"></a>
+<h3 id="available-formats">Available Formats<a class="anchor" aria-label="anchor" href="#available-formats"></a>
 </h3>
-<p>You can also open a <code>unhcrdown</code> template using <strong>RStudio</strong>.</p>
-<p><strong>Step 1:</strong> Click the “File” menu then “New File” and choose “R Markdown”.</p>
-<p><img src="reference/figures/new_rmd.png" width="60%"></p>
-<p><strong>Step 2:</strong> In the “From Template” tab, choose one of the built-in templates.</p>
-<p><img src="reference/figures/new_template.png" width="60%"></p>
-</div>
-</div>
-<div class="section level2">
-<h2 id="unhcr-packages">UNHCR packages<a class="anchor" aria-label="anchor" href="#unhcr-packages"></a>
-</h2>
-<p>unhcrthemes is part of <strong>unhcrverse</strong>, a set of packages to ease the production of statistical evidence and data stories.</p>
 <ul>
 <li>
-<a href="https://github.com/vidonne/unhcrdown" class="external-link">unhcrdown</a>: UNHCR templates for R Markdown</li>
+<p><strong>PDF Reports</strong>: Two HTML to PDF options:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> unhcrdown::paged_report</span><span class="co">  # Full template with cover</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> unhcrdown::paged_simple</span><span class="co">  # Streamlined version</span></span></code></pre></div>
+</li>
 <li>
-<a href="https://github.com/Edouard-Legoupil/unhcrdatapackage" class="external-link">unhcrdatapackage</a>: Use UNHCR Open data</li>
+<p><strong>Word Documents</strong>: Professional reports using <code><a href="https://davidgohel.github.io/officedown/reference/rdocx_document.html" class="external-link">officedown::rdocx_document</a></code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> unhcrdown::docx_simple</span></span></code></pre></div>
+</li>
 <li>
-<a href="https://github.com/UNHCR-WEB/hcrdata/" class="external-link">hcrdata</a>: API to connect to internal data source</li>
+<p><strong>PowerPoint</strong>: Presentation slides</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> unhcrdown::pptx_slides</span></span></code></pre></div>
+</li>
 <li>
-<a href="https://github.com/unhcr/HighFrequencyChecks/" class="external-link">HighFrequencyChecks</a>: Perform High Frequency Check</li>
+<p><strong>HTML Slides</strong>: Web presentations</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> unhcrdown::html_slides</span></span></code></pre></div>
+</li>
 <li>
-<a href="https://github.com/unhcr/koboloadeR/" class="external-link">koboloadeR</a>: Process data crunching for survey dataset</li>
+<p><strong>HTML Page</strong>: Web based documents</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> unhcrdown::html_page</span></span></code></pre></div>
+</li>
 </ul>
-<p>You can install them all with the following:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co">## unhcrdown</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"vidonne/unhcrdown"</span><span class="op">)</span></span>
-<span><span class="co">## unhcrdatapackage</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'unhcr/unhcrdatapackage'</span><span class="op">)</span></span>
-<span><span class="co">## hcrdata</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'unhcr-web/hcrdata'</span><span class="op">)</span></span>
-<span><span class="co">## HighFrequencyChecks</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'unhcr/HighFrequencyChecks'</span><span class="op">)</span></span>
-<span><span class="co">## koboloadeR</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'unhcr/koboloadeR'</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="rstudio-integration">RStudio Integration<a class="anchor" aria-label="anchor" href="#rstudio-integration"></a>
+</h3>
+<p>Create new documents directly from RStudio:</p>
+<ol style="list-style-type: decimal">
+<li>File → New File → R Markdown</li>
+<li>Select “From Template”</li>
+<li>Choose any <code>unhcrdown</code> template</li>
+</ol>
+</div>
 </div>
 <div class="section level2">
-<h2 id="getting-help">Getting help<a class="anchor" aria-label="anchor" href="#getting-help"></a>
+<h2 id="additional-unhcr-tools">Additional UNHCR Tools<a class="anchor" aria-label="anchor" href="#additional-unhcr-tools"></a>
 </h2>
-<p>Please report any issues or bugs on <a href="https://github.com/unhcr-dataviz/unhcrdown/issues" class="external-link">GitHub</a>, try to include a minimal reproducible example to help us understand.</p>
+<ul>
+<li>
+<a href="https://github.com/unhcr-dataviz/unhcrthemes" class="external-link">unhcrthemes</a>: UNHCR branded ggplot2 themes and palettes - <a href="https://github.com/unhcr-dataviz/unhcrthemes" class="external-link">GitHub</a>
+</li>
+<li>
+<a href="https://populationstatistics.github.io/refugees/" class="external-link">refugees</a>: Access to <a href="https://www.unhcr.org/refugee-statistics/download" class="external-link">UNHCR Refugee Population Statistics Database</a> - <a href="https://github.com/PopulationStatistics/refugees" class="external-link">GitHub</a>
+</li>
+<li>
+<code>quarto-revealjs-unhcr</code>: UNHCR branded Quarto presentations - <a href="https://github.com/unhcr-dataviz/quarto-revealjs-unhcr" class="external-link">GitHub</a>
+</li>
+<li>
+<code>quarto-html-unhcr</code>: UNHCR branded Quarto HTML documents - <a href="https://github.com/unhcr-dataviz/quarto-html-unhcr" class="external-link">GitHub</a>
+</li>
+<li>
+<a href="https://dataviz.unhcr.org/" class="external-link">Data Visualization Platform</a>: UNHCR’s comprehensive data visualization guidance</li>
+</ul>
 </div>
 <div class="section level2">
-<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+<h2 id="contribution-and-code-of-conduct">Contribution and Code of Conduct<a class="anchor" aria-label="anchor" href="#contribution-and-code-of-conduct"></a>
 </h2>
-<p>Please note that the mynewpack project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Contributions to <a href="https://github.com/unhcr-dataviz/unhcrdown" class="external-link">unhcrdown</a> are highly valued. To ensure a welcoming and inclusive community, we follow our <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. If you have suggestions, uncover bugs, or envision new features, kindly submit an <a href="https://github.com/unhcr-dataviz/unhcrdown/issues" class="external-link">issue on GitHub</a>.</p>
+</div>
+<div class="section level2">
+<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h2>
+<p>This package is distributed under the <a href="https://github.com/unhcr-dataviz/unhcrdown/blob/master/LICENSE.md" class="external-link">MIT License</a>.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
