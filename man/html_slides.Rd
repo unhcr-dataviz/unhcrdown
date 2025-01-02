@@ -11,6 +11,9 @@ html_slides(other_css = NULL, ...)
 
 \item{...}{extra parameters to pass to \code{xaringan::moon_reader}}
 }
+\value{
+An R Markdown output format.
+}
 \description{
 Format for converting from R Markdown to an UNHCR branded HTML presentation
 }

@@ -9,6 +9,9 @@ pptx_slides(...)
 \arguments{
 \item{...}{extra parameters to pass to \code{officedown::rpptx_document}}
 }
+\value{
+An R Markdown output format.
+}
 \description{
 Format for converting from R Markdown to an UNHCR branded Powerpoint presentation
 }

@@ -16,7 +16,7 @@ paged_simple(back_html = TRUE, other_css = NULL, number_sections = FALSE, ...)
 \item{...}{Arguments passed to pagedown::html_paged}
 }
 \value{
-A pagedown report
+An R Markdown output format.
 }
 \description{
 Function for UNHCR paged simple template

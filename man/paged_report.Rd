@@ -30,7 +30,7 @@ paged_report(
 \item{...}{Arguments passed to pagedown::html_paged}
 }
 \value{
-A pagedown report
+An R Markdown output format.
 }
 \description{
 Function for UNHCR paged report template

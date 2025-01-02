@@ -52,7 +52,7 @@ Click the `Knit` button to compile it and you get the title slide of your presen
 
 :::{.mb-5}
 ```{r, echo=FALSE, out.width="100%", output.class=c("border","mb-5")}
-knitr::include_graphics("../man/figures/html_slides_title.png")
+knitr::include_graphics("figures/html_slides_title.png")
 ```
 :::
 
@@ -68,7 +68,7 @@ Press **h** or **?** to see the `remark.js` [keyboard shortcuts](https://bookdow
 
 :::{.mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_revealjs_help.png")
+knitr::include_graphics("figures/html_slides_revealjs_help.png")
 ```
 :::
 
@@ -142,7 +142,7 @@ class: middle, center
 
 :::{.border .mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_alignment.png")
+knitr::include_graphics("figures/html_slides_alignment.png")
 ```
 :::
 
@@ -160,7 +160,7 @@ class: middle, center
 ```
 :::{.border .mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_alignment_left.png")
+knitr::include_graphics("figures/html_slides_alignment_left.png")
 ```
 :::
 
@@ -181,7 +181,7 @@ Each column takes 47% of the total width
 ```
 :::{.border .mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_twocolumns.png")
+knitr::include_graphics("figures/html_slides_twocolumns.png")
 ```
 :::
 
@@ -218,7 +218,7 @@ This is a `.pull-right[]` within a `.pull-right[]`
 
 :::{.border .mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_multiplecolumns.png")
+knitr::include_graphics("figures/html_slides_multiplecolumns.png")
 ```
 :::
 
@@ -253,7 +253,7 @@ You can change the **background** of the text by using the `.bg-blue[]` or `.bg-
 
 :::{.border .mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_unhcrhelpers.png")
+knitr::include_graphics("figures/html_slides_unhcrhelpers.png")
 ```
 :::
 
@@ -285,7 +285,7 @@ class: inverse
 ```
 :::{.mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_inverse.png")
+knitr::include_graphics("figures/html_slides_inverse.png")
 ```
 :::
 
@@ -320,7 +320,7 @@ background-position: center 25%
 ```
 :::{.mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_bgimage.jpg")
+knitr::include_graphics("figures/html_slides_bgimage.jpg")
 ```
 :::
 
@@ -344,7 +344,7 @@ To highlight lines of code simply add `#<<` at the end of each targeted row and 
 
 :::{.border .mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_code_highlight.png")
+knitr::include_graphics("figures/html_slides_code_highlight.png")
 ```
 :::
 
@@ -354,7 +354,7 @@ It is also possible to highlight the code output by adding `highlight.output = c
 
 :::{.border .mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_output_highlight.png")
+knitr::include_graphics("figures/html_slides_output_highlight.png")
 ```
 :::
 
@@ -375,7 +375,7 @@ head(aus_displ) |>
 ```
 :::{.border .mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_table.png")
+knitr::include_graphics("figures/html_slides_table.png")
 ```
 :::
 
@@ -404,7 +404,7 @@ head(aus_displ) |>
 ```
 :::{.border .mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_table_class.png")
+knitr::include_graphics("figures/html_slides_table_class.png")
 ```
 :::
 
@@ -445,7 +445,7 @@ ggplot(idp_total_sex) +
 ````
 :::{.border .mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_plot.png")
+knitr::include_graphics("figures/html_slides_plot.png")
 ```
 :::
 
@@ -461,7 +461,7 @@ A nice tip for the purpose of teaching is to use the `fig.show` and the `ref.lab
 
 :::{.border .mb-5}
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("../man/figures/html_slides_plot_code.png")
+knitr::include_graphics("figures/html_slides_plot_code.png")
 ```
 :::
 

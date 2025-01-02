@@ -9,6 +9,9 @@ html_page(...)
 \arguments{
 \item{...}{extra parameters to pass to \code{rmarkdown::html_document}}
 }
+\value{
+An R Markdown output format.
+}
 \description{
 Format for converting from R Markdown to an UNHCR branded HTML website
 }

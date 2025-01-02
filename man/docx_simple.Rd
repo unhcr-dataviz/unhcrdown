@@ -9,6 +9,9 @@ docx_simple(...)
 \arguments{
 \item{...}{extra parameters to pass to \code{officedown::rdocx_document}}
 }
+\value{
+An R Markdown output format.
+}
 \description{
 Format for converting from R Markdown to an UNHCR branded Word simple document
 }
