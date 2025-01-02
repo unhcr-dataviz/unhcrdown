@@ -410,9 +410,9 @@ knitr::include_graphics("../man/figures/html_slides_table_class.png")
 
 ### Plots
 
-For the creation of charts, we recommend the use of the [**`unhcrthemes`**](https://unhcr-dataviz.github.io/unhcrthemes/) as it provides a `ggplot2` theme and a set of colour palettes for making charts and graphics based on the [UNHCR Data Visualization Guidelines](https://dataviz.unhcr.org/general_guidance/). The charts made with [`unhcrthemes`](https://unhcr-dataviz.github.io/unhcrthemes/) will be perfectly integrated in the `unhcrdown::html_slides` presentation and will be fully aligned with the UNHCR brand.
+For the creation of charts, we recommend the use of the [**`unhcrthemes`**](https://unhcr-dataviz.github.io/unhcrthemes/) as it provides a `ggplot2` theme and a set of colour palettes for making charts and graphics based on the [UNHCR Data Visualization Guidelines](https://dataviz.unhcr.org/guidance/). The charts made with [`unhcrthemes`](https://unhcr-dataviz.github.io/unhcrthemes/) will be perfectly integrated in the `unhcrdown::html_slides` presentation and will be fully aligned with the UNHCR brand.
 
-Inserting a plot is as easy as a table and only requires a few lines of code. For more information on how to make a plot using `unhcrthemes` please refer to [package documentation](https://unhcr-dataviz.github.io/unhcrthemes/articles/unhcrthemes.html) and the [UNHCR Data Visualization Platform R tutorials](https://dataviz.unhcr.org/tools/r/).
+Inserting a plot is as easy as a table and only requires a few lines of code. For more information on how to make a plot using `unhcrthemes` please refer to [package documentation](https://unhcr-dataviz.github.io/unhcrthemes/articles/unhcrthemes.html) and the [UNHCR Data Visualization Platform R tutorials](https://dataviz.unhcr.org/tutorials/r/).
 
 **`unhcrthemes` plot example:**
 
