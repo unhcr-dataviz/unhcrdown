@@ -449,15 +449,8 @@ knitr::include_graphics("../man/figures/html_slides_plot.png")
 ```
 :::
 
-Getting your plot right is not always easy, but you can control your plots by playing with individual chunk options like `fig.retina` and `out.width` (plus `fig.width` and `fig.height`). Often this requires some trial and error, but look at [html_slides sample presentation](#) or the **template skeleton** for setup examples. Also check Hadley/Garrett's recommended [ggplot2 chunk options](https://r4ds.had.co.nz/graphics-for-communication.html#figure-sizing) and Christophe Nicault blog's post on [understanding text size and resolution in ggplot2](https://www.christophenicault.com/post/understand_size_dimension_ggplot2/) for guidance. 
+Getting your plot right is not always easy, but you can control your plots by playing with individual chunk options like `fig.retina` and `out.width` (plus `fig.width` and `fig.height`). Often this requires some trial and error, but check Hadley/Garrett's recommended [ggplot2 chunk options](https://r4ds.had.co.nz/graphics-for-communication.html#figure-sizing) for guidance. 
 
-You can also set your global chunk options in a setup chunk, all the code chunk following the setup will get the same options. This can always be overridden by setting the desired parameter in the required code chunk. As `unhcrthemes` package use specific fonts it's always a good thing to include the `showtext` setup to avoid unexpected results:
-
-````
-```{r setup}`r ''`
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.showtext = TRUE, fig.retina = 4)
-```
-````
 
 **Show code alongside resulting plot:**
 
