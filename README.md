@@ -5,9 +5,8 @@
 
 <!-- badges: start -->
 
-[![Project Status: WIP – Initial development is in progress, but there
-has not yet been a stable, usable release suitable for the
-public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/unhcrdown)](https://CRAN.R-project.org/package=unhcrdown)
@@ -40,10 +39,10 @@ presentations and more:
 
 1.  Microsoft **Word document** (based on `officedown::rdocx_document`)
 2.  HTML to **PDF paged reports** (based on `pagedown::html_paged`)
-      - `unhcrdown::paged_report`, advanced report template including
-        page cover, table of content, back-cover and more.
-      - `unhcrdown::paged_simple`, simple document template to create
-        quick reports, updates, etc.
+    - `unhcrdown::paged_report`, advanced report template including page
+      cover, table of content, back-cover and more.
+    - `unhcrdown::paged_simple`, simple document template to create
+      quick reports, updates, etc.
 3.  Microsoft **PowerPoint presentation** (based on
     `officedown::rpptx_document`)
 4.  **HTML slides** (based on `xaringan::moon_reader`)
@@ -64,7 +63,7 @@ or `html_slides` engine in your R Markdown header. For example:
 ---
 title: "UNHCR Branded Rmarkdown"
 author: First Last Name
-date: "23 August, 2023"
+date: "02 January, 2025"
 output: unhcrdown::paged_report
 ---
 ```
@@ -88,16 +87,16 @@ templates.
 unhcrthemes is part of **unhcrverse**, a set of packages to ease the
 production of statistical evidence and data stories.
 
-  - [unhcrdown](https://github.com/vidonne/unhcrdown): UNHCR templates
-    for R Markdown
-  - [unhcrdatapackage](https://github.com/Edouard-Legoupil/unhcrdatapackage):
-    Use UNHCR Open data
-  - [hcrdata](https://github.com/UNHCR-WEB/hcrdata/): API to connect to
-    internal data source
-  - [HighFrequencyChecks](https://github.com/unhcr/HighFrequencyChecks/):
-    Perform High Frequency Check
-  - [koboloadeR](https://github.com/unhcr/koboloadeR/): Process data
-    crunching for survey dataset
+- [unhcrdown](https://github.com/vidonne/unhcrdown): UNHCR templates for
+  R Markdown
+- [unhcrdatapackage](https://github.com/Edouard-Legoupil/unhcrdatapackage):
+  Use UNHCR Open data
+- [hcrdata](https://github.com/UNHCR-WEB/hcrdata/): API to connect to
+  internal data source
+- [HighFrequencyChecks](https://github.com/unhcr/HighFrequencyChecks/):
+  Perform High Frequency Check
+- [koboloadeR](https://github.com/unhcr/koboloadeR/): Process data
+  crunching for survey dataset
 
 You can install them all with the following:
 

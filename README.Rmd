@@ -16,14 +16,14 @@ knitr::opts_chunk$set(
 # unhcrdown <a href="https://github.com/vidonne/unhcrdown"><img src='man/figures/unhcrdown_sticker.png' align="right" width="140" /></a>
 
 <!-- badges: start -->
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/unhcrdown)](https://CRAN.R-project.org/package=unhcrdown)
 <!-- badges: end -->
 
 ## Overview
 
-The **`unhcrdown`** package provides a set of templates following [UNHCR Brand](https://www.unhcr.org/brand) recommendations. The goal of this package is to ease and speed up the creation of reports, presentation and website while promoting the UNHCR visual identity. 
+The **`unhcrdown`** package provides a set of templates following [UNHCR Brand](https://www.unhcr.org/brand) recommendations. The goal of this package is to ease and speed up the creation of reports, presentation and website while promoting the UNHCR visual identity.
 
 ## Installation
 
@@ -83,7 +83,7 @@ knitr::include_graphics("man/figures/new_template.png")
 ```
 
 
-```{r child="man/rmdfragments/unhcrverse.Rmd"} 
+```{r child="man/rmdfragments/unhcrverse.Rmd"}
 ```
 
 ## Getting help
@@ -93,4 +93,3 @@ Please report any issues or bugs on [GitHub](https://github.com/unhcr-dataviz/un
 ## Code of Conduct
 
 Please note that the mynewpack project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
-

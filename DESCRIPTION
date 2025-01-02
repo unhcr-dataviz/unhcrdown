@@ -1,6 +1,6 @@
 Package: unhcrdown
 Title: UNHCR Templates for R Markdown
-Version: 0.0.5.9000
+Version: 0.5.9000
 Authors@R: c(
     person("Cedric", "Vidonne", , "cedric@vidonne.me", role = c("aut", "cre")),
     person("Ahmadou", "Dicko", , "mail@ahmadoudicko.com", role = "aut"),
@@ -19,10 +19,10 @@ Imports:
     pagedown,
     rmarkdown,
     xaringan
-Suggests: 
+Suggests:
     fontawesome,
     knitr
-VignetteBuilder: 
+VignetteBuilder:
     knitr
 Config/Needs/website: unhcr-dataviz/unhcrtemplate
 Encoding: UTF-8
