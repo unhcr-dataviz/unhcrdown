@@ -17,21 +17,7 @@ paged_report <- function(front_img = NULL,
                          toc_depth = 2,
                          number_sections = FALSE,
                          ...) {
-  # base css files
-  base_css <- unhcrdesign::use_unhcr_css(c("reset", "color_variables", "fonts"))
-
-  # logo css file
-  logo_var <- paste0("  --unhcr-logoblue: url(\"", unhcrdesign::use_unhcr_logo(logo = "blue", data_uri = TRUE), "\");")
-  logo_css <- tempfile(fileext = ".css")
-  writeLines(c(":root {", logo_var, "}"), con = logo_css)
-
-  file.append(base_css, logo_css)
-
-  # icon css files
-  icon_css <- pkg_resource("css/fontawesome_all.css")
-
-  # specific css files
-  paged_base_css <- pkg_resource("css/paged_base.css")
+  # css file
   paged_report_css <- pkg_resource("css/paged_report.css")
 
   # html back-cover
@@ -59,8 +45,7 @@ paged_report <- function(front_img = NULL,
 
   # template
   pagedown::html_paged(
-    css = c(base_css, icon_css, paged_base_css,
-            paged_report_css, other_css),
+    css = c(paged_report_css, other_css),
     front_cover = front_img,
     includes = list(after_body = back_html),
     toc = toc,
