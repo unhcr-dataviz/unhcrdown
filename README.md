@@ -13,10 +13,10 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 Streamline your document creation process with the `{unhcrdown}` R
 package. It provides a comprehensive set of templates designed to align
-your reports and presentations with [UNHCR’s brand
-guidelines](https://www.unhcr.org/brand). This package offers
-ready-to-use R Markdown templates for various document types, ensuring
-consistent UNHCR visual identity across your communications.
+your reports and presentations with **UNHCR’s brand guidelines**. This
+package offers ready-to-use R Markdown templates for various document
+types, ensuring consistent UNHCR visual identity across your
+communications.
 
 ## Features
 
@@ -93,21 +93,28 @@ Create new documents directly from RStudio:
 
 1.  File → New File → R Markdown
 2.  Select “From Template”
-3.  Choose any `unhcrdown` template
+3.  Choose any `{unhcrdown}` template
 
 ## Additional UNHCR Tools
 
-- [`{unhcrthemes}`](https://github.com/unhcr-dataviz/unhcrthemes): UNHCR
-  branded ggplot2 themes and color palettes
-- [`{refugees}`](https://github.com/PopulationStatistics/refugees):
-  Access to [UNHCR Refugee Population Statistics
-  Database](https://www.unhcr.org/refugee-statistics/download)
-- [`quarto-revealjs-unhcr`](https://github.com/unhcr-dataviz/quarto-revealjs-unhcr):
-  UNHCR branded Quarto presentations
-- [`quarto-html-unhcr`](https://github.com/unhcr-dataviz/quarto-html-unhcr):
-  UNHCR branded Quarto HTML documents
-- [Data Visualization Platform](https://dataviz.unhcr.org/): UNHCR’s
-  comprehensive data visualization guidance
+- [**unhcrthemes**](https://github.com/unhcr-dataviz/unhcrthemes): UNHCR
+  branded ggplot2 theme and color palettes
+  <!-- * [**unhcrdown**](https://github.com/unhcr-dataviz/unhcrdown): UNHCR templates for R Markdown -->
+- [**refugees**](https://github.com/PopulationStatistics/refugees):
+  Access to [UNHCR Refugee Data
+  Finder](https://www.unhcr.org/refugee-statistics) API
+- [**quarto-html-unhcr**](https://github.com/unhcr-dataviz/quarto-html-unhcr):
+  Quarto extension for UNHCR branded HTML documents
+- [**quarto-revealjs-unhcr**](https://github.com/unhcr-dataviz/quarto-revealjs-unhcr):
+  Quarto extension for UNHCR branded presentations
+- [**Data Visualization Platform**](https://dataviz.unhcr.org/): UNHCR’s
+  data visualization guidelines and tools
+
+## Acknowledgements
+
+We extend our gratitude to the creators of the
+[`pagedown`](https://github.com/rstudio/pagedown) package that
+influenced the development of `unhcrdown`.
 
 ## Contribution and Code of Conduct
 
