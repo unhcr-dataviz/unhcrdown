@@ -16,28 +16,16 @@ library(ggplot2)
 library(rvg)
 library(tidyverse)
 library(scales)
-library(lubridate)
-
-# turn off the automatic use of showtext functionality, so that the dml function can works properly
-showtext::showtext_auto(FALSE) 
-
-# Loading data
-df_1 <- read_csv("https://raw.githubusercontent.com/GDS-ODSSS/unhcr-dataviz-platform/master/data/comparison/column.csv")
-
-df_2 <- read_csv("https://raw.githubusercontent.com/GDS-ODSSS/unhcr-dataviz-platform/master/data/comparison/bar_grouped.csv")
-
-df_3 <- read_csv("https://raw.githubusercontent.com/GDS-ODSSS/unhcr-dataviz-platform/master/data/change_over_time/area_stacked.csv") |>
-  mutate(months = lubridate::my(paste(months, "2022")))
 ```
 
 ## Table
 
 ```{r layout='Two Content', ph=officer::ph_location_left()}
-head(df_1)
+head(iris)
 ```
 
 ```{r layout='Two Content', ph=officer::ph_location_right()}
-head(df_2)
+head(iris)
 ```
 
 ## ggplot in right column
@@ -47,122 +35,42 @@ head(df_2)
 - Bullets
 
 ```{r message=FALSE, warning=FALSE, ph=officer::ph_location_right()}
-mygg <- ggplot(df_1) +
-  geom_col(aes(
-    x = year,
-    y = displaced_number
-  ),
-  fill = unhcr_pal(n = 1, "pal_blue"),
-  width = 0.8
+mygg <-
+  ggplot(
+    mtcars,
+    aes(x = hp, y = mpg, color = as.factor(cyl))
   ) +
+  geom_point(alpha = .8) +
   labs(
-    title = "Total displaced population | 2011 - 2021",
-    y = "Number of people (in million)",
-    caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency"
+    title = "Simple scatterplot with ggplot",
+    subtitle = "This plot shows the default style of theme_unhcr()",
+    x = "Horsepower (hp)",
+    y = "Fuel efficiency (mpg)",
+    color = "Number of cylinder",
+    caption = "Source: mtcars"
   ) +
-  scale_x_continuous(breaks = pretty_breaks(n = 10)) +
-  scale_y_continuous(
-    expand = expansion(c(0, 0.1)),
-    labels = label_number_si()
-  ) +
-  theme_unhcr(
-    grid = "Y",
-    axis = "x",
-    axis_title = "y"
-  )
+  scale_color_unhcr_d() +
+  theme_unhcr(legend_title = TRUE)
 
-dml(ggobj = mygg, fonts = list(serif = 'Lato'))
+dml(ggobj = mygg, fonts = list(serif = "Lato"))
 ``` 
 
 ## Slide with ggplot 1
 
 ```{r layout='Title and Content', ph=officer::ph_location_type(type="body")}
-mygg <- ggplot(df_1) +
-  geom_col(aes(
-    x = year,
-    y = displaced_number
-  ),
-  fill = unhcr_pal(n = 1, "pal_blue"),
-  width = 0.8
-  ) +
-  labs(
-    title = "Total displaced population | 2011 - 2021",
-    y = "Number of people (in million)",
-    caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency"
-  ) +
-  scale_x_continuous(breaks = pretty_breaks(n = 10)) +
-  scale_y_continuous(
-    expand = expansion(c(0, 0.1)),
-    labels = label_number_si()
-  ) +
-  theme_unhcr(
-    grid = "Y",
-    axis = "x",
-    axis_title = "y"
-  )
-
-dml(ggobj = mygg, fonts = list(serif = 'Lato'))
+dml(ggobj = mygg, fonts = list(serif = "Lato"))
 ```
 
 ## Slide with ggplot 2
 
 ```{r ph=officer::ph_location_fullsize()}
-mygg <- ggplot(df_2) +
-  geom_col(aes(
-    x = asylum_application,
-    y = fct_rev(factor(region)),
-    fill = as.character(year)
-  ),
-  position = position_dodge(0.7),
-  width = 0.6
-  ) +
-  scale_fill_unhcr_d(palette = "pal_unhcr") +
-  labs(
-    title = "Individual asylum applications registered by region | 2019-2020",
-    x = "Number of people",
-    caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency"
-  ) +
-  scale_x_continuous(
-    expand = expansion(c(0, 0.1)),
-    labels = label_number_si()
-  ) +
-  scale_y_discrete(labels = scales::label_wrap(17)) +
-  theme_unhcr(
-    grid = "X",
-    axis = "y",
-    axis_title = "x"
-  )
-
-dml(ggobj = mygg, fonts = list(serif = 'Lato'))
+dml(ggobj = mygg, fonts = list(serif = "Lato"))
 ```
 
 ## ggplot in left column
 
 ```{r ph=officer::ph_location_left()}
-mygg <- ggplot(df_3) +
-  geom_area(aes(
-    x = months,
-    y = funding_million,
-    fill = funding_type
-  )) +
-  scale_fill_unhcr_d(palette = "pal_unhcr") +
-  labs(
-    title = "Evolution of funding in West Africa region | 2020",
-    y = "USD millions",
-    caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency"
-  ) +
-  scale_x_date(
-    date_labels = "%b",
-    breaks = pretty_breaks(n = 12)
-  ) +
-  scale_y_continuous(expand = expansion(c(0, 0.1))) +
-  theme_unhcr(
-    grid = "Y",
-    axis = "x",
-    axis_title = "y"
-  )
-
-dml(ggobj = mygg, fonts = list(serif = 'Lato'))
+dml(ggobj = mygg, fonts = list(serif = "Lato"))
 ```
 
 ## ggplot in right column
@@ -172,44 +80,18 @@ dml(ggobj = mygg, fonts = list(serif = 'Lato'))
 - Bullets
 
 ```{r ph=officer::ph_location_right()}
-mygg <- ggplot(df_2) +
-  geom_col(aes(
-    x = asylum_application,
-    y = fct_rev(factor(region)),
-    fill = as.character(year)
-  ),
-  position = position_dodge(0.7),
-  width = 0.6
-  ) +
-  scale_fill_unhcr_d(palette = "pal_unhcr") +
-  labs(
-    title = "Individual asylum applications registered by region | 2019-2020",
-    x = "Number of people",
-    caption = "Source: UNHCR Refugee Data Finder\n© UNHCR, The UN Refugee Agency"
-  ) +
-  scale_x_continuous(
-    expand = expansion(c(0, 0.1)),
-    labels = label_number_si()
-  ) +
-  scale_y_discrete(labels = scales::label_wrap(17)) +
-  theme_unhcr(
-    grid = "X",
-    axis = "y",
-    axis_title = "x"
-  )
-
-dml(ggobj = mygg, fonts = list(serif = 'Lato'))
+dml(ggobj = mygg, fonts = list(serif = "Lato"))
 ```
 
 ## ggplot in both columns
 
 
 ```{r ph=officer::ph_location_left()}
-dml(ggobj = mygg, fonts = list(serif = 'Lato'))
+dml(ggobj = mygg, fonts = list(serif = "Lato"))
 ```
 
 ```{r ph=officer::ph_location_right()}
-dml(ggobj = mygg, fonts = list(serif = 'Lato'))
+dml(ggobj = mygg, fonts = list(serif = "Lato"))
 ```
 
 
@@ -217,10 +99,10 @@ dml(ggobj = mygg, fonts = list(serif = 'Lato'))
 
 
 ```{r ph=officer::ph_location(width = 2, height = 2, left = 2, top = 2)}
-dml(ggobj = mygg, fonts = list(serif = 'Lato'))
+dml(ggobj = mygg, fonts = list(serif = "Lato"))
 ```
 
 ```{r ph=officer::ph_location(width = 3, height = 3, left = 4, top = 4)}
-dml(ggobj = mygg, fonts = list(serif = 'Lato'))
+dml(ggobj = mygg, fonts = list(serif = "Lato"))
 ```
 
