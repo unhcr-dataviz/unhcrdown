@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # unhcrdown <a href="https://github.com/unhcr-dataviz/unhcrdown"><img src='man/figures/unhcrdown_sticker.png' align="right" width="140" alt="unhcrdown package hex sticker" /></a>
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml)
 <!-- [![CRAN status](https://www.r-pkg.org/badges/version/unhcrdown)](https://CRAN.R-project.org/package=unhcrdown) -->
 <!-- badges: end -->
