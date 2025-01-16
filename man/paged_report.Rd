@@ -35,3 +35,33 @@ An R Markdown output format.
 \description{
 Function for UNHCR paged report template
 }
+\examples{
+\dontrun{
+# Requires pandoc
+
+# Create an R Markdown example file
+rmd_content <- "---
+ title: 'Example UNHCR HTML'
+ subtitle: 'Paged Report'
+ output: unhcrdown::paged_report
+ ---
+
+ ## Introduction
+
+ This is an example of a UNHCR-branded HTML paged report using `unhcrdown::paged_report`.
+ "
+
+# Write the R Markdown content to a file
+example_file <- tempfile(fileext = ".Rmd")
+writeLines(rmd_content, example_file)
+
+# Render the R Markdown file
+rmarkdown::render(example_file,
+  output_format = unhcrdown::paged_report()
+  output_dir = tempdir()
+)
+
+# View the rendered HTML file
+browseURL(render_file)
+}
+}

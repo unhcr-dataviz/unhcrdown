@@ -7,6 +7,32 @@
 #' @param ... extra parameters to pass to `officedown::rdocx_document`
 #'
 #' @return An R Markdown output format.
+#'
+#' @examples
+#' \dontrun{
+#' # Requires pandoc
+#'
+#' # Create an R Markdown example file
+#' rmd_content <- "---
+#'  title: 'Example UNHCR Word Document'
+#'  output: unhcrdown::docx_simple
+#'  ---
+#'
+#'  ## Introduction
+#'
+#'  This is an example of a UNHCR-branded Word document created using `unhcrdown::docx_simple`.
+#'  "
+#'
+#' # Write the R Markdown content to a file
+#' example_file <- tempfile(fileext = ".Rmd")
+#' writeLines(rmd_content, example_file)
+#'
+#' # Render the R Markdown file
+#' rmarkdown::render(example_file,
+#'   output_format = unhcrdown::docx_simple(),
+#'   output_dir = tempdir()
+#' )
+#' }
 #' @export
 docx_simple <- function(...) {
   docx_template <- pkg_resource("templates/docx_template.docx")
