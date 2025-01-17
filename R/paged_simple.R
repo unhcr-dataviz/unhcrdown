@@ -6,7 +6,7 @@
 #' @param ... Arguments passed to pagedown::html_paged
 #'
 #' @return An R Markdown output format.
-#' 
+#'
 #' @examples
 #' \dontrun{
 #' # Requires pandoc
@@ -29,10 +29,10 @@
 #'
 #' # Render the R Markdown file
 #' rmarkdown::render(example_file,
-#'   output_format = unhcrdown::paged_simple()
+#'   output_format = unhcrdown::paged_simple(),
 #'   output_dir = tempdir()
 #' )
-#' 
+#'
 #' # View the rendered HTML file
 #' browseURL(render_file)
 #' }

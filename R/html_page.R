@@ -31,10 +31,10 @@
 #'
 #' # Render the R Markdown file
 #' rmarkdown::render(example_file,
-#'   output_format = unhcrdown::html_page()
+#'   output_format = unhcrdown::html_page(),
 #'   output_dir = tempdir()
 #' )
-#' 
+#'
 #' # View the rendered HTML file
 #' browseURL(render_file)
 #' }

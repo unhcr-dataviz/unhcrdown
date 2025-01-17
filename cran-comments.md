@@ -1,6 +1,6 @@
 ## Resubmission Notes
 
-This is a resubmission of version 0.6.0 of the `unhcrdown` package to CRAN. In response to CRAN's request, runnable examples have been added to all exported functions. Since the examples require Pandoc to execute, they are wrapped in `\dontrun{}` to avoid issues in automated testing environments.
+Added missing comma in function examples as highlighted by CRAN reviewer.
 
 ## R CMD check results
 

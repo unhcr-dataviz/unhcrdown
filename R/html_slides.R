@@ -10,7 +10,7 @@
 #' @param ... extra parameters to pass to `xaringan::moon_reader`
 #'
 #' @return An R Markdown output format.
-#' 
+#'
 #' @examples
 #' \dontrun{
 #' # Requires pandoc
@@ -32,7 +32,7 @@
 #'
 #' # Render the R Markdown file
 #' rmarkdown::render(example_file,
-#'   output_format = unhcrdown::html_slides()
+#'   output_format = unhcrdown::html_slides(),
 #'   output_dir = tempdir()
 #' )
 #'

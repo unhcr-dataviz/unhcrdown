@@ -38,7 +38,7 @@ writeLines(rmd_content, example_file)
 
 # Render the R Markdown file
 rmarkdown::render(example_file,
-  output_format = unhcrdown::html_slides()
+  output_format = unhcrdown::html_slides(),
   output_dir = tempdir()
 )
 
