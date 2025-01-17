@@ -8,7 +8,8 @@
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/unhcr-dataviz/unhcrdown/actions/workflows/R-CMD-check.yaml)
-<!-- [![CRAN status](https://www.r-pkg.org/badges/version/unhcrdown)](https://CRAN.R-project.org/package=unhcrdown) -->
+[![CRAN
+status](https://www.r-pkg.org/badges/version/unhcrdown)](https://CRAN.R-project.org/package=unhcrdown)
 <!-- badges: end -->
 
 Streamline your document creation process with the `{unhcrdown}` R
@@ -28,7 +29,14 @@ communications.
 
 ## Installation
 
-Get started by installing the development version from GitHub with:
+Get started by installing the `{unhcrdown}` package from CRAN with:
+
+``` r
+install.packages("unhcrdown")
+```
+
+Or retrieve the development version from Github using the `{pak}`
+package:
 
 ``` r
 # If pak is not yet installed, uncomment the following line:
