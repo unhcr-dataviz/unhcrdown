@@ -1,6 +1,6 @@
 Package: unhcrdown
 Title: UNHCR Branded Templates for R Markdown Documents
-Version: 0.6.0
+Version: 0.6.0.9000
 Authors@R: c(
     person("Cédric", "Vidonne", , "cedric@vidonne.me", role = c("aut", "cre")),
     person("Ahmadou", "Dicko", , "mail@ahmadoudicko.com", role = "aut"),
